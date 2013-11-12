@@ -9,8 +9,40 @@
     tools:context=".FriendList" >
 
     <TextView
+        android:id="@+id/friendListText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/friend_list_text"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:id="@+id/friendListLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/friendListText"
+        android:layout_above="@+id/newPenpalButton"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/friend1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Timmy (Filler button again for a friend)" />
+    </LinearLayout>
+
+    <Button
+        android:id="@id/newPenpalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/new_penpal_button" />
 
 </RelativeLayout>
