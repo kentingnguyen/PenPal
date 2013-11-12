@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -10,8 +9,49 @@
     tools:context=".Home" >
 
     <TextView
+        android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:text="@string/hello_user" />
+
+    <TextView
+        android:id="@+id/unreadText"
+        android:layout_below="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="@string/unread_messages" />
+    
+
+        <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/unreadMessagesLayout"
+        android:layout_below="@+id/unreadText"
+		android:layout_above="@+id/friendListButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Timmy (This is a filler button, fix it)" />
+            
+    </LinearLayout>
+    
+    
+        
+    <Button
+        android:id="@+id/friendListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/friend_list_button" />
 
 </RelativeLayout>
