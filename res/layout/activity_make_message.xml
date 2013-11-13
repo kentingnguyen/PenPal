@@ -53,13 +53,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal" >
 
-                <include
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    layout="@layout/voice_message" />
+                
                 
             </RelativeLayout>
 
@@ -69,13 +63,6 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal" >
                 
-                            <include
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    layout="@layout/draw_message" />
                 
             </RelativeLayout>
 
@@ -85,14 +72,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal" >
                      
-                            <include
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
-                    layout="@layout/text_message" />
-                
+          	    
             </RelativeLayout>
         </FrameLayout>
 
