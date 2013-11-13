@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/friendListText"
-        android:layout_above="@+id/newPenpalButton"
+        android:layout_above="@+id/newPenPalButton"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:orientation="vertical" >
@@ -40,16 +40,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Timmy (Filler button again for a friend)" />
+            android:text="Timmy (Filler button again for a friend)" 
+            android:onClick="goToFriendProfile"
+            />
+        
     </LinearLayout>
 
     <Button
-        android:id="@id/newPenpalButton"
+        android:id="@id/newPenPalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/new_penpal_button" />
+        android:text="@string/new_pen_pal_button" 
+        android:onClick="goToMeetPenPal"
+        />
 
 </RelativeLayout>

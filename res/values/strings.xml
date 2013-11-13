@@ -11,7 +11,8 @@
     <string name="friend_list_text">Your Friends</string>
     <string name="home_button">Home</string>
     <string name="back_button">Back</string>
-    <string name="new_penpal_button">Make a New Pen Pal!</string>
+    <string name="new_pen_pal_button">Make a New Pen Pal!</string>
+    <string name="new_pen_pal_text">Meet a New Pen Pal!</string>
     <string name="title_activity_send_message">SendMessage</string>
     <string name="send_message_text">Send a message\n to Timmy</string>
     <string name="text_message">Write</string>
@@ -22,7 +23,9 @@
     <string name="to_user">To Timmy</string>
     <string name="reply_button">Reply</string>
     <string name="clear_button">Redo</string>
-    <string name="send_button">Send Message!</string>
+    <string name="research_pen_pal">Search Again</string>
+    <string name="send_message_button">Send Message!</string>
     <string name="title_activity_receive_message">ReceiveMessage</string>
+    <string name="title_activity_meet_pen_pal">MeetPenPal</string>
 
 </resources>

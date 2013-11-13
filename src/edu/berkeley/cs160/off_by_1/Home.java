@@ -28,7 +28,10 @@ public class Home extends Activity {
     }
     
     
-    public void goToReceivedMessage(View v) {
+    public void goToReceiveMessage(View v) {
+    	Intent i = new Intent(this, ReceiveMessage.class);
+    	//this intent will hopefully be dynamically loaded in the future
+    	startActivity(i);
     	
     }
 }

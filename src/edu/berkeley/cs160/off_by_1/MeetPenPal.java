@@ -6,30 +6,25 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 
-public class FriendList extends Activity {
+public class MeetPenPal extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_friend_list);
+		setContentView(R.layout.activity_meet_pen_pal);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.friend_list, menu);
+		getMenuInflater().inflate(R.menu.meet_pen_pal, menu);
 		return true;
 	}
-
 	
-	void goToMeetPenPal(View v) {
-	Intent i = new Intent(this, MeetPenPal.class);
+	void goToSendMessage(View v) {
+	Intent i = new Intent(this, SendMessage.class);
+	//Be sure to remember the recipient
 	startActivity(i);
-	}
-	
-	
-	void goToFriendProfile(View v) {
-		
 	}
 	
 }

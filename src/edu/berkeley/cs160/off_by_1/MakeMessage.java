@@ -3,6 +3,7 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
 
 public class MakeMessage extends Activity {
 
@@ -18,5 +19,16 @@ public class MakeMessage extends Activity {
 		getMenuInflater().inflate(R.menu.make_message, menu);
 		return true;
 	}
+	
+	
+	
+	void clear(View v) {
+	//Clear the screen	
+	}
+	
+	void sendMessage(View v) {
+	//in progress	
+	}
+	
 
 }

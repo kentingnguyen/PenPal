@@ -29,7 +29,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/voice_message" />
+        android:text="@string/voice_message"
+        android:onClick="goToVoiceMessage"
+         />
 
     <Button
         android:id="@+id/textMessageButton"
@@ -39,7 +41,9 @@
         android:layout_alignBottom="@+id/drawMessageButton"
         android:layout_marginLeft="31dp"
         android:layout_toRightOf="@+id/drawMessageButton"
-        android:text="@string/text_message" />
+        android:text="@string/text_message"
+        android:onClick="goToTextMessage"
+         />
 
     <Button
         android:id="@+id/drawMessageButton"
@@ -48,6 +52,8 @@
         android:layout_alignBaseline="@+id/voiceMessageButton"
         android:layout_alignBottom="@+id/voiceMessageButton"
         android:layout_centerHorizontal="true"
-        android:text="@string/draw_message" />
+        android:text="@string/draw_message"
+        android:onClick="goToDrawMessage"
+         />
 
 </RelativeLayout>

@@ -2,7 +2,9 @@ package edu.berkeley.cs160.off_by_1;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class SendMessage extends Activity {
 
@@ -19,4 +21,21 @@ public class SendMessage extends Activity {
 		return true;
 	}
 
+	
+    public void goToTextMessage(View v) {
+    	Intent i = new Intent(this, MakeMessage.class);
+    	startActivity(i);
+    }
+
+    public void goToDrawMessage(View v) {
+    	Intent i = new Intent(this, MakeMessage.class);
+    	startActivity(i);
+    }
+
+    public void goToVoiceMessage(View v) {
+    	Intent i = new Intent(this, MakeMessage.class);
+    	startActivity(i);
+    }
+
+	
 }

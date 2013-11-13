@@ -40,9 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Timmy (This is a filler button, fix it)" 
-                android:onClick="goToReceivedMessage"
-                />
-            
+                android:onClick="goToReceiveMessage"
+                />        
     </LinearLayout>
     
     <Button
