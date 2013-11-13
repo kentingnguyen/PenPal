@@ -16,7 +16,7 @@
         <activity
             android:name="edu.berkeley.cs160.off_by_1.Home"
             android:theme="@style/PenPalTheme" >
-            android:label="@string/app_name" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,20 +24,33 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="edu.berkeley.cs160.off_by_1.FriendList"
+            android:label="@string/title_activity_friend_list" 
+            android:theme="@style/PenPalTheme" >
+        </activity>
+        <activity
             android:name="edu.berkeley.cs160.off_by_1.SendMessage"
-            android:label="@string/title_activity_send_message" >
+            android:label="@string/title_activity_send_message"
+            android:theme="@style/PenPalTheme" 
+             >
         </activity>
         <activity
             android:name="edu.berkeley.cs160.off_by_1.MakeMessage"
-            android:label="@string/title_activity_make_message" >
+            android:label="@string/title_activity_make_message" 
+            android:theme="@style/PenPalTheme"
+            >
         </activity>
         <activity
             android:name="edu.berkeley.cs160.off_by_1.ReceiveMessage"
-            android:label="@string/title_activity_receive_message" >
+            android:label="@string/title_activity_receive_message" 
+            android:theme="@style/PenPalTheme"
+            >
         </activity>
         <activity
             android:name="edu.berkeley.cs160.off_by_1.MeetPenPal"
-            android:label="@string/title_activity_meet_pen_pal" >
+            android:label="@string/title_activity_meet_pen_pal" 
+            android:theme="@style/PenPalTheme"
+            >
         </activity>
     </application>
 

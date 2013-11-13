@@ -9,19 +9,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MakeMessage" >
-
-    <fragment
-        android:id="@+id/fragmentHeader"
-        android:name="edu.berkeley.cs160.off_by_1.Header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_header" />
    
     <TextView
         android:id="@+id/toUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragmentHeader"
         android:layout_centerHorizontal="true"
         android:text="@string/to_user" />
     
@@ -62,11 +54,11 @@
                 android:orientation="horizontal" >
 
                 <include
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="132dp"
+                    android:layout_marginTop="20dp"
                     layout="@layout/voice_message" />
                 
             </RelativeLayout>
@@ -77,14 +69,14 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal" >
                 
-                     <include
-                    android:layout_width="wrap_content"
+                            <include
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="132dp"
+                    android:layout_marginTop="20dp"
                     layout="@layout/draw_message" />
-           
+                
             </RelativeLayout>
 
             <RelativeLayout
@@ -93,18 +85,19 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal" >
                      
-                     <include
-                    android:layout_width="wrap_content"
+                            <include
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="132dp"
+                    android:layout_marginTop="20dp"
                     layout="@layout/text_message" />
-           
+                
             </RelativeLayout>
         </FrameLayout>
 
         <LinearLayout
+            android:id="@+id/clearSendLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
@@ -132,7 +125,6 @@
             android:id="@android:id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" 
-            android:layout_weight="0"
             >
         </TabWidget>
         

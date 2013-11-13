@@ -14,4 +14,15 @@ public class Header extends Fragment {
 	        // Inflate the layout for this fragment
 	        return inflater.inflate(R.layout.fragment_header, container, false);
 	    }	
+	 
+	 public void goToHome(View v) {
+		 //finish();	 
+	 }
+	 
+	 
+	 public void goBack(View v) {
+		//finish(); 
+	 }
+		 
+	 
 }

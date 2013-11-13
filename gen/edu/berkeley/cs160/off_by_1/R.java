@@ -27,25 +27,27 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f09000a;
+        public static final int RelativeLayout1=0x7f090009;
+        public static final int actionBack=0x7f090027;
+        public static final int actionHome=0x7f090026;
         public static final int action_settings=0x7f090025;
         public static final int backButton=0x7f09001e;
-        public static final int button1=0x7f090009;
+        public static final int button1=0x7f090008;
         public static final int clearButton=0x7f090010;
-        public static final int draw=0x7f09000e;
+        public static final int clearSendLayout=0x7f09000f;
+        public static final int draw=0x7f09000d;
         public static final int drawMessageButton=0x7f09001b;
         public static final int editText1=0x7f090021;
-        public static final int fragmentHeader=0x7f090000;
-        public static final int friend1=0x7f090004;
-        public static final int friendListButton=0x7f090008;
-        public static final int friendListLayout=0x7f090002;
-        public static final int friendListText=0x7f090001;
+        public static final int friend1=0x7f090003;
+        public static final int friendListButton=0x7f090007;
+        public static final int friendListLayout=0x7f090001;
+        public static final int friendListText=0x7f090000;
         public static final int fromUser=0x7f090016;
         public static final int header=0x7f09001d;
         public static final int homeButton=0x7f090020;
         public static final int imageView1=0x7f09001c;
         public static final int meetPenPalText=0x7f090012;
-        public static final int newPenPalButton=0x7f090003;
+        public static final int newPenPalButton=0x7f090002;
         public static final int penPalDetailsText=0x7f090013;
         public static final int recordButton=0x7f090022;
         public static final int recordTimer=0x7f090024;
@@ -55,16 +57,16 @@ public final class R {
         public static final int sendButton=0x7f090011;
         public static final int sendMessage=0x7f090015;
         public static final int sendMessageText=0x7f090018;
-        public static final int suggestedQuestion=0x7f09000c;
+        public static final int suggestedQuestion=0x7f09000b;
         public static final int textMessageButton=0x7f09001a;
         public static final int title=0x7f09001f;
-        public static final int toUser=0x7f09000b;
-        public static final int unreadMessagesLayout=0x7f090007;
-        public static final int unreadText=0x7f090006;
-        public static final int voice=0x7f09000d;
+        public static final int toUser=0x7f09000a;
+        public static final int unreadMessagesLayout=0x7f090006;
+        public static final int unreadText=0x7f090005;
+        public static final int voice=0x7f09000c;
         public static final int voiceMessageButton=0x7f090019;
-        public static final int welcomeText=0x7f090005;
-        public static final int write=0x7f09000f;
+        public static final int welcomeText=0x7f090004;
+        public static final int write=0x7f09000e;
     }
     public static final class layout {
         public static final int activity_friend_list=0x7f030000;
@@ -80,13 +82,16 @@ public final class R {
     }
     public static final class menu {
         public static final int friend_list=0x7f080000;
-        public static final int home=0x7f080001;
-        public static final int make_message=0x7f080002;
-        public static final int meet_pen_pal=0x7f080003;
-        public static final int receive_message=0x7f080004;
-        public static final int send_message=0x7f080005;
+        public static final int header=0x7f080001;
+        public static final int home=0x7f080002;
+        public static final int make_message=0x7f080003;
+        public static final int meet_pen_pal=0x7f080004;
+        public static final int receive_message=0x7f080005;
+        public static final int send_message=0x7f080006;
     }
     public static final class string {
+        public static final int action_back=0x7f06001b;
+        public static final int action_home=0x7f06001a;
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
         public static final int back_button=0x7f060009;

@@ -7,21 +7,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".FriendList" >
-
-        <fragment
-            android:id="@+id/fragmentHeader"
-            android:name="edu.berkeley.cs160.off_by_1.Header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_header" />
     
     <TextView
         android:id="@+id/friendListText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragmentHeader"
         android:layout_centerHorizontal="true"
-        
         android:text="@string/friend_list_text"
         android:textSize="25sp" />
 

@@ -27,5 +27,7 @@
     <string name="send_message_button">Send Message!</string>
     <string name="title_activity_receive_message">ReceiveMessage</string>
     <string name="title_activity_meet_pen_pal">MeetPenPal</string>
+    <string name="action_home">Home</string>
+    <string name="action_back">Back</string>
 
 </resources>
