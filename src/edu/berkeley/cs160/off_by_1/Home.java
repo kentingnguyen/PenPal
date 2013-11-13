@@ -2,7 +2,9 @@ package edu.berkeley.cs160.off_by_1;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class Home extends Activity {
 
@@ -20,4 +22,13 @@ public class Home extends Activity {
         return true;
     }
     
+    public void goToFriendList(View v) {
+    	Intent i = new Intent(this, FriendList.class);
+    	startActivity(i);
+    }
+    
+    
+    public void goToReceivedMessage(View v) {
+    	
+    }
 }
