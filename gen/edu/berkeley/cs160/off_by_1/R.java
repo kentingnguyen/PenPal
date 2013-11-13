@@ -27,27 +27,32 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090014;
-        public static final int backButton=0x7f090011;
-        public static final int button1=0x7f090008;
-        public static final int draw=0x7f09000a;
-        public static final int drawMessageButton=0x7f09000f;
-        public static final int friend1=0x7f090003;
-        public static final int friendListButton=0x7f090007;
-        public static final int friendListLayout=0x7f090001;
-        public static final int friendListText=0x7f090000;
-        public static final int header=0x7f090010;
-        public static final int homeButton=0x7f090013;
-        public static final int newPenpalButton=0x7f090002;
-        public static final int textMessageButton=0x7f09000e;
-        public static final int textView1=0x7f09000c;
-        public static final int title=0x7f090012;
-        public static final int unreadMessagesLayout=0x7f090006;
-        public static final int unreadText=0x7f090005;
-        public static final int voice=0x7f090009;
-        public static final int voiceMessageButton=0x7f09000d;
-        public static final int welcomeText=0x7f090004;
-        public static final int write=0x7f09000b;
+        public static final int RelativeLayout1=0x7f09000a;
+        public static final int action_settings=0x7f090019;
+        public static final int backButton=0x7f090014;
+        public static final int button1=0x7f090009;
+        public static final int draw=0x7f09000d;
+        public static final int drawMessageButton=0x7f090012;
+        public static final int editText1=0x7f090017;
+        public static final int fragmentHeader=0x7f090000;
+        public static final int friend1=0x7f090004;
+        public static final int friendListButton=0x7f090008;
+        public static final int friendListLayout=0x7f090002;
+        public static final int friendListText=0x7f090001;
+        public static final int header=0x7f090013;
+        public static final int homeButton=0x7f090016;
+        public static final int newPenpalButton=0x7f090003;
+        public static final int recordButton=0x7f090018;
+        public static final int sendMessageText=0x7f09000f;
+        public static final int textMessageButton=0x7f090011;
+        public static final int title=0x7f090015;
+        public static final int toUser=0x7f09000b;
+        public static final int unreadMessagesLayout=0x7f090007;
+        public static final int unreadText=0x7f090006;
+        public static final int voice=0x7f09000c;
+        public static final int voiceMessageButton=0x7f090010;
+        public static final int welcomeText=0x7f090005;
+        public static final int write=0x7f09000e;
     }
     public static final class layout {
         public static final int activity_friend_list=0x7f030000;
@@ -55,6 +60,8 @@ public final class R {
         public static final int activity_make_message=0x7f030002;
         public static final int activity_send_message=0x7f030003;
         public static final int fragment_header=0x7f030004;
+        public static final int text_message=0x7f030005;
+        public static final int voice_message=0x7f030006;
     }
     public static final class menu {
         public static final int friend_list=0x7f080000;
@@ -78,6 +85,7 @@ public final class R {
         public static final int title_activity_friend_list=0x7f060005;
         public static final int title_activity_make_message=0x7f060010;
         public static final int title_activity_send_message=0x7f06000b;
+        public static final int to_user=0x7f060011;
         public static final int unread_messages=0x7f060003;
         public static final int voice_message=0x7f06000f;
     }

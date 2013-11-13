@@ -18,5 +18,7 @@
     <string name="draw_message">Draw</string>
     <string name="voice_message">Talk</string>
     <string name="title_activity_make_message">MakeMessage</string>
+    <string name="to_user">To Timmy</string>
+    
 
 </resources>
