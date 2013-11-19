@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.berkeley.cs160.off_by_1"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="edu.berkeley.cs160.off_by_1.Home"
+            android:theme="@style/PenPalTheme" >
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="edu.berkeley.cs160.off_by_1.FriendList"
+            android:label="@string/title_activity_friend_list" 
+            android:theme="@style/PenPalTheme" >
+        </activity>
+        <activity
+            android:name="edu.berkeley.cs160.off_by_1.SendMessage"
+            android:label="@string/title_activity_send_message"
+            android:theme="@style/PenPalTheme" 
+             >
+        </activity>
+        <activity
+            android:name="edu.berkeley.cs160.off_by_1.MakeMessage"
+            android:label="@string/title_activity_make_message" 
+            android:theme="@style/PenPalTheme"
+            >
+        </activity>
+        <activity
+            android:name="edu.berkeley.cs160.off_by_1.ReceiveMessage"
+            android:label="@string/title_activity_receive_message" 
+            android:theme="@style/PenPalTheme"
+            >
+        </activity>
+        <activity
+            android:name="edu.berkeley.cs160.off_by_1.MeetPenPal"
+            android:label="@string/title_activity_meet_pen_pal" 
+            android:theme="@style/PenPalTheme"
+            >
+        </activity>
+    </application>
+
+</manifest>

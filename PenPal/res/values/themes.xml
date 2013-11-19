@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="PenPalTheme" parent="android:Theme.Holo"> 
+  		<item name="android:windowBackground">@color/light_blue</item>
+  		<item name="android:textColor">#FFFFFF</item>
+ 	</style>
+</resources>
