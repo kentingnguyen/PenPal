@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TabHost;
 
+@SuppressWarnings("deprecation")
 public class MakeMessage extends TabActivity {
 
 	String debug = "debug";
@@ -21,9 +22,9 @@ public class MakeMessage extends TabActivity {
 	       TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
 		//TabHost tabHost = getTabHost();
 	       Log.d(debug, "tabhost " + tabHost);
-	       tabHost.addTab(tabHost.newTabSpec("Voice")
-	         .setIndicator("Voice");
-	         .setContent(R.layout.voice_message);
+//	       tabHost.addTab(tabHost.newTabSpec("Voice")
+//	         .setIndicator("Voice");
+//	         .setContent(R.layout.voice_message);
 	       Log.d(debug, "set voice");
 	       tabHost.addTab(tabHost.newTabSpec("Draw")
 	         .setIndicator("Draw")
