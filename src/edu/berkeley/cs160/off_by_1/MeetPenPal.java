@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class MeetPenPal extends Activity {
@@ -21,6 +22,33 @@ public class MeetPenPal extends Activity {
 		return true;
 	}
 	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent i = new Intent();
+		switch(item.getItemId()) {		
+		case R.id.actionHome:
+				i.putExtra("home", true);
+				setResult(RESULT_OK, i);
+				finish();
+				return true;
+		case R.id.actionBack:
+				setResult(RESULT_OK, i);
+				finish();
+				return true;
+		}
+	return false;
+	}
+
+	@Override
+	public void onActivityResult(int req, int result, Intent i) {
+	boolean goHome = i.getBooleanExtra("home", false);
+	if (goHome) {
+		setResult(RESULT_OK, i);
+		finish();	
+	}
+	}
+
+	
 	public void goToSendMessage(View v) {
 		goToSendMessage();
 	}
@@ -28,7 +56,7 @@ public class MeetPenPal extends Activity {
 	public void goToSendMessage() {
 	Intent i = new Intent(this, SendMessage.class);
 	//Be sure to remember the recipient
-	startActivity(i);
+	startActivityForResult(i, 0);
 	}
 	
 }

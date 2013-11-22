@@ -30,18 +30,16 @@ public class Home extends Activity {
     }
     
     public void goToFriendList() {
-    	Intent i = new Intent(this, FriendList.class);
+    	Intent i = new Intent(this, FriendList.class);    	
+    	/*TaskStackBuilder.create(this)
+    								.addNextIntentWithParentStack(i)
+    								.startActivities();*/
     	// Use TaskStackBuilder to build the back stack and get the PendingIntent
     	
-    	/*PendingIntent pendingIntent =
-    	        TaskStackBuilder.create(this)
-    	                        // add all of DetailsActivity's parents to the stack,
-    	                        // followed by DetailsActivity itself
-    	                        //.addNextIntentWithParentStack(i)
-    	                        .getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-    	 */
+    	 
     	//NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
     	//builder.setContentIntent(pendingIntent);
+    	//startActivities(builder);
     	startActivity(i);
     }
     
@@ -50,7 +48,11 @@ public class Home extends Activity {
     }
 
     public void goToReceiveMessage() {
-    	Intent i = new Intent(this, ReceiveMessage.class);
+    	Intent i = new Intent(this, ReceiveMessage.class);    	
+    	/*TaskStackBuilder.create(this)
+    								.addNextIntentWithParentStack(i)
+    								.startActivities();*/
+    	
     	//this intent will hopefully be dynamically loaded in the future
     	startActivity(i);
     	
