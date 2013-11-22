@@ -21,8 +21,11 @@ public class ReceiveMessage extends Activity {
 		return true;
 	}
 	
+	public void goToSendMessage(View v) {	
+		goToSendMessage();
+	}
 	
-	public void goToSendMessage(View v) {
+	public void goToSendMessage() {
 	Intent i = new Intent(this, SendMessage.class);
 	//Be sure to remember the recipient
 	startActivity(i);	

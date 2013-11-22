@@ -21,18 +21,29 @@ public class SendMessage extends Activity {
 		return true;
 	}
 
+	public void goToTextMessage(View v) {
+		goToTextMessage();
+	}
 	
-    public void goToTextMessage(View v) {
+    public void goToTextMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	startActivity(i);
     }
 
     public void goToDrawMessage(View v) {
+        goToDrawMessage();
+    }
+    
+    public void goToDrawMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	startActivity(i);
     }
 
     public void goToVoiceMessage(View v) {
+        goToVoiceMessage();
+    }
+    	
+    public void goToVoiceMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	startActivity(i);
     }

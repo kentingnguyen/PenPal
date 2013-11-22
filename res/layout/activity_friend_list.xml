@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:text="Timmy (message))" 
-            android:onClick="goToSMessage" 
+            android:onClick="goToSendMessage" 
             />
         
         <Button

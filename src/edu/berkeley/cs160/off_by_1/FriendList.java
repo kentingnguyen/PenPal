@@ -22,19 +22,29 @@ public class FriendList extends Activity {
 		return true;
 	}
 
-	
 	public void goToMeetPenPal(View v) {
+		goToMeetPenPal();
+	}
+	
+	public void goToMeetPenPal() {
 	Intent i = new Intent(this, MeetPenPal.class);
 	startActivity(i);
 	}
 	
-
 	public void goToSendMessage(View v) {
+	goToSendMessage();
+	}
+	
+	public void goToSendMessage() {
 	Intent i = new Intent(this, SendMessage.class);
 	startActivity(i);
 	}
 
 	public void goToProfile(View v) {
+	goToProfile();
+	}
+		
+	public void goToProfile() {
 		Intent i = new Intent(this, Profile.class);
 		startActivity(i);
 		

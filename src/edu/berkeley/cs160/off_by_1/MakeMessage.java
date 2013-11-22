@@ -3,6 +3,7 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -52,8 +53,13 @@ public class MakeMessage extends TabActivity {
 	}
 	
 	public void sendMessage(View v) {
-	//in progress	
+	//in progress
+		goToMessageSent();
 	}
 	
 
+	void goToMessageSent() {
+		Intent i = new Intent(this, MessageSent.class);
+		startActivity(i);
+	}
 }
