@@ -18,10 +18,14 @@ public class Home extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.header, menu);
         return true;
     }
-    
+    /**
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+    	
+    }
+    */
     public void goToFriendList(View v) {
     	Intent i = new Intent(this, FriendList.class);
     	startActivity(i);
