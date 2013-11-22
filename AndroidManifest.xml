@@ -35,6 +35,12 @@
              >
         </activity>
         <activity
+            android:name="edu.berkeley.cs160.off_by_1.Profile"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/PenPalTheme" 
+             >
+        </activity>
+        <activity
             android:name="edu.berkeley.cs160.off_by_1.MakeMessage"
             android:label="@string/title_activity_make_message" 
             android:theme="@style/PenPalTheme"

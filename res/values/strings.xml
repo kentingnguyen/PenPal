@@ -8,7 +8,7 @@
     <string name="friend_list_button">Friend\'s List</string>
     <string name="title_activity_friend_list">FriendList</string>
     <string name="hello_world">Hello world!</string>
-    <string name="friend_list_text">Your Friends</string>
+    <string name="friend_list_text">My Friends</string>
     <string name="home_button">Home</string>
     <string name="back_button">Back</string>
     <string name="new_pen_pal_button">Make a New Pen Pal!</string>
@@ -29,5 +29,9 @@
     <string name="title_activity_meet_pen_pal">MeetPenPal</string>
     <string name="action_home">Home</string>
     <string name="action_back">Back</string>
+    <string name="user_profile">Timmy</string>
+    <string name="country">Country From: Spain</string>
+    <string name="language">Language: Englihs, Spanish</string>
+    <string name="title_activity_profile">ProfilePage</string>
 
 </resources>

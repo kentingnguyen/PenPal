@@ -28,8 +28,15 @@ public class FriendList extends Activity {
 	startActivity(i);
 	}
 	
-	
-	public void goToFriendProfile(View v) {
+
+	public void goToSendMessage(View v) {
+	Intent i = new Intent(this, SendMessage.class);
+	startActivity(i);
+	}
+
+	public void goToProfile(View v) {
+		Intent i = new Intent(this, Profile.class);
+		startActivity(i);
 		
 	}
 	

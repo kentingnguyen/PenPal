@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Home" >
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/language"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:text="@string/user_profile"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="89dp"
+        android:layout_height="89dp"
+        android:layout_alignLeft="@+id/welcomeText"
+        android:layout_below="@+id/welcomeText"
+        android:layout_marginTop="21dp"
+        android:src="@drawable/ic_launcher" />
+   
+
+    <TextView
+        android:id="@+id/language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/friendListButton"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="28dp"
+        android:text="@string/language"
+        android:textSize="20sp" />
+    
+	<TextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/friendListButton"
+        android:layout_below="@+id/language"
+        android:layout_marginTop="28dp"
+        android:text="@string/country"
+        android:textSize="20sp" />
+	
+	<Button
+        android:id="@+id/friendListButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="goToSendMessage"
+        android:text="@string/send_message_button" />
+</RelativeLayout>

@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15px"
         android:text="@string/friend_list_text"
         android:textSize="25sp" />
 
@@ -24,17 +25,27 @@
         android:layout_above="@+id/newPenPalButton"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical" >
-
+        android:orientation="horizontal" >
+        
         <Button
-            android:id="@+id/friend1"
-            android:layout_width="match_parent"
+            android:id="@+id/friend1_message"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Timmy (Filler button again for a friend)" 
-            android:onClick="goToFriendProfile"
+            android:layout_marginBottom="20dp"
+            android:text="Timmy (message))" 
+            android:onClick="goToSMessage" 
             />
         
+        <Button
+            android:id="@+id/friend1_profile"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Timmy Profile (profile)" 
+            android:onClick="goToProfile"
+            />
     </LinearLayout>
 
     <Button
