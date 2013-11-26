@@ -17,13 +17,13 @@
             android:textSize="25sp" />
         
         <TextView
-    	android:id="@+id/penPalDetailsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text=""
-		android:textAlignment="center" 
-        />
+	    	android:id="@+id/penPalDetailsText"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:text=""
+	        android:textSize="20sp"
+			android:textAlignment="center" />
         
     	<ImageView
 	        android:id="@+id/sun"

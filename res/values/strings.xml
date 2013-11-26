@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PenPal</string>
+    <string name="app_name">Pen Pal</string>
     <string name="title_activity_friend_list">FriendList</string>
     <string name="title_activity_profile">ProfilePage</string>
     <string name="title_activity_message_sent">MessageSent</string>
     <string name="title_activity_receive_message">ReceiveMessage</string>
-    <string name="title_activity_meet_pen_pal">MeetPenPal</string>
+    <string name="title_activity_meet_pen_pal">Meet Pen Pal</string>
     <string name="title_activity_send_message">SendMessage</string>
     <string name="title_activity_make_message">MakeMessage</string>
     
@@ -16,7 +16,7 @@
     <string name="action_home">Home</string>
     <string name="action_back">Back</string>
     <string name="hello_user">Welcome Back, Jack Jack!</string>
-    <string name="unread_messages">You have x unread messages</string>
+    <string name="unread_messages">You have 2 unread messages</string>
     <string name="friend_list_button">Friend\'s List</string>
     <string name="friend_list_text">My Friends</string>
     <string name="new_pen_pal_button">Make a New Pen Pal!</string>

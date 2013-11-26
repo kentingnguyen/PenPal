@@ -32,20 +32,18 @@
             style="@style/ListViewButton"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="40dp"
+            android:layout_height="42dp"
             android:layout_marginBottom="20dp"
-            android:text="Timmy (message))" 
+            android:text="Timmy" 
             android:onClick="goToSendMessage" 
             />
         
-        <Button
+        <ImageButton
             android:id="@+id/friend1_profile"
-            style="@style/ListViewButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:background="@drawable/profile_icon"
+            android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
-            android:text="Timmy Profile (profile)" 
             android:onClick="goToProfile"
             />
     </LinearLayout>
