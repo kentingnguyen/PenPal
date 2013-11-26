@@ -3,8 +3,10 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
 
@@ -45,6 +47,33 @@ public class MakeMessage extends TabActivity {
 		return true;
 	}
 	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		Intent i = new Intent();
+		switch(item.getItemId()) {		
+		case R.id.actionHome:
+				i.putExtra("home", true);
+				setResult(RESULT_OK, i);
+				finish();
+				return true;
+		case R.id.actionBack:
+				setResult(RESULT_OK, i);
+				finish();
+				return true;
+		}
+	return false;
+	}
+	
+	@Override
+	public void onActivityResult(int req, int result, Intent i) {
+	boolean goHome = i.getBooleanExtra("home", false);
+	if (goHome) {
+		setResult(RESULT_OK, i);
+		finish();	
+	}
+	}
+
+
 	
 	
 	public void clear(View v) {
@@ -52,8 +81,13 @@ public class MakeMessage extends TabActivity {
 	}
 	
 	public void sendMessage(View v) {
-	//in progress	
+	//in progress
+		goToMessageSent();
 	}
 	
 
+	void goToMessageSent() {
+		Intent i = new Intent(this, MessageSent.class);
+		startActivityForResult(i, 0);
+	}
 }

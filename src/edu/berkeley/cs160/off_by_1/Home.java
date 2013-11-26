@@ -2,7 +2,10 @@ package edu.berkeley.cs160.off_by_1;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.View;
 
@@ -27,13 +30,33 @@ public class Home extends Activity {
     }
     */
     public void goToFriendList(View v) {
-    	Intent i = new Intent(this, FriendList.class);
+    goToFriendList();	
+    }
+    
+    public void goToFriendList() {
+    	Intent i = new Intent(this, FriendList.class);    	
+    	/*TaskStackBuilder.create(this)
+    								.addNextIntentWithParentStack(i)
+    								.startActivities();*/
+    	// Use TaskStackBuilder to build the back stack and get the PendingIntent
+    	
+    	 
+    	//NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+    	//builder.setContentIntent(pendingIntent);
+    	//startActivities(builder);
     	startActivity(i);
     }
     
-    
     public void goToReceiveMessage(View v) {
-    	Intent i = new Intent(this, ReceiveMessage.class);
+    goToReceiveMessage();	
+    }
+
+    public void goToReceiveMessage() {
+    	Intent i = new Intent(this, ReceiveMessage.class);    	
+    	/*TaskStackBuilder.create(this)
+    								.addNextIntentWithParentStack(i)
+    								.startActivities();*/
+    	
     	//this intent will hopefully be dynamically loaded in the future
     	startActivity(i);
     	

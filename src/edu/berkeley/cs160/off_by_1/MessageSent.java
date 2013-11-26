@@ -5,14 +5,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class ReceiveMessage extends Activity {
+public class MessageSent extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_receive_message);
+		setContentView(R.layout.activity_message_sent);
 	}
 
 	@Override
@@ -38,8 +37,7 @@ public class ReceiveMessage extends Activity {
 		}
 	return false;
 	}
-
-
+	
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
 	boolean goHome = i.getBooleanExtra("home", false);
@@ -49,15 +47,6 @@ public class ReceiveMessage extends Activity {
 	}
 	}
 
-	public void goToSendMessage(View v) {	
-		goToSendMessage();
-	}
-	
-	public void goToSendMessage() {
-	Intent i = new Intent(this, SendMessage.class);
-	//Be sure to remember the recipient
-	startActivityForResult(i, 0);	
-	}
-	
+
 
 }
