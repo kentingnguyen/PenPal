@@ -8,51 +8,73 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Home" >
 
+    <LinearLayout
+        android:id="@+id/unreadMessagesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/friendListButton"
+        android:layout_below="@+id/unreadText"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/ListViewButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:onClick="goToReceiveMessage"
+            android:text="Timmy" />
+
+    </LinearLayout>
+    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:adjustViewBounds="true"
+        android:baselineAlignBottom="true"
+        android:src="@drawable/sun" />
+    
+    <Button
+        android:id="@+id/friendListButton"
+        style="@style/GreenButton"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="goToFriendList"
+        android:text="@string/friend_list_button" />
+
+    <TextView
+        android:id="@+id/unreadText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcomeText"
+        android:layout_centerHorizontal="true"
+        android:text="@string/unread_messages"
+        android:textSize="15sp" />
+
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/hello_user" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/hello_user"
+        android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/unreadText"
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17sp"
-        android:text="@string/unread_messages" />
-    
-
-        <LinearLayout
-        android:orientation="vertical"
-        android:id="@+id/unreadMessagesLayout"
-        android:layout_below="@+id/unreadText"
-		android:layout_above="@+id/friendListButton"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" >
+        android:text="@string/hello_user"
+        android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Timmy (This is a filler button, fix it)" 
-                android:onClick="goToReceiveMessage"
-                />        
-    </LinearLayout>
-    
-    <Button
-        android:id="@+id/friendListButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/friend_list_button"
-        android:onClick="goToFriendList"
-         />
+
 
 </RelativeLayout>
