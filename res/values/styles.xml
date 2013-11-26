@@ -10,6 +10,7 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
+        <item name="android:actionBarStyle">@style/PenPalActionBar</item>
     </style>
 
     <!-- Application theme. -->
@@ -17,6 +18,30 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-
+    
+    <!-- Action Bar Theme. -->
+    <style name="PenPalActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/top_bar</item>
+        <item name="android:height">73dp</item>
+    </style>
+    
+    <!-- List View Button -->
+    <style name="ListViewButton">
+    	<item name="android:background">@drawable/list_view_button</item>
+    	<item name="android:textColor">@color/light_blue</item>
+    	<item name="android:layout_height">40dp</item>
+    </style>
+    
+    <style name="GreenButton">
+        <item name="android:background">@drawable/list_view_green_button</item>
+        <item name="android:textColor">@color/tan</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+    
+    <style name="RedButton">
+        <item name="android:background">@drawable/red_button</item>
+        <item name="android:textColor">@color/tan</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
     
 </resources>
