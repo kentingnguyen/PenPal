@@ -56,8 +56,8 @@ public class FriendList extends Activity {
 	}
 	
 	public void goToMeetPenPal() {
-	Intent i = new Intent(this, MeetPenPal.class);
-	startActivityForResult(i, 0);
+		Intent i = new Intent(this, MeetPenPal.class);
+		startActivityForResult(i, 0);
 	}
 	
 	public void goToSendMessage(View v) {
