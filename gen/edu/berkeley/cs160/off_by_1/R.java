@@ -25,41 +25,45 @@ public final class R {
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int background=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int list_view_button=0x7f020002;
-        public static final int list_view_green_button=0x7f020003;
-        public static final int list_view_green_button_click=0x7f020004;
-        public static final int pen_pal_icon=0x7f020005;
-        public static final int pen_pal_text=0x7f020006;
-        public static final int red_button=0x7f020007;
-        public static final int sun=0x7f020008;
-        public static final int top_bar=0x7f020009;
+        public static final int back_btn=0x7f020000;
+        public static final int background=0x7f020001;
+        public static final int home_icon=0x7f020002;
+        public static final int list_view_button=0x7f020003;
+        public static final int list_view_green_button=0x7f020004;
+        public static final int list_view_green_button_click=0x7f020005;
+        public static final int pen_pal_icon=0x7f020006;
+        public static final int pen_pal_text=0x7f020007;
+        public static final int profile_icon=0x7f020008;
+        public static final int red_button=0x7f020009;
+        public static final int sun=0x7f02000a;
+        public static final int top_bar=0x7f02000b;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f0a000c;
-        public static final int actionBack=0x7f0a0028;
-        public static final int actionHome=0x7f0a0027;
+        public static final int RelativeLayout1=0x7f0a000d;
+        public static final int actionBack=0x7f0a0027;
+        public static final int actionHome=0x7f0a0028;
         public static final int action_settings=0x7f0a0026;
         public static final int button1=0x7f0a0009;
+        public static final int button2=0x7f0a000a;
         public static final int clearButton=0x7f0a0013;
         public static final int clearSendLayout=0x7f0a0012;
         public static final int country=0x7f0a001a;
-        public static final int draw=0x7f0a0010;
         public static final int drawMessageButton=0x7f0a0020;
         public static final int editText1=0x7f0a0022;
+        public static final int fragmentContainer=0x7f0a0011;
         public static final int friend1_message=0x7f0a0003;
         public static final int friend1_profile=0x7f0a0004;
         public static final int friendListButton=0x7f0a0007;
         public static final int friendListLayout=0x7f0a0001;
         public static final int friendListText=0x7f0a0000;
         public static final int fromUser=0x7f0a001b;
-        public static final int imageView1=0x7f0a000a;
+        public static final int imageView1=0x7f0a000b;
         public static final int language=0x7f0a0019;
         public static final int mainSpinner1=0x7f0a0021;
         public static final int meetPenPalText=0x7f0a0015;
         public static final int newPenPalButton=0x7f0a0002;
         public static final int penPalDetailsText=0x7f0a0016;
+        public static final int questionButton=0x7f0a000f;
         public static final int recordButton=0x7f0a0023;
         public static final int recordTimer=0x7f0a0025;
         public static final int recordTimerBar=0x7f0a0024;
@@ -68,16 +72,14 @@ public final class R {
         public static final int sendButton=0x7f0a0014;
         public static final int sendMessage=0x7f0a0018;
         public static final int sendMessageText=0x7f0a001d;
-        public static final int suggestedQuestion=0x7f0a000e;
+        public static final int suggestedQuestion=0x7f0a0010;
         public static final int sun=0x7f0a0005;
         public static final int textMessageButton=0x7f0a001f;
-        public static final int toUser=0x7f0a000d;
+        public static final int toUser=0x7f0a000e;
         public static final int unreadMessagesLayout=0x7f0a0006;
         public static final int unreadText=0x7f0a0008;
-        public static final int voice=0x7f0a000f;
         public static final int voiceMessageButton=0x7f0a001e;
-        public static final int welcomeText=0x7f0a000b;
-        public static final int write=0x7f0a0011;
+        public static final int welcomeText=0x7f0a000c;
     }
     public static final class layout {
         public static final int activity_friend_list=0x7f030000;

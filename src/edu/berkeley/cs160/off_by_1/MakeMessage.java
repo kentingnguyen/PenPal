@@ -2,8 +2,12 @@ package edu.berkeley.cs160.off_by_1;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,35 +15,37 @@ import android.view.View;
 import android.widget.TabHost;
 
 @SuppressWarnings("deprecation")
-public class MakeMessage extends TabActivity {
+public class MakeMessage extends FragmentActivity {
 
 	String debug = "debug";
+	String msgType;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_make_message);
-		
-		
-	       TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
-		//TabHost tabHost = getTabHost();
-	       Log.d(debug, "tabhost " + tabHost);
-//	       tabHost.addTab(tabHost.newTabSpec("Voice")
-//	         .setIndicator("Voice");
-//	         .setContent(R.layout.voice_message);
-	       Log.d(debug, "set voice");
-	       tabHost.addTab(tabHost.newTabSpec("Draw")
-	         .setIndicator("Draw")
-	         .setContent(R.id.draw));
-	       Log.d(debug, "set draw");
-	       tabHost.addTab(tabHost.newTabSpec("Write")
-	         .setIndicator("Write")
-	         .setContent(R.id.write));
-	       Log.d(debug, "set write");
-	      
-	       tabHost.setCurrentTab(0);
-	}
+		try {
+			Intent i = getIntent();
+			msgType = i.getStringExtra("msgType");
+		Log.d(debug, "got here" + msgType);
+		setContentView(R.layout.activity_make_message);	
+		FragmentManager manager = getFragmentManager();
+		FragmentTransaction transaction = manager.beginTransaction();
+		Fragment fragment = null;
+		if (msgType == "text") {
+			fragment = new TextMessageFragment();
+		} else if (msgType == "voice") {
+			fragment = new VoiceMessageFragment();
+		} else if (msgType == "draw") {
+			fragment = new DrawMessageFragment();
+		}
+		transaction.add(R.id.fragmentContainer, fragment);
+		transaction.commit();
+		} catch (Exception e) {
+			
+		}
 
+	}
+       
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -73,9 +79,6 @@ public class MakeMessage extends TabActivity {
 	}
 	}
 
-
-	
-	
 	public void clear(View v) {
 	//Clear the screen	
 	}

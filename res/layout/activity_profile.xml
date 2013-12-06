@@ -25,7 +25,7 @@
         android:layout_alignLeft="@+id/welcomeText"
         android:layout_below="@+id/welcomeText"
         android:layout_marginTop="21dp"
-        android:src="@drawable/ic_launcher" />
+         />
    
 
     <TextView

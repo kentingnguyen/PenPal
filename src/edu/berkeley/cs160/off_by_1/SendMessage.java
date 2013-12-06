@@ -3,6 +3,7 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,6 +56,7 @@ public class SendMessage extends Activity {
 	
     public void goToTextMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
+    	i.putExtra("msgType", "text");
     	startActivityForResult(i, 0);
     }
 
@@ -64,6 +66,8 @@ public class SendMessage extends Activity {
     
     public void goToDrawMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
+    	i.putExtra("msgType", "draw");
+    	Log.d("debug", "got to intent");
     	startActivityForResult(i, 0);
     }
 
@@ -73,6 +77,7 @@ public class SendMessage extends Activity {
     	
     public void goToVoiceMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
+    	i.putExtra("msgType", "voice");
     	startActivityForResult(i, 0);
     }
 
