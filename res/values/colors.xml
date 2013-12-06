@@ -2,5 +2,6 @@
 <resources>
     <color name="light_blue">#00B2EE</color>
     <color name="tan">#E5ECE6</color>
+    <color name="white">#000000</color>
 	    
 </resources>

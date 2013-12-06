@@ -31,15 +31,17 @@ public class MakeMessage extends FragmentActivity {
 		FragmentManager manager = getFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();
 		Fragment fragment = null;
-		if (msgType == "text") {
+		if (msgType.equals("text")) {
 			fragment = new TextMessageFragment();
-		} else if (msgType == "voice") {
+		} else if (msgType.equals("voice")) {
 			fragment = new VoiceMessageFragment();
-		} else if (msgType == "draw") {
+		} else if (msgType.equals("draw")) {
 			fragment = new DrawMessageFragment();
+			
 		}
-		transaction.add(R.id.fragmentContainer, fragment);
+		transaction.replace(R.id.fragmentContainer, fragment);
 		transaction.commit();
+		Log.d(debug, "added in fragment container");
 		} catch (Exception e) {
 			
 		}
