@@ -75,9 +75,12 @@ public class MakeMessage extends FragmentActivity {
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
 	boolean goHome = i.getBooleanExtra("home", false);
+	boolean sendAnother = i.getBooleanExtra("sendAnother", false);
 	if (goHome) {
 		setResult(RESULT_OK, i);
 		finish();	
+	} else if (sendAnother) {
+		finish();
 	}
 	}
 

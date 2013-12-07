@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class MessageSent extends Activity {
@@ -61,7 +62,7 @@ public class MessageSent extends Activity {
 
 	public void sendAnother(View v) {
 		Intent i = new Intent();
-		//i.putExtra("sendAnother", true);
+		i.putExtra("sendAnother", true);
 		setResult(RESULT_OK, i);
 		finish();
 	}
