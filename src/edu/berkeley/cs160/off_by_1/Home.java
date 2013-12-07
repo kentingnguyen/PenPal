@@ -8,14 +8,19 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 public class Home extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
         setContentView(R.layout.activity_home);
+        //R.id.unreadText
+        int unreadMessages = 2;
+        String unreadMsgString = getResources().getQuantityString(R.plurals.unread_messages, unreadMessages, unreadMessages);
+        TextView unreadMessagesText = (TextView) findViewById(R.id.unreadText);
+        unreadMessagesText.setText(unreadMsgString);
     }
 
 

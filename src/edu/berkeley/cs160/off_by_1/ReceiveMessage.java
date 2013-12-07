@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class ReceiveMessage extends Activity {
 
@@ -13,6 +14,9 @@ public class ReceiveMessage extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_receive_message);
+		String fromUserText = String.format(getResources().getString(R.string.from_user), "Timmy");
+		TextView fromUser = (TextView) findViewById(R.id.fromUser); 
+		fromUser.setText(fromUserText);
 	}
 
 	@Override

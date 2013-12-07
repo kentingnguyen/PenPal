@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 @SuppressWarnings("deprecation")
 public class MakeMessage extends FragmentActivity {
@@ -29,6 +30,16 @@ public class MakeMessage extends FragmentActivity {
 			msgType = i.getStringExtra("msgType");
 
 		setContentView(R.layout.activity_make_message);	
+		
+		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
+		TextView toUser = (TextView) findViewById(R.id.toUser); 
+		toUser.setText(toUserText);	
+		String[] suggestedQuestionsArray = getResources().getStringArray(R.array.suggested_questions);
+		int choice = (int) (Math.random() * suggestedQuestionsArray.length) ;
+		String suggestedQuestionText = suggestedQuestionsArray[choice];
+		TextView suggestedQuestion = (TextView) findViewById(R.id.suggestedQuestion);
+		suggestedQuestion.setText(suggestedQuestionText);
+		
 		FragmentManager manager = getFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();
 		fragment = new MessageFragment(msgType);
@@ -84,12 +95,12 @@ public class MakeMessage extends FragmentActivity {
 		Log.d(debug, "starting send message" + fragment);
 		Intent i = fragment.getIntent();
 		Log.d(debug, "got intent" + i);
-		goToMessageSent();
+		goToMessageSent(i);
 	}
 	
 
-	void goToMessageSent() {
-		Intent i = new Intent(this, MessageSent.class);
+	void goToMessageSent(Intent i) {
+		i.setClass(this, MessageSent.class);
 		startActivityForResult(i, 0);
 	}
 }

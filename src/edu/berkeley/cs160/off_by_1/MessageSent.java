@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MessageSent extends Activity {
 
@@ -12,6 +13,12 @@ public class MessageSent extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_message_sent);
+		
+		
+		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
+		TextView toUser = (TextView) findViewById(R.id.toUser); 
+		toUser.setText(toUserText);
+
 	}
 
 	@Override

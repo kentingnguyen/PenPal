@@ -9,8 +9,41 @@
     tools:context=".MessageSent" >
 
     <TextView
+        android:id="@+id/toUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="45sp"
+        android:text="@string/to_user" />
+    
+    
+    <TextView
+        android:id="@+id/messageSent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="35sp"
         android:text="@string/message_sent_text" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+         >
+
+        <Button
+            android:id="@+id/undo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/undo" />
+
+        <Button
+            android:id="@+id/sendAnother"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/send_another" />
+    </LinearLayout>
 
 </RelativeLayout>

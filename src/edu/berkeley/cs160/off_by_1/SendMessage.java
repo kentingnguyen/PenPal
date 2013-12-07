@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class SendMessage extends Activity {
 
@@ -14,6 +15,10 @@ public class SendMessage extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_send_message);
+		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
+		TextView toUser = (TextView) findViewById(R.id.sendMessageText); 
+		toUser.setText(toUserText);
+
 	}
 
 	@Override

@@ -8,6 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Home" >
 
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/hello_user"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/unreadText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcomeText"
+        android:layout_centerHorizontal="true"
+        
+        android:textSize="15sp" />
+
     <LinearLayout
         android:id="@+id/unreadMessagesLayout"
         android:layout_width="match_parent"
@@ -25,7 +42,7 @@
             android:layout_marginTop="20dp"
             android:onClick="goToReceiveMessage"
             android:text="Timmy" />
-        
+
         <Button
             android:id="@+id/button2"
             style="@style/ListViewButton"
@@ -33,9 +50,8 @@
             android:layout_marginTop="5dp"
             android:onClick="goToReceiveMessage"
             android:text="Annie" />
-
     </LinearLayout>
-    
+
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
@@ -45,7 +61,7 @@
         android:adjustViewBounds="true"
         android:baselineAlignBottom="true"
         android:src="@drawable/sun" />
-    
+
     <Button
         android:id="@+id/friendListButton"
         style="@style/GreenButton"
@@ -55,34 +71,5 @@
         android:layout_alignParentRight="true"
         android:onClick="goToFriendList"
         android:text="@string/friend_list_button" />
-
-    <TextView
-        android:id="@+id/unreadText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/welcomeText"
-        android:layout_centerHorizontal="true"
-        android:text="@string/unread_messages"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/hello_user"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/welcomeText"
-        android:layout_centerHorizontal="true"
-        android:text="@string/hello_user"
-        android:textSize="20sp" />
-
-
 
 </RelativeLayout>
