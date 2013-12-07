@@ -13,6 +13,7 @@ public final class R {
     public static final class color {
         public static final int light_blue=0x7f050000;
         public static final int tan=0x7f050001;
+        public static final int white=0x7f050002;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -49,7 +50,7 @@ public final class R {
         public static final int clearSendLayout=0x7f0a0012;
         public static final int country=0x7f0a001a;
         public static final int drawMessageButton=0x7f0a0020;
-        public static final int editText1=0x7f0a0022;
+        public static final int editTextMessage=0x7f0a0022;
         public static final int fragmentContainer=0x7f0a0011;
         public static final int friend1_message=0x7f0a0003;
         public static final int friend1_profile=0x7f0a0004;

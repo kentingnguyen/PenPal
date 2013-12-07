@@ -18,7 +18,8 @@ import android.widget.TabHost;
 public class MakeMessage extends FragmentActivity {
 
 	String debug = "debug";
-	String msgType;
+	String msgType = null;
+	MessageFragment fragment = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +27,12 @@ public class MakeMessage extends FragmentActivity {
 		try {
 			Intent i = getIntent();
 			msgType = i.getStringExtra("msgType");
-		Log.d(debug, "got here" + msgType);
+
 		setContentView(R.layout.activity_make_message);	
 		FragmentManager manager = getFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();
-		Fragment fragment = null;
-		if (msgType.equals("text")) {
-			fragment = new TextMessageFragment();
-		} else if (msgType.equals("voice")) {
-			fragment = new VoiceMessageFragment();
-		} else if (msgType.equals("draw")) {
-			fragment = new DrawMessageFragment();
-			
-		}
+		fragment = new MessageFragment(msgType);
+		
 		transaction.replace(R.id.fragmentContainer, fragment);
 		transaction.commit();
 		Log.d(debug, "added in fragment container");
@@ -87,6 +81,9 @@ public class MakeMessage extends FragmentActivity {
 	
 	public void sendMessage(View v) {
 	//in progress
+		Log.d(debug, "starting send message" + fragment);
+		Intent i = fragment.getIntent();
+		Log.d(debug, "got intent" + i);
 		goToMessageSent();
 	}
 	
