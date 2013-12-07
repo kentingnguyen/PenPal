@@ -39,6 +39,11 @@ public class MessageFragment extends Fragment{
 	Intent getIntent() {
 		return fragment.getIntent();
 	}
+	
+	void clear() {
+		fragment.clear();
+		
+	}
         
 //	public static Fragment getFragment(String type) {
 }

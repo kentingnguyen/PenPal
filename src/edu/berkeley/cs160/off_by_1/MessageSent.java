@@ -13,11 +13,16 @@ public class MessageSent extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_message_sent);
-		
-		
+
+
 		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
 		TextView toUser = (TextView) findViewById(R.id.toUser); 
 		toUser.setText(toUserText);
+
+		String sentUserText = String.format(getResources().getString(R.string.message_sent_text), "Timmy");
+		TextView sentUser = (TextView) findViewById(R.id.messageSent); 
+		sentUser.setText(sentUserText);
+
 
 	}
 
@@ -27,33 +32,38 @@ public class MessageSent extends Activity {
 		getMenuInflater().inflate(R.menu.header, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent i = new Intent();
 		switch(item.getItemId()) {		
 		case R.id.actionHome:
-				i.putExtra("home", true);
-				setResult(RESULT_OK, i);
-				finish();
-				return true;
+			i.putExtra("home", true);
+			setResult(RESULT_OK, i);
+			finish();
+			return true;
 		case R.id.actionBack:
-				setResult(RESULT_OK, i);
-				finish();
-				return true;
+			setResult(RESULT_OK, i);
+			finish();
+			return true;
 		}
-	return false;
+		return false;
 	}
-	
+
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-	boolean goHome = i.getBooleanExtra("home", false);
-	if (goHome) {
+		boolean goHome = i.getBooleanExtra("home", false);
+		if (goHome) {
+			setResult(RESULT_OK, i);
+			finish();	
+		}
+	}
+
+	public void sendAnother(View v) {
+		Intent i = new Intent();
+		//i.putExtra("sendAnother", true);
 		setResult(RESULT_OK, i);
-		finish();	
+		finish();
 	}
-	}
-
-
 
 }

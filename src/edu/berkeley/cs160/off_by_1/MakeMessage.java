@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-@SuppressWarnings("deprecation")
+
 public class MakeMessage extends FragmentActivity {
 
 	String debug = "debug";
@@ -33,12 +33,7 @@ public class MakeMessage extends FragmentActivity {
 		
 		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
 		TextView toUser = (TextView) findViewById(R.id.toUser); 
-		toUser.setText(toUserText);	
-		String[] suggestedQuestionsArray = getResources().getStringArray(R.array.suggested_questions);
-		int choice = (int) (Math.random() * suggestedQuestionsArray.length) ;
-		String suggestedQuestionText = suggestedQuestionsArray[choice];
-		TextView suggestedQuestion = (TextView) findViewById(R.id.suggestedQuestion);
-		suggestedQuestion.setText(suggestedQuestionText);
+		toUser.setText(toUserText);
 		
 		FragmentManager manager = getFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();
@@ -86,8 +81,21 @@ public class MakeMessage extends FragmentActivity {
 	}
 	}
 
+	public void getSuggestedQuestion(View v) {
+		getSuggestedQuestion();
+	}
+	
+	public void getSuggestedQuestion() {
+		String[] suggestedQuestionsArray = getResources().getStringArray(R.array.suggested_questions);
+		int choice = (int) (Math.random() * suggestedQuestionsArray.length) ;
+		String suggestedQuestionText = suggestedQuestionsArray[choice];
+		TextView suggestedQuestion = (TextView) findViewById(R.id.suggestedQuestion);
+		suggestedQuestion.setText(suggestedQuestionText);
+	}
+	
 	public void clear(View v) {
 	//Clear the screen	
+		fragment.clear();
 	}
 	
 	public void sendMessage(View v) {

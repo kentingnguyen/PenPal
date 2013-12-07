@@ -22,6 +22,11 @@ public class DrawMessageFragment extends MessageFragment {
 	    	return i;
 	    	
 	    }
+	    
+	    void clear() {
+	    	
+	    }
+
 
 	}
 

@@ -24,5 +24,8 @@ public class VoiceMessageFragment extends MessageFragment {
 		    	return i;
 		    	
 		    }
-
+		    
+		    void clear() {
+		    	
+		    }
 		}

@@ -29,7 +29,10 @@ public class TextMessageFragment extends MessageFragment {
 	    	Intent i = new Intent();
 	    	i.putExtra("msg", msg);
 	    	return i;
-	    	
+	    }
+	    
+	    void clear() {
+	    	editText.setText("");
 	    }
 	}
 

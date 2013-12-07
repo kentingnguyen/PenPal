@@ -15,10 +15,12 @@
     <string name="action_home">Home</string>
     <string name="action_back">Back</string>
     <string name="hello_user">Welcome Back, Jack Jack!</string>
+
     <plurals name="unread_messages">
         <item quantity="one">You have 1 unread messages</item>
         <item quantity="other">You have %1$d unread messages</item>
     </plurals>
+
     <string name="friend_list_button">Friend\'s List</string>
     <string name="friend_list_text">My Friends</string>
     <string name="new_pen_pal_button">Make a New Pen Pal!</string>
@@ -37,13 +39,14 @@
     <string name="user_profile">%1$s</string>
     <string name="country">Country From: Spain</string>
     <string name="language">Language: English, Spanish</string>
+    <string name="get_question_button"> Get a Question to ask </string>
+
     <string-array name="suggested_questions">
         <item>What are you learning in school? </item>
-        <item>What did you eat for breakfast? </item>	</string-array>
-    <string name="send_another">
-        Send Another
-</string>
-    <string name="undo">
-        undo
-</string>
+        <item>What did you eat for breakfast? </item>
+    </string-array>
+
+    <string name="send_another">Send Another</string>
+    <string name="undo">undo</string>
+
 </resources>

@@ -24,13 +24,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/toUser"
-        android:text="Get a Question to ask" />
+        android:text="@string/get_question_button"
+        android:onClick="getSuggestedQuestion"
+         />
 
     <TextView
         android:id="@+id/suggestedQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/questionButton"
+
          />
 
     <FrameLayout

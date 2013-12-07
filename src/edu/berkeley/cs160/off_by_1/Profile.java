@@ -6,12 +6,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class Profile extends Activity  {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
+		
+		String friendProfileText = String.format(getResources().getString(R.string.user_profile), "Timmy");
+		TextView friendProfile = (TextView) findViewById(R.id.profileName); 
+		friendProfile.setText(friendProfileText);	
+
 	}
 
 	@Override
