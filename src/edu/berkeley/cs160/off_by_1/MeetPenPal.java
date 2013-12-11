@@ -82,7 +82,7 @@ public class MeetPenPal extends Activity {
 		TextView detailsText = (TextView) findViewById(R.id.penPalDetailsText);
 		StringBuilder details = new StringBuilder();
 		try {
-				details.append("First Name: ").append(penPalDetails.getString("first_name")).append("\n");
+				details.append("First Name:").append(penPalDetails.getString("first_name")).append("\n");
 				details.append("Last Name: ").append(penPalDetails.getString("last_name")).append("\n");
 				details.append("From: ").append(penPalDetails.getString("location")).append("\n");
 				detailsText.setText(details.toString());
