@@ -3,12 +3,13 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class ReceiveMessage extends Activity {
+public class ReceiveMessage extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

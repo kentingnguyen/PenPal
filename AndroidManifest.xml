@@ -46,6 +46,7 @@
             android:name="edu.berkeley.cs160.off_by_1.MakeMessage"
             android:label="@string/title_activity_make_message"
             android:parentActivityName="edu.berkeley.cs160.off_by_1.SendMessage"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/PenPalTheme" >
             >
         </activity>

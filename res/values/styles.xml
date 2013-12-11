@@ -10,7 +10,6 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
-        <item name="android:actionBarStyle">@style/PenPalActionBar</item>
     </style>
 
     <!-- Application theme. -->
@@ -19,11 +18,6 @@
     </style>
 
     
-    <!-- Action Bar Theme. -->
-    <style name="PenPalActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">@drawable/top_bar</item>
-        <item name="android:height">73dp</item>
-    </style>
     
     <!-- List View Button -->
     <style name="ListViewButton">

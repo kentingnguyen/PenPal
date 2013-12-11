@@ -19,13 +19,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class MeetPenPal extends Activity {
+public class MeetPenPal extends ActionBarActivity {
 	String api = "http://hidden-ridge-3009.herokuapp.com/penpals/api/v1.0/";
 
 	@Override

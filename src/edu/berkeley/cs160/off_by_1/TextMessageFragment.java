@@ -1,14 +1,19 @@
 package edu.berkeley.cs160.off_by_1;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 public class TextMessageFragment extends MessageFragment {
 	
@@ -34,5 +39,7 @@ public class TextMessageFragment extends MessageFragment {
 	    void clear() {
 	    	editText.setText("");
 	    }
+	    
+
 	}
 

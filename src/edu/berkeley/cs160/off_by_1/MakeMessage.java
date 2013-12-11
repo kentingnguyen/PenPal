@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +16,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 
-public class MakeMessage extends FragmentActivity {
+public class MakeMessage extends ActionBarActivity {
 
 	String debug = "debug";
 	String msgType = null;
@@ -75,10 +76,12 @@ public class MakeMessage extends FragmentActivity {
 	public void onActivityResult(int req, int result, Intent i) {
 	boolean goHome = i.getBooleanExtra("home", false);
 	boolean sendAnother = i.getBooleanExtra("sendAnother", false);
+	Log.d("debug", "on activity result" + goHome + " " + sendAnother);
 	if (goHome) {
 		setResult(RESULT_OK, i);
 		finish();	
 	} else if (sendAnother) {
+		setResult(RESULT_OK, i);
 		finish();
 	}
 	}

@@ -3,12 +3,14 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class MessageSent extends Activity {
+public class MessageSent extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,7 @@ public class MessageSent extends Activity {
 		Intent i = new Intent();
 		i.putExtra("sendAnother", true);
 		setResult(RESULT_OK, i);
+		Log.d("debug", "Sending another");
 		finish();
 	}
 
