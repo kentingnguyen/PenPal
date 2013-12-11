@@ -7,9 +7,13 @@
     </style>
 
     <!-- Action Bar Theme. -->
-    <style name="PenPalActionBar" parent="@style/Theme.Base.AppCompat.Light.DarkActionBar">
+    <style name="PenPalActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        
         <item name="android:background">@drawable/top_bar</item>
         <item name="android:height">73dp</item>
+        
+ 
     </style>
+    
 
 </resources>

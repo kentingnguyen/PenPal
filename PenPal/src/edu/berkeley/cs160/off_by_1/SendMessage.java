@@ -42,6 +42,7 @@ public class SendMessage extends ActionBarActivity {
 				setResult(RESULT_OK, i);
 				finish();
 				return true;
+
 		}
 	return false;
 	}
@@ -49,6 +50,7 @@ public class SendMessage extends ActionBarActivity {
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
 	boolean goHome = i.getBooleanExtra("home", false);
+	Log.d("debug", "going back");
 	if (goHome) {
 		setResult(RESULT_OK, i);
 		finish();	

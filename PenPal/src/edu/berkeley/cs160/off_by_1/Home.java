@@ -2,11 +2,8 @@ package edu.berkeley.cs160.off_by_1;
 
 import android.os.Bundle;
 
-import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -19,6 +16,7 @@ public class Home extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         Log.d("debug", "creating1");
         setContentView(R.layout.activity_home);
+        
         Log.d("debug", "creating");
         //R.id.unreadText
         int unreadMessages = 2;
@@ -33,7 +31,11 @@ public class Home extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
     	Log.d("debug", "inflating menu");
         getMenuInflater().inflate(R.menu.header, menu);
-        return true;
+        //MenuItem backItem = menu.findItem(R.id.actionBack);
+        //MenuItem homeItem = menu.findItem(R.id.actionHome);
+        // To retrieve the Action Provider
+        //ShareActionProvider provider = (ShareActionProvider) MenuItemCompat.getActionProvider(backItem);
+        return super.onCreateOptionsMenu(menu);
     }
     /**
     public boolean onOptionsItemSelected(MenuItem menuItem) {
