@@ -996,8 +996,13 @@ containing a value of this type.
         public static final int pen_pal_text=0x7f02005e;
         public static final int profile_icon=0x7f02005f;
         public static final int red_button=0x7f020060;
-        public static final int sun=0x7f020061;
-        public static final int top_bar=0x7f020062;
+        public static final int stamp1=0x7f020061;
+        public static final int stamp2=0x7f020062;
+        public static final int stamp3=0x7f020063;
+        public static final int stamp4=0x7f020064;
+        public static final int stamp5=0x7f020065;
+        public static final int sun=0x7f020066;
+        public static final int top_bar=0x7f020067;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f06004b;
