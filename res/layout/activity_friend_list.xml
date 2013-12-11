@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".FriendList" >
-    
+
     <TextView
         android:id="@+id/friendListText"
         android:layout_width="wrap_content"
@@ -17,36 +17,52 @@
         android:text="@string/friend_list_text"
         android:textSize="25sp" />
 
-    <LinearLayout
-        android:id="@+id/friendListLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/friendListText"
-        android:layout_above="@+id/newPenPalButton"
+    <ImageButton
+        android:id="@+id/friend1_profile"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginLeft="22dp"
+        android:background="@drawable/profile_icon"
+        android:onClick="goToProfile" />
+
+    <ImageButton
+        android:id="@+id/friend2_profile"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="42dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="horizontal" >
-        
-        <Button
-            android:id="@+id/friend1_message"
-            style="@style/ListViewButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="42dp"
-            android:layout_marginBottom="20dp"
-            android:text="Timmy" 
-            android:onClick="goToSendMessage" 
-            />
-        
-        <ImageButton
-            android:id="@+id/friend1_profile"
-            android:background="@drawable/profile_icon"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="goToProfile"
-            />
-    </LinearLayout>
+        android:background="@drawable/profile_icon"
+        android:onClick="goToProfile" />
+    
+    <ImageButton
+        android:id="@+id/friend3_profile"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="22dp"
+        android:background="@drawable/profile_icon"
+        android:onClick="goToProfile" />
+    
+    <ImageButton
+        android:id="@+id/friend4_profile"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="22dp"
+        android:background="@drawable/profile_icon"
+        android:onClick="goToProfile" />
+
+    <ImageButton
+        android:id="@+id/friend5_profile"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/profile_icon"
+        android:onClick="goToProfile" />
+    
     
     <ImageView
         android:id="@+id/sun"
@@ -57,16 +73,16 @@
         android:adjustViewBounds="true"
         android:baselineAlignBottom="true"
         android:src="@drawable/sun" />
-    
+
     <Button
-        android:id="@id/newPenPalButton"
+        android:id="@+id/newPenPalButton"
         style="@style/GreenButton"
         android:layout_width="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="@string/new_pen_pal_button" 
         android:onClick="goToMeetPenPal"
-        />
+        android:text="@string/new_pen_pal_button" />
+
 
 </RelativeLayout>

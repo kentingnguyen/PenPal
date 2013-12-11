@@ -1,8 +1,10 @@
 package edu.berkeley.cs160.off_by_1;
+
 import android.annotation.SuppressLint;
-import android.app.Fragment;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

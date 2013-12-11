@@ -2,12 +2,11 @@ package edu.berkeley.cs160.off_by_1;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +34,7 @@ public class MakeMessage extends FragmentActivity {
 		TextView toUser = (TextView) findViewById(R.id.toUser); 
 		toUser.setText(toUserText);
 		
-		FragmentManager manager = getFragmentManager();
+		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();
 		fragment = new MessageFragment(msgType);
 		
