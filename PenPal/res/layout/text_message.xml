@@ -8,10 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:scrollHorizontally="false"
         
         android:background="#FFFFFF"
-        android:inputType="textMultiLine"
-        android:minLines="4"
+        android:inputType="textMultiLine|"
+        android:imeOptions="actionDone"
+        android:minLines="2"
+        android:maxLength="250"
+        android:maxLines="3"
         android:textColor="#000000" />
 
 </RelativeLayout>

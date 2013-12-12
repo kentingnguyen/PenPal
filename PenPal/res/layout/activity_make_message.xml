@@ -23,7 +23,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toUser"
+        android:layout_toRightOf="@id/toUser"
         android:text="@string/get_question_button"
         android:onClick="getSuggestedQuestion"
          />
@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/questionButton"
+        android:layout_centerHorizontal="true"
          />
 
     <FrameLayout

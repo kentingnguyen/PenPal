@@ -39,7 +39,7 @@
     <string name="user_profile">%1$s</string>
     <string name="location">Location From: %1$s</string>
     <string name="language">Language: %1$s</string>
-    <string name="get_question_button"> Get a Question to ask </string>
+    <string name="get_question_button"> Get a Question</string>
     <string name="received_message"> Hi Jack Jack,\n How are you doing today?</string>
 
     <string-array name="suggested_questions">
