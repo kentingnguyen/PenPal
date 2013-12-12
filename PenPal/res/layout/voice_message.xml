@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Record button" />
+        android:text="Record Button"/>
 
     <ProgressBar
         android:id="@+id/recordTimerBar"
@@ -31,5 +31,14 @@
         android:text=":15"
         android:textSize="30sp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/recordButton"
+        android:layout_below="@+id/recordTimer"
+        android:layout_marginTop="18dp"
+        android:text="Play Button" />
 
 </RelativeLayout>
