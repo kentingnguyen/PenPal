@@ -11,24 +11,34 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MessageSent extends ActionBarActivity {
-
+	String receiverName = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_message_sent);
 
-
-		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
+		receiverName = getIntent().getStringExtra("name");
 		TextView toUser = (TextView) findViewById(R.id.toUser); 
+		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
 		toUser.setText(toUserText);
 
-		String sentUserText = String.format(getResources().getString(R.string.message_sent_text), "Timmy");
+		String sentUserText = String.format(getResources().getString(R.string.message_sent_text), receiverName);
 		TextView sentUser = (TextView) findViewById(R.id.messageSent); 
 		sentUser.setText(sentUserText);
 
 
 	}
 
+	 @Override
+	    public void onBackPressed(){
+	    super.onBackPressed();
+	    Intent i = new Intent();
+	    setResult(RESULT_OK, i);
+	     finish();     
+	    }
+
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -55,12 +65,15 @@ public class MessageSent extends ActionBarActivity {
 
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
+	try {
 		boolean goHome = i.getBooleanExtra("home", false);
-		if (goHome) {
-			setResult(RESULT_OK, i);
-			finish();	
-		}
+	if (goHome) {
+		setResult(RESULT_OK, i);
+		finish();	
 	}
+	} catch (Exception e) {
+	}
+}
 
 	public void sendAnother(View v) {
 		Intent i = new Intent();

@@ -49,10 +49,9 @@ public class DrawMessageFragment extends MessageFragment {
     ImageView image;
     ArrayList<View> views;
 	Map<Path, Paint> pathMap;
-	Context damn;
+	Context act;
 	
 	public class CustomView extends View {
-		
         public CustomView(Context context) {
         	super(context);
         	Log.d("debug", "crashed?");
@@ -72,23 +71,25 @@ public class DrawMessageFragment extends MessageFragment {
         }
 
     }
+	
 	@Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        damn = activity;
+        act = activity;
     }
+	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.d("debug", "before view");
 		Log.d("debug", "here");
-		if (damn == null) {
+		if (act == null) {
 			Log.d("debug", "it's nulllllllllllllllllllllllllllllllll");
 		} else {
 			Log.d("debug", "itllll");
 		}
-		CusView = new CustomView(damn);
+		CusView = new CustomView(act);
 		View v = inflater.inflate(R.layout.draw_message, container, false);
 		layout = (RelativeLayout) v.findViewById(R.id.kk);
 		views = new ArrayList<View>();
@@ -122,11 +123,9 @@ public class DrawMessageFragment extends MessageFragment {
         	}
         };
         CusView.setOnTouchListener(touchListener);
-		Log.d("debug", "comememememememmemem");
         return v;
     }
-
-    
+	
     public void clear() {
 		for (Map.Entry<Path, Paint> p : pathMap.entrySet()) {
             p.getKey().rewind();
@@ -134,113 +133,11 @@ public class DrawMessageFragment extends MessageFragment {
             CusView.setDrawingCacheEnabled(false);
       }
 	}
-	/**
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-	*/
-	
-	/**
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int duration = Toast.LENGTH_SHORT;
-	    switch (item.getItemId()) {
-	      case R.id.red:
-	    	  Toast.makeText(this, "You have chosen " + getResources().getString(R.string.red) + " .",
-	    			  		duration).show();
-	    	  paint.setColor(Color.RED);
-	    	  color = Color.RED;
-	    	  if (item.isChecked()) {
-	    		  item.setChecked(false);
-	    	  } else {
-	    		  item.setChecked(true);
-	    	  }
-	    	  return true;
-	      case R.id.blue:
-	    	  Toast.makeText(this, "You have chosen " + getResources().getString(R.string.blue) + " .",
-	    			  		duration).show();
-	    	  paint.setColor(Color.BLUE);
-	    	  color = Color.BLUE;
-	    	  if (item.isChecked()) {
-	    		  item.setChecked(false);
-	    	  } else {
-	    		  item.setChecked(true);
-	    	  }
-	    	  return true;
-	      case R.id.cyan:
-	    	  Toast.makeText(this, "You have chosen " + getResources().getString(R.string.cyan) + " .",
-	    			  		duration).show();
-	    	  paint.setColor(Color.CYAN);
-	    	  color = Color.CYAN;
-	    	  if (item.isChecked()) {
-	    		  item.setChecked(false);
-	    	  } else {
-	    		  item.setChecked(true);
-	    	  }
-	    	  return true;
-	      case R.id.green:
-	    	  Toast.makeText(this, "You have chosen " + getResources().getString(R.string.green) + " .",
-	    			  		duration).show();
-	    	  paint.setColor(Color.GREEN);
-	    	  color = Color.GREEN;
-	    	  if (item.isChecked()) {
-	    		  item.setChecked(false);
-	    	  } else {
-	    		  item.setChecked(true);
-	    	  }
-	    	  
-	    	  return true;
-	      case R.id.yellow:
-	    	  Toast.makeText(this, "You have chosen " + getResources().getString(R.string.yellow) + " .",
-	    			  		duration).show();
-	    	  paint.setColor(Color.YELLOW);
-	    	  color = Color.YELLOW;
-	    	  if (item.isChecked()) {
-	    		  item.setChecked(false);
-	    	  } else {
-	    		  item.setChecked(true);
-	    	  }
-	    	  
-	    	  return true;
-	      case R.id.black:
-	    	  Toast.makeText(this, "You have chosen " + getResources().getString(R.string.black) + " .",
-	    			  		duration).show();
-	    	  paint.setColor(Color.BLACK);
-	    	  color = Color.BLACK;
-	    	  if (item.isChecked()) {
-	    		  item.setChecked(false);
-	    	  } else {
-	    		  item.setChecked(true);
-	    	  }
-	    	  return true;
-	      case R.id.eraselast:
-	    	  Toast.makeText(this, "You have chosen to undo the drawing.",
-	    			  		duration).show();
-	    	  path.rewind();
-	    	  CusView.invalidate();
-	    	  return true;
-	      case R.id.eraseall:
-	    	  Toast.makeText(this, "You have chosen to erase everything.",
-	    			  		duration).show();
-	    	  for (Map.Entry<Path, Paint> p : pathMap.entrySet()) {
-	               p.getKey().rewind();
-	               CusView.invalidate();
-	           }
-	    	  return true;
-	      default:
-	            return super.onOptionsItemSelected(item);
-	      }
-	}
-	public void clear() {
-		for (Map.Entry<Path, Paint> p : pathMap.entrySet()) {
-            p.getKey().rewind();
-            CusView.invalidate();
-            CusView.setDrawingCacheEnabled(false);
-      }
-	}
-	*/
-	
-	
+    
+    Intent getIntent() {
+    	String msg = "";
+    	Intent i = new Intent();
+    	i.putExtra("msg", msg);
+    	return i;
+    }
 }

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-	
-	<item android:id="@+id/actionBack"
-	      android:icon="@drawable/back_btn"
-	      android:title="@string/action_back" 
-	      android:showAsAction="ifRoom"
-	      />
-	
-	<item android:id="@+id/actionHome"
-		  android:icon="@drawable/home_icon"
-		  android:title="@string/action_home"
-		  android:showAsAction="always"
-		  />
-	
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/actionBack"
+        android:icon="@drawable/back_btn"
+        android:title="@string/action_back"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/actionHome"
+        android:icon="@drawable/home_icon"
+        android:title="@string/action_home"
+        app:showAsAction="always"/>
+
 </menu>

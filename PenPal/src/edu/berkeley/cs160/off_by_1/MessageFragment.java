@@ -47,8 +47,7 @@ public class MessageFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.text_message, container, false);
-		
+        //return inflater.inflate(R.layout.text_message, container, false);	
 		if (draw) {
 			Log.d("debug", "it's drawing");
 			Log.d("debug", getActivity().toString());
@@ -60,10 +59,6 @@ public class MessageFragment extends Fragment{
 		return fragment.onCreateView(inflater, container, savedInstanceState);
 	}
 	
-	private void set(Context con2) {
-		// TODO Auto-generated method stub
-		
-	}
 	Intent getIntent() {
 		return fragment.getIntent();
 	}

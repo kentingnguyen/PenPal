@@ -11,13 +11,15 @@ import android.view.View;
 import android.widget.TextView;
 
 public class SendMessage extends ActionBarActivity {
-
+	String receiverName = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_send_message);
-		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
-		TextView toUser = (TextView) findViewById(R.id.sendMessageText); 
+		receiverName = getIntent().getStringExtra("name");
+		TextView toUser = (TextView) findViewById(R.id.sendMessageText);
+		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
 		toUser.setText(toUserText);
 
 	}
@@ -42,19 +44,30 @@ public class SendMessage extends ActionBarActivity {
 				setResult(RESULT_OK, i);
 				finish();
 				return true;
+
 		}
 	return false;
 	}
 
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-	boolean goHome = i.getBooleanExtra("home", false);
+	try {
+		boolean goHome = i.getBooleanExtra("home", false);
 	if (goHome) {
 		setResult(RESULT_OK, i);
 		finish();	
 	}
+	} catch (Exception e) {
 	}
+}
 
+	 @Override
+	    public void onBackPressed(){
+	    super.onBackPressed();
+	    Intent i = new Intent();
+	    setResult(RESULT_OK, i);
+	     finish();     
+	    }
 	
 	public void goToTextMessage(View v) {
 		goToTextMessage();
@@ -63,6 +76,7 @@ public class SendMessage extends ActionBarActivity {
     public void goToTextMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	i.putExtra("msgType", "text");
+    	i.putExtra("name", receiverName);
     	startActivityForResult(i, 0);
     }
 
@@ -73,6 +87,7 @@ public class SendMessage extends ActionBarActivity {
     public void goToDrawMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	i.putExtra("msgType", "draw");
+    	i.putExtra("name", receiverName);
     	Log.d("debug", "got to intent");
     	startActivityForResult(i, 0);
     }
@@ -84,6 +99,7 @@ public class SendMessage extends ActionBarActivity {
     public void goToVoiceMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	i.putExtra("msgType", "voice");
+    	i.putExtra("name", receiverName);
     	startActivityForResult(i, 0);
     }
 

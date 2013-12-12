@@ -17,52 +17,67 @@
         android:text="@string/friend_list_text"
         android:textSize="25sp" />
 
-    <ImageButton
+    <Button
         android:id="@+id/friend1_profile"
         android:layout_width="70dp"
-        android:layout_height="80dp"
         android:layout_marginTop="42dp"
         android:layout_marginLeft="22dp"
-        android:background="@drawable/stamp1"
-        android:onClick="goToProfile" />
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:drawableBottom="@drawable/stamp1"
+        android:text="Timmy"
+        
+        android:textSize="15sp"
+        android:onClick="goToProfile"
+         />
 
-    <ImageButton
+    <Button
         android:id="@+id/friend2_profile"
         android:layout_width="70dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:drawableBottom="@drawable/stamp2"
+        android:text="Natalie"
         android:layout_marginTop="42dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/stamp2"
+        android:src="@drawable/stamp2"
         android:onClick="goToProfile" />
     
-    <ImageButton
+    <Button
         android:id="@+id/friend3_profile"
         android:layout_width="70dp"
-        android:layout_height="80dp"
+                android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:drawableBottom="@drawable/stamp3"
+        android:text="Lizzet"
+
         android:layout_marginTop="42dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="22dp"
-        android:background="@drawable/stamp3"
         android:onClick="goToProfile" />
     
-    <ImageButton
+    <Button
         android:id="@+id/friend4_profile"
         android:layout_width="70dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:drawableBottom="@drawable/stamp4"
+        android:text="Mike"
+
         android:layout_marginTop="140dp"
         android:layout_marginLeft="22dp"
-        android:background="@drawable/stamp4"
         android:onClick="goToProfile" />
 
-    <ImageButton
+    <Button
         android:id="@+id/friend5_profile"
         android:layout_width="70dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="140dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/stamp5"
-        android:onClick="goToProfile" />
-    
+        android:layout_marginTop="140dp"
+        android:background="@color/light_blue"
+        android:drawableBottom="@drawable/stamp5"
+        android:onClick="goToProfile"
+        android:text="Kevin" />
     
     <ImageView
         android:id="@+id/sun"

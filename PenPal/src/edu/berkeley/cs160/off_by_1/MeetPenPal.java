@@ -24,18 +24,38 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MeetPenPal extends ActionBarActivity {
 	String api = "http://hidden-ridge-3009.herokuapp.com/penpals/api/v1.0/";
+	TextView detailsText = null;
+	String name = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_meet_pen_pal);
-		search();
-		
+		detailsText = (TextView) findViewById(R.id.penPalDetailsText);
+		try {
+			search();
+		} catch (Exception e) {
+			internetError();
+		}
 	}
+
+	private void internetError() {
+		// TODO Auto-generated method stub
+		try {
+			setContentView(R.layout.activity_meet_pen_pal);
+			Button sendMessage = (Button) findViewById(R.id.sendMessage);
+			sendMessage.setVisibility(View.INVISIBLE);
+			detailsText = (TextView) findViewById(R.id.penPalDetailsText);
+			detailsText.setText("Please turn on your internet");
+		} catch (Exception e) {
+		}
+	}
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,33 +82,54 @@ public class MeetPenPal extends ActionBarActivity {
 	}
 
 	@Override
+	public void onBackPressed(){
+		super.onBackPressed();
+		Intent i = new Intent();
+		setResult(RESULT_OK, i);
+		finish();     
+	}
+
+	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-		boolean goHome = i.getBooleanExtra("home", false);
-		if (goHome) {
-			setResult(RESULT_OK, i);
-			finish();	
+		try {
+			boolean goHome = i.getBooleanExtra("home", false);
+			if (goHome) {
+				setResult(RESULT_OK, i);
+				finish();	
+			}
+		} catch (Exception e) {
 		}
 	}
-	
+
 	public void research(View v) {
-		search();
+		try {
+			search();
+		} catch (Exception e) {
+			internetError();			
+		}
 	}
-	
+
 	public void search() {
 		setContentView(R.layout.loading_screen);
-		getPenPal();
+		try {
+			getPenPal();
+		} catch (Exception e) {
+			internetError();
+		}
 	}
-	
+
 	public void setDetailsTextView(JSONObject penPalDetails) {
-		TextView detailsText = (TextView) findViewById(R.id.penPalDetailsText);
+		detailsText = (TextView) findViewById(R.id.penPalDetailsText);
+		
 		StringBuilder details = new StringBuilder();
 		try {
-				details.append("First Name:").append(penPalDetails.getString("first_name")).append("\n");
-				details.append("Last Name: ").append(penPalDetails.getString("last_name")).append("\n");
-				details.append("From: ").append(penPalDetails.getString("location")).append("\n");
-				detailsText.setText(details.toString());
-			} catch (Exception e) {
-			}				
+			name = penPalDetails.getString("first_name");
+			details.append("First Name:").append(name).append("\n");
+			details.append("Last Name: ").append(penPalDetails.getString("last_name")).append("\n");
+			details.append("From: ").append(penPalDetails.getString("location")).append("\n");
+			detailsText.setText(details.toString());
+		} catch (Exception e) {
+		}				
 	}
 
 	public void getPenPal() {
@@ -102,23 +143,23 @@ public class MeetPenPal extends ActionBarActivity {
 
 	public void goToSendMessage() {
 		Intent i = new Intent(this, SendMessage.class);
+		i.putExtra("name", name);
 		//Be sure to remember the recipient
 		startActivityForResult(i, 0);
 	}
-	
+
 	class GetPenPal extends AsyncTask<String, Void, JSONObject> {
 
-
-	    protected JSONObject doInBackground(String... urls) {
-	    	HttpClient client = new DefaultHttpClient();
-			HttpGet get = new HttpGet(api);
-			Log.d("debug", get.toString() +" error");
-			StringBuilder builder = new StringBuilder();
-			java.lang.String line;
-			JSONObject jsonObject = null; 
+		protected JSONObject doInBackground(String... urls) {
 			try {
+				HttpClient client = new DefaultHttpClient();
+				HttpGet get = new HttpGet(api);
+				
+				StringBuilder builder = new StringBuilder();
+				java.lang.String line;
+				JSONObject jsonObject = null; 
+
 				HttpResponse response = client.execute(get);
-				Log.d("debug", response.toString() + "here");
 				int statusCode = response.getStatusLine().getStatusCode();
 				if (statusCode == HttpStatus.SC_OK) {
 					Log.d("debug", "here");
@@ -132,40 +173,39 @@ public class MeetPenPal extends ActionBarActivity {
 				} else {
 					return null;
 				}
-			} catch (Exception e) {
-				Log.d("debug", "error" + e);
-			}
-			JSONObject jsonArray;
-			
-			try {
+
+				JSONObject jsonArray = null;
+
 				jsonArray = new JSONObject(builder.toString());
 				Log.d("debug", "here!!!!!!");
-			if (jsonArray.length() != 0) {
-				jsonObject = jsonArray;
-			} else {		
+				if (jsonArray.length() != 0) {
+					jsonObject = jsonArray;
+				} else {		
+					return null;
+				}
+				return jsonObject;
+			} catch (Exception e) {
+				Log.d("debug", "hi2");
 				return null;
 			}
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		}
+
+		protected void onPostExecute(JSONObject penpaldata) {
 			try {
-				Log.d("debug",jsonObject.getString("first_name"));
-			} catch (JSONException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				Log.d("debug","error null");
+				setContentView(R.layout.activity_meet_pen_pal);
+				if (penpaldata == null) {
+					internetError();
+				} else {
+					Button sendMessage = (Button) findViewById(R.id.sendMessage);
+					sendMessage.setVisibility(View.VISIBLE);
+				setDetailsTextView(penpaldata);
+				}
+				// TODO: check this.exception 
+				// TODO: do something with the feed
+			} catch (Exception e) {
+
 			}
-			return jsonObject;
-	    }
+		}
 
-	    protected void onPostExecute(JSONObject penpaldata) {
-	    	setContentView(R.layout.activity_meet_pen_pal);
-	    	setDetailsTextView(penpaldata);
-	        // TODO: check this.exception 
-	        // TODO: do something with the feed
-	    }
 	}
-
 }
-
