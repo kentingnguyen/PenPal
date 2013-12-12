@@ -4,41 +4,42 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/recordButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Record Button"/>
-
     <ProgressBar
-        android:id="@+id/recordTimerBar"
+        android:id="@+id/recordProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recordButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp" />
+        android:layout_marginTop="26dp" 
+        android:max="60"/>
 
-    <TextView
-        android:id="@+id/recordTimer"
+    <Button
+        android:id="@+id/recordButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/recordTimerBar"
-        android:layout_below="@+id/recordTimerBar"
-        android:layout_marginTop="18dp"
-        android:text=":15"
-        android:textSize="30sp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:text="Start Recording" />
 
     <Button
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/recordButton"
-        android:layout_below="@+id/recordTimer"
+        android:layout_below="@+id/recordProgressBar"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:text="Play Button" />
+
+    <TextView
+        android:id="@+id/recordTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/recordProgressBar"
+        android:layout_below="@+id/recordProgressBar"
+        android:text=":15"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30sp" />
 
 </RelativeLayout>

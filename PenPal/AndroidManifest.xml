@@ -4,6 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 	<uses-permission android:name="android.permission.INTERNET" /> 
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-sdk
         android:minSdkVersion="9"
         android:targetSdkVersion="17" />
@@ -13,12 +14,13 @@
         android:icon="@drawable/pen_pal_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:screenOrientation="portrait" 
+         
          >
         <activity
             android:name="edu.berkeley.cs160.off_by_1.Home"
-            android:theme="@style/PenPalTheme" >
-            android:label="@string/app_name" >
+            android:theme="@style/PenPalTheme" 
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,47 +31,55 @@
             android:name="edu.berkeley.cs160.off_by_1.FriendList"
             android:label="@string/title_activity_friend_list"
             android:parentActivityName="edu.berkeley.cs160.off_by_1.Home"
-            android:theme="@style/PenPalTheme" >
+            android:theme="@style/PenPalTheme"
+            android:screenOrientation="portrait"
+             >
         </activity>
         
         <activity
             android:name="edu.berkeley.cs160.off_by_1.SendMessage"
             android:label="@string/title_activity_send_message"
             android:parentActivityName="edu.berkeley.cs160.off_by_1.Home"
-            android:theme="@style/PenPalTheme" >
+            android:theme="@style/PenPalTheme" 
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="edu.berkeley.cs160.off_by_1.Profile"
             android:label="@string/title_activity_profile"
             android:parentActivityName="edu.berkeley.cs160.off_by_1.FriendList"
-            android:theme="@style/PenPalTheme" >
+            android:theme="@style/PenPalTheme"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="edu.berkeley.cs160.off_by_1.MakeMessage"
             android:label="@string/title_activity_make_message"
             android:parentActivityName="edu.berkeley.cs160.off_by_1.SendMessage"
             android:windowSoftInputMode="adjustResize"
-            android:theme="@style/PenPalTheme" >
+            android:theme="@style/PenPalTheme"
+            android:screenOrientation="portrait" >
             >
         </activity>
         <activity
             android:name="edu.berkeley.cs160.off_by_1.ReceiveMessage"
             android:label="@string/title_activity_receive_message"
             android:parentActivityName="edu.berkeley.cs160.off_by_1.Home"
-            android:theme="@style/PenPalTheme" >
+            android:theme="@style/PenPalTheme"
+            android:screenOrientation="portrait" >
             >
         </activity>
         <activity
             android:name="edu.berkeley.cs160.off_by_1.MeetPenPal"
             android:label="@string/title_activity_meet_pen_pal"
             android:parentActivityName="edu.berkeley.cs160.off_by_1.FriendLit"
-            android:theme="@style/PenPalTheme" >
+            android:theme="@style/PenPalTheme"
+            android:screenOrientation="portrait" >
             >
         </activity>
         <activity
             android:name="edu.berkeley.cs160.off_by_1.MessageSent"
             android:label="@string/title_activity_message_sent"
-            android:theme="@style/PenPalTheme" >
+            android:theme="@style/PenPalTheme"
+            android:screenOrientation="portrait" >
 
         </activity>
     </application>

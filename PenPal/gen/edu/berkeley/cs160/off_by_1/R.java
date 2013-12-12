@@ -1072,16 +1072,16 @@ containing a value of this type.
         public static final int none=0x7f060010;
         public static final int normal=0x7f060000;
         public static final int penPalDetailsText=0x7f060054;
-        public static final int playButton=0x7f06006b;
+        public static final int playButton=0x7f06006a;
         public static final int profileName=0x7f060059;
         public static final int progress_circular=0x7f060018;
         public static final int progress_horizontal=0x7f060019;
         public static final int questionButton=0x7f06004d;
         public static final int radio=0x7f06002f;
         public static final int receivedMessage=0x7f06005f;
-        public static final int recordButton=0x7f060068;
-        public static final int recordTimer=0x7f06006a;
-        public static final int recordTimerBar=0x7f060069;
+        public static final int recordButton=0x7f060069;
+        public static final int recordProgressBar=0x7f060068;
+        public static final int recordTimer=0x7f06006b;
         public static final int reply=0x7f06005e;
         public static final int research=0x7f060055;
         public static final int search_badge=0x7f060032;
@@ -2542,7 +2542,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x01010435
+            0x0101012f, 0x01010130, 0x01010131, 0x0101040c
         };
         /**
           <p>
