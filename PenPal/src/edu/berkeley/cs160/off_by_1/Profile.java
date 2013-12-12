@@ -3,6 +3,8 @@ package edu.berkeley.cs160.off_by_1;
 import android.app.Activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -20,6 +22,9 @@ public class Profile extends ActionBarActivity {
 
 		Intent i = getIntent();
 		Object[] data = (Object[]) i.getSerializableExtra("name");
+		byte[] compressStamp = i.getByteArrayExtra("image");
+		Bitmap stampBitmap = BitmapFactory.decodeByteArray(compressStamp, 0, compressStamp.length);
+		
 		
 		TextView friendProfileName = (TextView) findViewById(R.id.profileName);
 		ImageView friendProfileStamp = (ImageView) findViewById(R.id.stamp);
@@ -34,7 +39,7 @@ public class Profile extends ActionBarActivity {
 		
 		friendProfileName.setText(friendProfileNameText);
 		//friendProfileStamp.setBackgroundDrawable(stamp);
-		//friendProfileStamp.setBackground(stamp);
+		friendProfileStamp.setImageBitmap(stampBitmap);
 		friendProfileLocation.setText(friendProfileLocationText);
 		friendProfileLanguage.setText(friendProfileLanguageText);
 		

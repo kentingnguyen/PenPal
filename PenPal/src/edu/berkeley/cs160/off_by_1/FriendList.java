@@ -1,10 +1,17 @@
 package edu.berkeley.cs160.off_by_1;
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+
 import android.os.Bundle;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -85,9 +92,13 @@ public class FriendList extends ActionBarActivity {
 		Intent i = new Intent(this, Profile.class);
 		Object[] data = getUserData(v);
 		//Log.d("debug", "data" + data[0] + data[1] + data[2]);
-		
+		Drawable stamp = ((ImageButton) v).getDrawable();
+		Bitmap stampBitmap = ((BitmapDrawable) stamp).getBitmap();
+		ByteArrayOutputStream stream = new ByteArrayOutputStream();
+		stampBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+		byte[] compressStamp = stream.toByteArray();
 		i.putExtra("name", data);
-		//i.putExtra("image", value);
+		i.putExtra("image", compressStamp);
 		startActivityForResult(i, 0);
 	
 	}
