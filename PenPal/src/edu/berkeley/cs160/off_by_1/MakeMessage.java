@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -29,20 +31,23 @@ public class MakeMessage extends ActionBarActivity {
 		try {
 			Intent i = getIntent();
 			msgType = i.getStringExtra("msgType");
+			setContentView(R.layout.activity_make_message);	
+			if (msgType.equals("draw")) {
+				Button questionButton = (Button) findViewById(R.id.questionButton);
+				questionButton.setVisibility(View.INVISIBLE);
+			}
+			receiverName = getIntent().getStringExtra("name");
+			TextView toUser = (TextView) findViewById(R.id.toUser); 
+			String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
+			toUser.setText(toUserText);
 
-		setContentView(R.layout.activity_make_message);	
-		receiverName = getIntent().getStringExtra("name");
-		TextView toUser = (TextView) findViewById(R.id.toUser); 
-		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
-		toUser.setText(toUserText);
-		
-		FragmentManager manager = getSupportFragmentManager();
-		FragmentTransaction transaction = manager.beginTransaction();
-		fragment = new MessageFragment(msgType);
-		
-		transaction.replace(R.id.fragmentContainer, fragment);
-		transaction.commit();
-		Log.d(debug, "added in fragment container");
+			FragmentManager manager = getSupportFragmentManager();
+			FragmentTransaction transaction = manager.beginTransaction();
+			fragment = new MessageFragment(msgType);
+
+			transaction.replace(R.id.fragmentContainer, fragment);
+			transaction.commit();
+			Log.d(debug, "added in fragment container");
 		} catch (Exception e) {
 			
 		}

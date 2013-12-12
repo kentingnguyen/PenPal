@@ -49,7 +49,7 @@ public class MeetPenPal extends ActionBarActivity {
 		try {
 			setContentView(R.layout.activity_meet_pen_pal);
 			Button sendMessage = (Button) findViewById(R.id.sendMessage);
-			sendMessage.setVisibility(View.INVISIBLE);
+			sendMessage.setVisibility(View.GONE);
 			detailsText = (TextView) findViewById(R.id.penPalDetailsText);
 			detailsText.setText("Please turn on your internet");
 		} catch (Exception e) {
