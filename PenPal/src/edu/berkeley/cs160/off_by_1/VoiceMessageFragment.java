@@ -3,27 +3,48 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaRecorder;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class VoiceMessageFragment extends MessageFragment {
 		    
+			TextView time;
 		    Button recordButton;
 		    Button playButton;
 		    String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/voicemessage.mp4";
 		    MediaRecorder recorder;
 		    MediaPlayer player;
+		    ProgressBar progress;
+		    Handler handler = new Handler();
+		    Timer timer;
         	int record = 0;
+        	
+        	AsyncTask<Integer, Integer, Integer> task;
 
+        	int x = 0;
+	    	long delay;
+	    	long cap;
+	    	boolean cancel = false;
+	    	
+	    	boolean recording = false;
+	    	boolean playing = false;
+        	
 		    @Override
 		    public View onCreateView(LayoutInflater inflater, ViewGroup container,
 		                             Bundle savedInstanceState) {
@@ -34,21 +55,13 @@ public class VoiceMessageFragment extends MessageFragment {
 		    	recordButton.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						if (record == 0) {
-							record++;
-							recordButton.setText("Stop Button");
-							startRecording();
-						} else if (record == 1){
-							record++;
-							stopRecording();
-							recordButton.setText("Done Recording");
-						}
+						recordMessage(recording);
+						recording = !recording;
 					}
 				});
 		    	
 		    	playButton = (Button) v.findViewById(R.id.playButton);
-		    	recordButton.setOnClickListener(new View.OnClickListener() {
-		    		boolean playing = false;
+		    	playButton.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						playMessage(playing);
@@ -56,10 +69,21 @@ public class VoiceMessageFragment extends MessageFragment {
 					}
 				});
 		        
+		    	time = (TextView) v.findViewById(R.id.recordTimer);
+		    	setTime(":15");
+		    	
+		    	progress = (ProgressBar) v.findViewById(R.id.recordProgressBar);
+		    	timer = new Timer();
+		    	
+		    	cap = progress.getMax();
+		    	delay = (15 * 1000) / cap;
+		    	
 		        return v;
 		    }
 		    
 		    void startRecording() {
+		    	record++;
+		    	recordButton.setText("Stop Recording");
 		    	recorder = new MediaRecorder();
 		    	recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
 		    	recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
@@ -70,21 +94,37 @@ public class VoiceMessageFragment extends MessageFragment {
 		        } catch (IOException e) {
 		            Log.e("error", "voicemessage recorder.prepare() failed");
 		        }
-		        recorder.start();
+		    	cancel = false;
+		    	setProgressTask();
+		        task.execute();
+		    	recorder.start();
 		    }
 		    
 		    void stopRecording() {
-		    	recorder.stop();
-		        recorder.release();
-		        recorder = null;
+		    	record++;
+		    	if (recorder != null) {
+			    	recorder.stop();
+			        recorder.release();
+			        recorder = null;
+		    	}
+		        cancel = true;
+		        recordButton.setText("Record Again");
 		    }
 		    
 		    void startPlaying() {
 		    	player = new MediaPlayer();
 		    	try {
+		    		playButton.setText("Stop Playing");
 		            player.setDataSource(fileName);
 		            player.prepare();
 		            player.start();
+		            player.setOnCompletionListener(new OnCompletionListener() {
+						@Override
+						public void onCompletion(MediaPlayer arg0) {
+							playing = false;
+							playButton.setText("Play Button");
+						}
+		            });
 		        } catch (IOException e) {
 		            Log.e("error", "voicemessage player.prepare() failed");
 		        }
@@ -92,6 +132,7 @@ public class VoiceMessageFragment extends MessageFragment {
 		    }
 		    
 		    void stopPlaying() {
+		    	playButton.setText("Play Button");
 		        player.release();
 		        player = null;
 		    }
@@ -103,6 +144,52 @@ public class VoiceMessageFragment extends MessageFragment {
 		    		startPlaying();
 		    	}
 		    }
+
+		    void recordMessage(boolean stop) {
+		    	if (stop) {
+		    		stopRecording();
+		    	} else {
+		    		startRecording();
+		    	}
+		    }
+		    
+		    void setTime(String s) {
+		    	time.setText(s);
+		    }
+		    
+		    void setProgressTask() {
+		    	task = new AsyncTask<Integer, Integer, Integer>() {
+		    		int p = 0;
+		    		
+					@Override
+					protected Integer doInBackground(Integer... arg0) {
+						while (p < cap && !cancel) {
+							try {
+								Thread.sleep(delay);
+							} catch (Exception e) {
+							}
+							p++;
+							publishProgress(p);
+						}
+						return null;
+					}
+					
+					@Override
+					protected void onProgressUpdate(Integer... values) {
+						setTime(":" + String.valueOf(15-p*15/cap));
+						handler.post(new Runnable() {
+	                         public void run() {
+	                             progress.setProgress(p);
+	                         }
+	                    });
+					}
+					
+					@Override
+					protected void onPostExecute(Integer x) {
+						stopRecording();
+					}
+		    	};
+		    }
 		    
 		    Intent getIntent() {
 		    	Intent i = new Intent();
@@ -110,9 +197,15 @@ public class VoiceMessageFragment extends MessageFragment {
 		    }
 		    
 		    void clear() {
+		    	if(recorder != null) {
+		    		recorder.stop();
+		    	}
+		    	timer = new Timer();
 		    	File f = new File(fileName);
 		    	f.delete();
 		    	record = 0;
 		    	recordButton.setText("Record Button");
+		    	progress.setProgress(0);
+		    	time.setText(":15");
 		    }
 		}
