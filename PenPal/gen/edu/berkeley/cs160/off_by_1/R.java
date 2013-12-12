@@ -797,10 +797,11 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f070002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f080006;
+        public static final int abc_search_url_text_holo=0x7f080007;
         public static final int abc_search_url_text_normal=0x7f080000;
         public static final int abc_search_url_text_pressed=0x7f080002;
         public static final int abc_search_url_text_selected=0x7f080001;
+        public static final int black=0x7f080006;
         public static final int light_blue=0x7f080003;
         public static final int tan=0x7f080004;
         public static final int white=0x7f080005;
@@ -992,17 +993,19 @@ containing a value of this type.
         public static final int list_view_button=0x7f02005a;
         public static final int list_view_green_button=0x7f02005b;
         public static final int list_view_green_button_click=0x7f02005c;
-        public static final int pen_pal_icon=0x7f02005d;
-        public static final int pen_pal_text=0x7f02005e;
-        public static final int profile_icon=0x7f02005f;
-        public static final int red_button=0x7f020060;
-        public static final int stamp1=0x7f020061;
-        public static final int stamp2=0x7f020062;
-        public static final int stamp3=0x7f020063;
-        public static final int stamp4=0x7f020064;
-        public static final int stamp5=0x7f020065;
-        public static final int sun=0x7f020066;
-        public static final int top_bar=0x7f020067;
+        public static final int opened_message=0x7f02005d;
+        public static final int pen_pal_icon=0x7f02005e;
+        public static final int pen_pal_text=0x7f02005f;
+        public static final int profile_icon=0x7f020060;
+        public static final int red_button=0x7f020061;
+        public static final int stamp1=0x7f020062;
+        public static final int stamp2=0x7f020063;
+        public static final int stamp3=0x7f020064;
+        public static final int stamp4=0x7f020065;
+        public static final int stamp5=0x7f020066;
+        public static final int sun=0x7f020067;
+        public static final int top_bar=0x7f020068;
+        public static final int unopened_message=0x7f020069;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f06004b;

@@ -23,7 +23,8 @@ public class Profile extends ActionBarActivity {
 		setContentView(R.layout.activity_profile);
 
 		Intent i = getIntent();
-		String[] data = i.getStringArrayExtra("name");
+		//String[] data = i.getStringArrayExtra("name");
+		String[] data = Home.getUserData("name");
 		byte[] compressStamp = i.getByteArrayExtra("image");
 		Bitmap stampBitmap = BitmapFactory.decodeByteArray(compressStamp, 0, compressStamp.length);
 		

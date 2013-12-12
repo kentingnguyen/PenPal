@@ -41,6 +41,8 @@
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
             android:onClick="goToReceiveMessage"
+            android:drawableRight="@drawable/stamp1"
+            android:drawableLeft="@drawable/unopened_message"
             android:text="Timmy" />
 
         <Button
@@ -48,8 +50,11 @@
             style="@style/ListViewButton"
             android:layout_width="match_parent"
             android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/unopened_message"
+            android:drawableRight="@drawable/stamp2"
             android:onClick="goToReceiveMessage"
             android:text="Annie" />
+
     </LinearLayout>
 
     <ImageView

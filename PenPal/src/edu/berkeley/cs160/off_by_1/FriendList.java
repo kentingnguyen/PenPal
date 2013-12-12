@@ -93,8 +93,9 @@ public class FriendList extends ActionBarActivity {
 		Button buttonV = (Button) v;
 		Object[] data = getUserData(buttonV);
 		//Log.d("debug", "data" + data[0] + data[1] + data[2]);
+		String profileName = buttonV.getText().toString();
 		byte[] compressStamp = getUserStamp(buttonV); 
-		i.putExtra("name", data);
+		i.putExtra("name", profileName);
 		i.putExtra("image", compressStamp);
 		startActivityForResult(i, 0);
 
