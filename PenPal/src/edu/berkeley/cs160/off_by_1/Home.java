@@ -48,29 +48,17 @@ public class Home extends ActionBarActivity {
     
     public void goToFriendList() {
     	Intent i = new Intent(this, FriendList.class);    	
-    	/*TaskStackBuilder.create(this)
-    								.addNextIntentWithParentStack(i)
-    								.startActivities();*/
-    	// Use TaskStackBuilder to build the back stack and get the PendingIntent
-    	
-    	 
-    	//NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-    	//builder.setContentIntent(pendingIntent);
-    	//startActivities(builder);
     	startActivity(i);
     }
     
     public void goToReceiveMessage(View v) {
-    goToReceiveMessage();	
+    	String name = ((TextView) v).getText().toString(); 
+    goToReceiveMessage(name);	
     }
 
-    public void goToReceiveMessage() {
-    	Intent i = new Intent(this, ReceiveMessage.class);    	
-    	/*TaskStackBuilder.create(this)
-    								.addNextIntentWithParentStack(i)
-    								.startActivities();*/
-    	
-    	//this intent will hopefully be dynamically loaded in the future
+    public void goToReceiveMessage(String name) {
+    	Intent i = new Intent(this, ReceiveMessage.class);
+    	i.putExtra("name", name);
     	startActivity(i);
     	
     }

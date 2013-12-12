@@ -11,13 +11,16 @@ import android.widget.TextView;
 
 public class ReceiveMessage extends ActionBarActivity {
 
+	String senderName = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_receive_message);
-		String fromUserText = String.format(getResources().getString(R.string.from_user), "Timmy");
+		//String fromUserText = String.format(getResources().getString(R.string.from_user), "Timmy");
+		senderName = getIntent().getStringExtra("name");
 		TextView fromUser = (TextView) findViewById(R.id.fromUser); 
-		fromUser.setText(fromUserText);
+		fromUser.setText("From " + senderName);
 	}
 
 	@Override
@@ -72,6 +75,7 @@ public class ReceiveMessage extends ActionBarActivity {
 
 	public void goToSendMessage() {
 		Intent i = new Intent(this, SendMessage.class);
+		i.putExtra("name", senderName);
 		//Be sure to remember the recipient
 		startActivityForResult(i, 0);	
 	}

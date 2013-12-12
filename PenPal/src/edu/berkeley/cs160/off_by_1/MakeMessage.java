@@ -21,6 +21,7 @@ public class MakeMessage extends ActionBarActivity {
 	String debug = "debug";
 	String msgType = null;
 	MessageFragment fragment = null;
+	String receiverName = "";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +32,10 @@ public class MakeMessage extends ActionBarActivity {
 
 		setContentView(R.layout.activity_make_message);	
 		
-		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
+		//String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
+		receiverName = getIntent().getStringExtra("name");
 		TextView toUser = (TextView) findViewById(R.id.toUser); 
-		toUser.setText(toUserText);
+		toUser.setText(receiverName);
 		
 		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();

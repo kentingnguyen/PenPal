@@ -49,7 +49,6 @@ public class MeetPenPal extends ActionBarActivity {
 			detailsText = (TextView) findViewById(R.id.penPalDetailsText);
 			detailsText.setText("Please turn on your internet");
 		} catch (Exception e) {
-			Log.d("debug", "hi3");
 		}
 	}
 
@@ -192,7 +191,7 @@ public class MeetPenPal extends ActionBarActivity {
 				// TODO: check this.exception 
 				// TODO: do something with the feed
 			} catch (Exception e) {
-				Log.d("debug", "hi");
+
 			}
 		}
 

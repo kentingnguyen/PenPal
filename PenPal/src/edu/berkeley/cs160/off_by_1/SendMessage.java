@@ -11,14 +11,15 @@ import android.view.View;
 import android.widget.TextView;
 
 public class SendMessage extends ActionBarActivity {
-
+	String receiverName = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_send_message);
-		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
+		receiverName = getIntent().getStringExtra("name");
 		TextView toUser = (TextView) findViewById(R.id.sendMessageText); 
-		toUser.setText(toUserText);
+		toUser.setText("To " + receiverName);
 
 	}
 
@@ -95,6 +96,7 @@ public class SendMessage extends ActionBarActivity {
     public void goToVoiceMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	i.putExtra("msgType", "voice");
+    	i.putExtra("name", "receiverName");
     	startActivityForResult(i, 0);
     }
 
