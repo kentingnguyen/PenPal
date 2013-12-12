@@ -41,68 +41,74 @@ public class FriendList extends ActionBarActivity {
 		Intent i = new Intent();
 		switch(item.getItemId()) {		
 		case R.id.actionHome:
-				i.putExtra("home", true);
-				setResult(RESULT_OK, i);
-				finish();
-				return true;
+			i.putExtra("home", true);
+			setResult(RESULT_OK, i);
+			finish();
+			return true;
 		case R.id.actionBack:
-				setResult(RESULT_OK, i);
-				finish();
-				return true;
+			setResult(RESULT_OK, i);
+			finish();
+			return true;
 		}
-	return false;
+		return false;
 	}
-	
+
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-	try {
-		boolean goHome = i.getBooleanExtra("home", false);
-	if (goHome) {
-		setResult(RESULT_OK, i);
-		finish();	
+		try {
+			boolean goHome = i.getBooleanExtra("home", false);
+			if (goHome) {
+				setResult(RESULT_OK, i);
+				finish();	
+			}
+		} catch (Exception e) {
+		}
 	}
-	} catch (Exception e) {
-	}
-}
-	
-	
-	
+
+
+
 	public void goToMeetPenPal(View v) {
 		goToMeetPenPal();
 	}
-	
+
 	public void goToMeetPenPal() {
 		Intent i = new Intent(this, MeetPenPal.class);
 		startActivityForResult(i, 0);
 	}
-	
+
 	public void goToSendMessage(View v) {
-	goToSendMessage();
+		goToSendMessage();
 	}
-	
+
 	public void goToSendMessage() {
-	Intent i = new Intent(this, SendMessage.class);
-	startActivityForResult(i, 0);
+		Intent i = new Intent(this, SendMessage.class);
+		startActivityForResult(i, 0);
 	}
 
 	public void goToProfile(View v) {
-		
+
 		//Log.d("debug", profileName);
 		//goToProfile(profileName);
 		Intent i = new Intent(this, Profile.class);
-		Object[] data = getUserData(v);
+		Button buttonV = (Button) v;
+		Object[] data = getUserData(buttonV);
 		//Log.d("debug", "data" + data[0] + data[1] + data[2]);
-		Drawable stamp = ((ImageButton) v).getDrawable();
+		byte[] compressStamp = getUserStamp(buttonV); 
+		i.putExtra("name", data);
+		i.putExtra("image", compressStamp);
+		startActivityForResult(i, 0);
+
+	}
+
+	private byte[] getUserStamp(Button v) {
+		Drawable stamp = v.getCompoundDrawables()[3];
 		Bitmap stampBitmap = ((BitmapDrawable) stamp).getBitmap();
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
 		stampBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 		byte[] compressStamp = stream.toByteArray();
-		i.putExtra("name", data);
-		i.putExtra("image", compressStamp);
-		startActivityForResult(i, 0);
-	
+		return compressStamp;
 	}
-		
+
 	/*void goToProfile(String name) {
 		Intent i = new Intent(this, Profile.class);
 		String[] data = getUserData(name);
@@ -110,15 +116,15 @@ public class FriendList extends ActionBarActivity {
 		i.putExtra("name", data);
 		startActivityForResult(i, 0);
 	}*/
-	
-	private String[] getUserData(View v) {
-		String profileName = (String) ((ImageButton) v).getTag();
-		Drawable stamp = ((ImageButton) v).getBackground(); 
+
+	private String[] getUserData(Button v) {
+		String profileName = v.getText().toString();
+		Drawable stamp = ((Button) v).getBackground(); 
 		String[] data = new String[3];
 		data[0] = profileName;
 		data[1] = "Spain";
 		data[2] = "English, Spanish";
 		return data;
 	}
-	
+
 }
