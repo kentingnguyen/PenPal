@@ -31,11 +31,10 @@ public class MakeMessage extends ActionBarActivity {
 			msgType = i.getStringExtra("msgType");
 
 		setContentView(R.layout.activity_make_message);	
-		
-		//String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
 		receiverName = getIntent().getStringExtra("name");
 		TextView toUser = (TextView) findViewById(R.id.toUser); 
-		toUser.setText(receiverName);
+		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
+		toUser.setText(toUserText);
 		
 		FragmentManager manager = getSupportFragmentManager();
 		FragmentTransaction transaction = manager.beginTransaction();
@@ -122,6 +121,7 @@ public class MakeMessage extends ActionBarActivity {
 	//in progress
 		Log.d(debug, "starting send message" + fragment);
 		Intent i = fragment.getIntent();
+		i.putExtra("name", receiverName);
 		Log.d(debug, "got intent" + i);
 		goToMessageSent(i);
 	}

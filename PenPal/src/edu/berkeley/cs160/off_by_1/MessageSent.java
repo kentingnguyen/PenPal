@@ -11,18 +11,19 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MessageSent extends ActionBarActivity {
-
+	String receiverName = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_message_sent);
 
-
-		String toUserText = String.format(getResources().getString(R.string.to_user), "Timmy");
+		receiverName = getIntent().getStringExtra("name");
 		TextView toUser = (TextView) findViewById(R.id.toUser); 
+		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
 		toUser.setText(toUserText);
 
-		String sentUserText = String.format(getResources().getString(R.string.message_sent_text), "Timmy");
+		String sentUserText = String.format(getResources().getString(R.string.message_sent_text), receiverName);
 		TextView sentUser = (TextView) findViewById(R.id.messageSent); 
 		sentUser.setText(sentUserText);
 

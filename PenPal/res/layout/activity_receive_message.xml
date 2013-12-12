@@ -25,5 +25,18 @@
         android:text="@string/reply_button"
         android:onClick="goToSendMessage"
          />
+
+    <TextView
+        android:id="@+id/receivedMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/reply"
+        android:layout_below="@+id/fromUser"
+        android:layout_centerInParent="true"
+        android:text="@string/received_message"
+        android:ems="10" >
+
+        <requestFocus />
+    </TextView>
     
 </RelativeLayout>

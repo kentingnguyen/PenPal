@@ -15,9 +15,25 @@ public class Profile extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
 		
-		String friendProfileText = String.format(getResources().getString(R.string.user_profile), "Timmy");
-		TextView friendProfile = (TextView) findViewById(R.id.profileName); 
-		friendProfile.setText(friendProfileText);	
+		TextView friendProfileName = (TextView) findViewById(R.id.profileName);
+		TextView friendProfileLocation = (TextView) findViewById(R.id.location);
+		TextView friendProfileLanguage = (TextView) findViewById(R.id.language);
+
+		String friendProfileNameText = String.format(getResources().getString(R.string.user_profile), "Timmy");
+		String friendProfileLocationText = String.format(getResources().getString(R.string.location), "Spain");
+		String friendProfileLanguageText = String.format(getResources().getString(R.string.location), "English, Spanish");
+		
+		
+		friendProfileName.setText(friendProfileNameText);
+		friendProfileLocation.setText(friendProfileLocationText);
+		friendProfileLanguage.setText(friendProfileLanguageText);
+		
+		
+		
+	
+		
+		
+		
 
 	}
 

@@ -19,7 +19,7 @@
         android:textSize="20sp" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/stamp"
         android:layout_width="89dp"
         android:layout_height="89dp"
         android:layout_alignLeft="@+id/profileName"
@@ -33,19 +33,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/friendListButton"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@id/stamp"
         android:layout_marginTop="28dp"
         android:text="@string/language"
         android:textSize="20sp" />
     
 	<TextView
-        android:id="@+id/country"
+        android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/friendListButton"
         android:layout_below="@+id/language"
         android:layout_marginTop="28dp"
-        android:text="@string/country"
+        android:text="@string/location"
         android:textSize="20sp" />
 	
 	<Button

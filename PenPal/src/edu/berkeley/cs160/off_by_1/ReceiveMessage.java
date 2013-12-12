@@ -17,10 +17,12 @@ public class ReceiveMessage extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_receive_message);
-		//String fromUserText = String.format(getResources().getString(R.string.from_user), "Timmy");
 		senderName = getIntent().getStringExtra("name");
+		String fromUserText = String.format(getResources().getString(R.string.from_user), senderName);
 		TextView fromUser = (TextView) findViewById(R.id.fromUser); 
-		fromUser.setText("From " + senderName);
+		fromUser.setText(fromUserText);
+		
+		
 	}
 
 	@Override

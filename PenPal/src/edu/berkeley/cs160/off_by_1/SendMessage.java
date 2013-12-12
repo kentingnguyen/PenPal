@@ -18,8 +18,9 @@ public class SendMessage extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_send_message);
 		receiverName = getIntent().getStringExtra("name");
-		TextView toUser = (TextView) findViewById(R.id.sendMessageText); 
-		toUser.setText("To " + receiverName);
+		TextView toUser = (TextView) findViewById(R.id.sendMessageText);
+		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
+		toUser.setText(toUserText);
 
 	}
 
@@ -75,6 +76,7 @@ public class SendMessage extends ActionBarActivity {
     public void goToTextMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	i.putExtra("msgType", "text");
+    	i.putExtra("name", receiverName);
     	startActivityForResult(i, 0);
     }
 
@@ -85,6 +87,7 @@ public class SendMessage extends ActionBarActivity {
     public void goToDrawMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	i.putExtra("msgType", "draw");
+    	i.putExtra("name", receiverName);
     	Log.d("debug", "got to intent");
     	startActivityForResult(i, 0);
     }
@@ -96,7 +99,7 @@ public class SendMessage extends ActionBarActivity {
     public void goToVoiceMessage() {
     	Intent i = new Intent(this, MakeMessage.class);
     	i.putExtra("msgType", "voice");
-    	i.putExtra("name", "receiverName");
+    	i.putExtra("name", receiverName);
     	startActivityForResult(i, 0);
     }
 
