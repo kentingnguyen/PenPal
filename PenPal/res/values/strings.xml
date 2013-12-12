@@ -37,11 +37,26 @@
     <string name="research_pen_pal">Search Again</string>
     <string name="send_message_button">Send Message!</string>
     <string name="user_profile">%1$s</string>
+    <string name="red">Red</string>
+    <string name="black">Black</string>
+    <string name="blue">Blue</string>
+    <string name="yellow">Yellow</string>
+    <string name="color">Color</string>
+    <string name="green">Green</string>
+    <string name="cyan">Cyan</string>
+    <string name="eraser">Eraser</string>
+    <string name="eraselast">Undo</string>
+    <string name="eraseall">Erase All</string>
+    <string name="next">Start!</string>
+    <string name="smallsize">Small stroke</string>
+    <string name="medsize">Medium stroke</string>
+    <string name="largesize">Large stroke</string>
+    <string name="erasers">Eraser</string>
+    <string name="stroke">Stroke</string>
     <string name="location">Location From: %1$s</string>
     <string name="language">Language: %1$s</string>
     <string name="get_question_button"> Get a Question</string>
     <string name="received_message"> Hi Jack Jack,\n How are you doing today?</string>
-
     <string-array name="suggested_questions">
         <item>What are you learning in school? </item>
         <item>What did you eat for breakfast? </item>
