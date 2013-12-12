@@ -15,23 +15,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Profile extends ActionBarActivity {
+	String profileName = "";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
 
 		Intent i = getIntent();
-		Object[] data = (Object[]) i.getSerializableExtra("name");
+		String[] data = i.getStringArrayExtra("name");
 		byte[] compressStamp = i.getByteArrayExtra("image");
 		Bitmap stampBitmap = BitmapFactory.decodeByteArray(compressStamp, 0, compressStamp.length);
 		
-		
+		profileName = data[0];
 		TextView friendProfileName = (TextView) findViewById(R.id.profileName);
 		ImageView friendProfileStamp = (ImageView) findViewById(R.id.stamp);
 		TextView friendProfileLocation = (TextView) findViewById(R.id.location);
 		TextView friendProfileLanguage = (TextView) findViewById(R.id.language);
 
-		String friendProfileNameText = String.format(getResources().getString(R.string.user_profile), data[0]);
+		String friendProfileNameText = String.format(getResources().getString(R.string.user_profile), profileName);
 		//Drawable stamp = (Drawable) data[1];
 		String friendProfileLocationText = String.format(getResources().getString(R.string.location), data[1]);
 		String friendProfileLanguageText = String.format(getResources().getString(R.string.language), data[2]);
@@ -104,6 +106,7 @@ public class Profile extends ActionBarActivity {
         
     public void goToSendMessage() {
     	Intent i = new Intent(this, SendMessage.class);
+    	i.putExtra("name", profileName);
     	startActivityForResult(i, 0);
     }
 }

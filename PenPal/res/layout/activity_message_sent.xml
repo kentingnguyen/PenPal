@@ -32,13 +32,6 @@
          >
 
         <Button
-            android:id="@+id/undo"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/undo" />
-
-        <Button
             android:id="@+id/sendAnother"
             android:layout_width="0dp"
             android:layout_weight="1"

@@ -24,11 +24,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MeetPenPal extends ActionBarActivity {
 	String api = "http://hidden-ridge-3009.herokuapp.com/penpals/api/v1.0/";
 	TextView detailsText = null;
+	String name = "";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class MeetPenPal extends ActionBarActivity {
 		// TODO Auto-generated method stub
 		try {
 			setContentView(R.layout.activity_meet_pen_pal);
+			Button sendMessage = (Button) findViewById(R.id.sendMessage);
+			sendMessage.setVisibility(View.INVISIBLE);
 			detailsText = (TextView) findViewById(R.id.penPalDetailsText);
 			detailsText.setText("Please turn on your internet");
 		} catch (Exception e) {
@@ -87,10 +91,13 @@ public class MeetPenPal extends ActionBarActivity {
 
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-		boolean goHome = i.getBooleanExtra("home", false);
-		if (goHome) {
-			setResult(RESULT_OK, i);
-			finish();	
+		try {
+			boolean goHome = i.getBooleanExtra("home", false);
+			if (goHome) {
+				setResult(RESULT_OK, i);
+				finish();	
+			}
+		} catch (Exception e) {
 		}
 	}
 
@@ -113,9 +120,11 @@ public class MeetPenPal extends ActionBarActivity {
 
 	public void setDetailsTextView(JSONObject penPalDetails) {
 		detailsText = (TextView) findViewById(R.id.penPalDetailsText);
+		
 		StringBuilder details = new StringBuilder();
 		try {
-			details.append("First Name:").append(penPalDetails.getString("first_name")).append("\n");
+			name = penPalDetails.getString("first_name");
+			details.append("First Name:").append(name).append("\n");
 			details.append("Last Name: ").append(penPalDetails.getString("last_name")).append("\n");
 			details.append("From: ").append(penPalDetails.getString("location")).append("\n");
 			detailsText.setText(details.toString());
@@ -134,6 +143,7 @@ public class MeetPenPal extends ActionBarActivity {
 
 	public void goToSendMessage() {
 		Intent i = new Intent(this, SendMessage.class);
+		i.putExtra("name", name);
 		//Be sure to remember the recipient
 		startActivityForResult(i, 0);
 	}
@@ -186,6 +196,8 @@ public class MeetPenPal extends ActionBarActivity {
 				if (penpaldata == null) {
 					internetError();
 				} else {
+					Button sendMessage = (Button) findViewById(R.id.sendMessage);
+					sendMessage.setVisibility(View.VISIBLE);
 				setDetailsTextView(penpaldata);
 				}
 				// TODO: check this.exception 

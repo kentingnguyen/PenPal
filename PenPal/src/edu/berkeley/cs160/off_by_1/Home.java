@@ -30,7 +30,7 @@ public class Home extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
     	Log.d("debug", "inflating menu");
-        getMenuInflater().inflate(R.menu.header, menu);
+        getMenuInflater().inflate(R.menu.home, menu);
         //MenuItem backItem = menu.findItem(R.id.actionBack);
         //MenuItem homeItem = menu.findItem(R.id.actionHome);
         // To retrieve the Action Provider
