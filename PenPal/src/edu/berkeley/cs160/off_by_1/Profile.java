@@ -24,7 +24,8 @@ public class Profile extends ActionBarActivity {
 
 		Intent i = getIntent();
 		//String[] data = i.getStringArrayExtra("name");
-		String[] data = Home.getUserData("name");
+		String name = i.getStringExtra("name");
+		String[] data = Home.getUserData(name);
 		byte[] compressStamp = i.getByteArrayExtra("image");
 		Bitmap stampBitmap = BitmapFactory.decodeByteArray(compressStamp, 0, compressStamp.length);
 		

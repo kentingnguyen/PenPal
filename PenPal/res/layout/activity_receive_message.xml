@@ -26,17 +26,26 @@
         android:onClick="goToSendMessage"
          />
 
-    <TextView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/reply"
+        android:layout_below="@+id/fromUser"
+        android:layout_marginTop="20dp"
+        >
+    
+        <TextView
         android:id="@+id/receivedMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/reply"
-        android:layout_below="@+id/fromUser"
         android:layout_centerInParent="true"
+        
         android:text="@string/received_message"
-        android:ems="10" >
-
-        <requestFocus />
-    </TextView>
+         >
+        </TextView>
+        
+    </FrameLayout>
+    
+    
     
 </RelativeLayout>
