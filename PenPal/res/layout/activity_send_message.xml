@@ -17,35 +17,36 @@
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/voiceMessageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="@string/voice_message"
-        android:onClick="goToVoiceMessage"
-         />
-
-    <Button
         android:id="@+id/textMessageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/drawMessageButton"
-        android:layout_alignBottom="@+id/drawMessageButton"
-        android:layout_marginLeft="31dp"
-        android:layout_toRightOf="@+id/drawMessageButton"
-        android:text="@string/text_message"
+        android:layout_above="@+id/drawMessageButton"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="32dp"
         android:onClick="goToTextMessage"
-         />
+        android:text="@string/text_message"
+        android:textSize="35sp" />
+
+    <Button
+        android:id="@+id/voiceMessageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendMessageText"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="104dp"
+        android:onClick="goToVoiceMessage"
+        android:text="@string/voice_message"
+        android:textSize="35sp" />
 
     <Button
         android:id="@+id/drawMessageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/voiceMessageButton"
-        android:layout_alignBottom="@+id/voiceMessageButton"
+        android:layout_below="@+id/voiceMessageButton"
         android:layout_centerHorizontal="true"
-        android:text="@string/draw_message"
+        android:layout_marginTop="38dp"
         android:onClick="goToDrawMessage"
-         />
+        android:text="@string/draw_message"
+        android:textSize="35sp" />
 
 </RelativeLayout>

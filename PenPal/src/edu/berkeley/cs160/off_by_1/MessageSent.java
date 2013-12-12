@@ -32,17 +32,15 @@ public class MessageSent extends ActionBarActivity {
 
 	 @Override
 	    public void onBackPressed(){
-	    super.onBackPressed();
-	    Intent i = new Intent();
-	    setResult(RESULT_OK, i);
-	     finish();     
-	    }
+	    //super.onBackPressed();
+	    sendAnother();
+}
 
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.header, menu);
+		getMenuInflater().inflate(R.menu.message_sent, menu);
 		return true;
 	}
 
@@ -76,6 +74,10 @@ public class MessageSent extends ActionBarActivity {
 }
 
 	public void sendAnother(View v) {
+		sendAnother();
+	}
+	
+	void sendAnother() {
 		Intent i = new Intent();
 		i.putExtra("sendAnother", true);
 		setResult(RESULT_OK, i);

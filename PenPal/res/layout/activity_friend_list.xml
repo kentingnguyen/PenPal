@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:background="@color/light_blue"
         android:drawableBottom="@drawable/stamp2"
-        android:text="Natalie"
+        android:text="Annie"
         android:layout_marginTop="42dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/stamp2"
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
         android:background="@color/light_blue"
         android:drawableBottom="@drawable/stamp3"
-        android:text="Lizzet"
+        android:text="Angus"
 
         android:layout_marginTop="42dp"
         android:layout_alignParentRight="true"
@@ -77,7 +77,7 @@
         android:background="@color/light_blue"
         android:drawableBottom="@drawable/stamp5"
         android:onClick="goToProfile"
-        android:text="Kevin" />
+        android:text="Natalie" />
     
     <ImageView
         android:id="@+id/sun"
