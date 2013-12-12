@@ -30,23 +30,23 @@
    
 
     <TextView
-        android:id="@+id/language"
+        android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/friendListButton"
         android:layout_below="@id/stamp"
         android:layout_marginTop="28dp"
-        android:text="@string/language"
+        android:text="@string/location"
         android:textSize="20sp" />
     
 	<TextView
-        android:id="@+id/location"
+        android:id="@+id/language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/friendListButton"
-        android:layout_below="@+id/language"
+        android:layout_below="@+id/location"
         android:layout_marginTop="28dp"
-        android:text="@string/location"
+        android:text="@string/language"
         android:textSize="20sp" />
 	
 	<Button
