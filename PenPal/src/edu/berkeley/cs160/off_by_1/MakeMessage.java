@@ -47,6 +47,15 @@ public class MakeMessage extends ActionBarActivity {
 		}
 
 	}
+	
+	 @Override
+	    public void onBackPressed(){
+	    super.onBackPressed();
+	    Intent i = new Intent();
+	    setResult(RESULT_OK, i);
+	     finish();     
+	    }
+
        
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,6 +83,7 @@ public class MakeMessage extends ActionBarActivity {
 	
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
+		try {
 	boolean goHome = i.getBooleanExtra("home", false);
 	boolean sendAnother = i.getBooleanExtra("sendAnother", false);
 	Log.d("debug", "on activity result" + goHome + " " + sendAnother);
@@ -83,6 +93,9 @@ public class MakeMessage extends ActionBarActivity {
 	} else if (sendAnother) {
 		setResult(RESULT_OK, i);
 		finish();
+	}
+	} catch (Exception e) {
+		
 	}
 	}
 

@@ -43,12 +43,15 @@ public class FriendList extends ActionBarActivity {
 	
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-	boolean goHome = i.getBooleanExtra("home", false);
+	try {
+		boolean goHome = i.getBooleanExtra("home", false);
 	if (goHome) {
 		setResult(RESULT_OK, i);
 		finish();	
 	}
+	} catch (Exception e) {
 	}
+}
 	
 	
 	

@@ -21,6 +21,15 @@ public class Profile extends ActionBarActivity {
 
 	}
 
+	 @Override
+	    public void onBackPressed(){
+	    super.onBackPressed();
+	    Intent i = new Intent();
+	    setResult(RESULT_OK, i);
+	     finish();     
+	    }
+
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -47,12 +56,15 @@ public class Profile extends ActionBarActivity {
 
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-	boolean goHome = i.getBooleanExtra("home", false);
+	try {
+		boolean goHome = i.getBooleanExtra("home", false);
 	if (goHome) {
 		setResult(RESULT_OK, i);
 		finish();	
 	}
+	} catch (Exception e) {
 	}
+}
 
 	
     public void goToSendMessage(View v) {

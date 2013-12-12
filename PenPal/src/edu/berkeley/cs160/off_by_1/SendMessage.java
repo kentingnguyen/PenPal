@@ -49,14 +49,23 @@ public class SendMessage extends ActionBarActivity {
 
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-	boolean goHome = i.getBooleanExtra("home", false);
-	Log.d("debug", "going back");
+	try {
+		boolean goHome = i.getBooleanExtra("home", false);
 	if (goHome) {
 		setResult(RESULT_OK, i);
 		finish();	
 	}
+	} catch (Exception e) {
 	}
+}
 
+	 @Override
+	    public void onBackPressed(){
+	    super.onBackPressed();
+	    Intent i = new Intent();
+	    setResult(RESULT_OK, i);
+	     finish();     
+	    }
 	
 	public void goToTextMessage(View v) {
 		goToTextMessage();
