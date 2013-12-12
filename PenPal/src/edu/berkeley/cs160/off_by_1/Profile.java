@@ -1,12 +1,15 @@
 package edu.berkeley.cs160.off_by_1;
 
 import android.app.Activity;
+
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Profile extends ActionBarActivity {
@@ -14,17 +17,24 @@ public class Profile extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
+
+		Intent i = getIntent();
+		Object[] data = (Object[]) i.getSerializableExtra("name");
 		
 		TextView friendProfileName = (TextView) findViewById(R.id.profileName);
+		ImageView friendProfileStamp = (ImageView) findViewById(R.id.stamp);
 		TextView friendProfileLocation = (TextView) findViewById(R.id.location);
 		TextView friendProfileLanguage = (TextView) findViewById(R.id.language);
 
-		String friendProfileNameText = String.format(getResources().getString(R.string.user_profile), "Timmy");
-		String friendProfileLocationText = String.format(getResources().getString(R.string.location), "Spain");
-		String friendProfileLanguageText = String.format(getResources().getString(R.string.location), "English, Spanish");
+		String friendProfileNameText = String.format(getResources().getString(R.string.user_profile), data[0]);
+		//Drawable stamp = (Drawable) data[1];
+		String friendProfileLocationText = String.format(getResources().getString(R.string.location), data[1]);
+		String friendProfileLanguageText = String.format(getResources().getString(R.string.language), data[2]);
 		
 		
 		friendProfileName.setText(friendProfileNameText);
+		//friendProfileStamp.setBackgroundDrawable(stamp);
+		//friendProfileStamp.setBackground(stamp);
 		friendProfileLocation.setText(friendProfileLocationText);
 		friendProfileLanguage.setText(friendProfileLanguageText);
 		

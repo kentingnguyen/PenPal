@@ -25,6 +25,7 @@
         android:layout_alignLeft="@+id/profileName"
         android:layout_below="@+id/profileName"
         android:layout_marginTop="21dp"
+        
          />
    
 

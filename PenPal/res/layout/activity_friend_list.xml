@@ -24,7 +24,9 @@
         android:layout_marginTop="42dp"
         android:layout_marginLeft="22dp"
         android:background="@drawable/stamp1"
-        android:onClick="goToProfile" />
+        android:onClick="goToProfile"
+        android:tag="Timmy"
+         />
 
     <ImageButton
         android:id="@+id/friend2_profile"
@@ -33,6 +35,7 @@
         android:layout_marginTop="42dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/stamp2"
+        android:tag="Natalie"
         android:onClick="goToProfile" />
     
     <ImageButton
@@ -43,6 +46,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="22dp"
         android:background="@drawable/stamp3"
+        android:tag="Lizzet"
         android:onClick="goToProfile" />
     
     <ImageButton
@@ -52,6 +56,7 @@
         android:layout_marginTop="140dp"
         android:layout_marginLeft="22dp"
         android:background="@drawable/stamp4"
+        android:tag="Mike"
         android:onClick="goToProfile" />
 
     <ImageButton
@@ -61,6 +66,7 @@
         android:layout_marginTop="140dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/stamp5"
+        android:tag="Kevin"
         android:onClick="goToProfile" />
     
     

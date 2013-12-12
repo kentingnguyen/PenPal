@@ -4,11 +4,16 @@ import android.os.Bundle;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class FriendList extends ActionBarActivity {
 
@@ -74,13 +79,35 @@ public class FriendList extends ActionBarActivity {
 	}
 
 	public void goToProfile(View v) {
-	goToProfile();
+		
+		//Log.d("debug", profileName);
+		//goToProfile(profileName);
+		Intent i = new Intent(this, Profile.class);
+		Object[] data = getUserData(v);
+		//Log.d("debug", "data" + data[0] + data[1] + data[2]);
+		
+		i.putExtra("name", data);
+		//i.putExtra("image", value);
+		startActivityForResult(i, 0);
+	
 	}
 		
-	public void goToProfile() {
+	/*void goToProfile(String name) {
 		Intent i = new Intent(this, Profile.class);
+		String[] data = getUserData(name);
+		Log.d("debug", "data" + data[0] + data[1] + data[2]);
+		i.putExtra("name", data);
 		startActivityForResult(i, 0);
-		
+	}*/
+	
+	private String[] getUserData(View v) {
+		String profileName = (String) ((ImageButton) v).getTag();
+		Drawable stamp = ((ImageButton) v).getBackground(); 
+		String[] data = new String[3];
+		data[0] = profileName;
+		data[1] = "Spain";
+		data[2] = "English, Spanish";
+		return data;
 	}
 	
 }
