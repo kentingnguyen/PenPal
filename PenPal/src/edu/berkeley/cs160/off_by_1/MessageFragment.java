@@ -18,7 +18,7 @@ public class MessageFragment extends Fragment{
 
 	MessageFragment fragment;
 	boolean draw = false;
-	Activity con;
+	Activity act;
 	
 	public MessageFragment() {
 		
@@ -38,7 +38,7 @@ public class MessageFragment extends Fragment{
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        con = activity;
+        act = activity;
         Log.d("debug", "hello onattach");
     }
     
@@ -48,15 +48,15 @@ public class MessageFragment extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.text_message, container, false);	
-		if (draw) {
+		//if (draw) {
 			Log.d("debug", "it's drawing");
 			Log.d("debug", getActivity().toString());
-			onAttach(getActivity());
-			fragment.onAttach(con);
-			draw = false;
+			//onAttach(getActivity());
+			fragment.onAttach(act);
+			//draw = false;
 			return fragment.onCreateView(inflater, container, savedInstanceState);
-		}
-		return fragment.onCreateView(inflater, container, savedInstanceState);
+		//}
+		//return fragment.onCreateView(inflater, container, savedInstanceState);
 	}
 	
 	Intent getIntent() {

@@ -57,6 +57,12 @@
     <string name="language">%1$s speaks %2$s</string>
     <string name="get_question_button">Throw me a question!</string>
     <string name="received_message"> Hi Jack Jack,\n How are you doing today?</string>
+    <string name="start_record">Record Message</string>
+    <string name="stop_record">Stop Recording</string>
+    <string name="start_play">Play Message</string>
+    <string name="stop_play">"Stop Playing"</string>
+
+    
     <string-array name="suggested_questions">
         <item>What are you learning in school? </item>
         <item>What did you eat for breakfast? </item>

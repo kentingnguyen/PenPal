@@ -4,16 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <ProgressBar
-        android:id="@+id/recordProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/recordButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp" 
-        android:max="60"/>
-
     <Button
         android:id="@+id/recordButton"
         android:layout_width="wrap_content"
@@ -21,16 +11,28 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp"
-        android:text="Start Recording" />
+        android:text="@string/start_record" 
+        android:visibility="visible"
+        />
 
     <Button
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/recordProgressBar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:text="Play Button" />
+        android:layout_marginTop="140dp"
+        android:text="@string/start_play"
+        android:visibility="invisible" />
+
+    <ProgressBar
+        android:id="@+id/recordProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recordButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:max="60" />
 
     <TextView
         android:id="@+id/recordTimer"
