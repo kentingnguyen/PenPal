@@ -3,6 +3,8 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ReceiveMessage extends ActionBarActivity {
@@ -25,6 +28,9 @@ public class ReceiveMessage extends ActionBarActivity {
 		String fromUserText = String.format(getResources().getString(R.string.from_user), senderName);
 		TextView fromUser = (TextView) findViewById(R.id.fromUser); 
 		fromUser.setText(fromUserText);
+		Bitmap stamp = Home.getStamp(this, senderName);
+		ImageView stampView = (ImageView) findViewById(R.id.stamp);
+		stampView.setImageBitmap(stamp);
 		
 		try {
 		String msgType = Home.getUserMsgType(senderName);
@@ -82,11 +88,12 @@ public class ReceiveMessage extends ActionBarActivity {
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
 		try {
-			boolean goHome = i.getBooleanExtra("home", false);
+			/*boolean goHome = i.getBooleanExtra("home", false);
 			if (goHome) {
 				setResult(RESULT_OK, i);
 				finish();	
-			}
+			}*/
+			goBack(i);
 		} catch (Exception e) {
 		}
 	}

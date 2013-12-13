@@ -3,11 +3,14 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SendMessage extends ActionBarActivity {
@@ -18,10 +21,14 @@ public class SendMessage extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_send_message);
 		receiverName = getIntent().getStringExtra("name");
-		TextView toUser = (TextView) findViewById(R.id.sendMessageText);
+		TextView toUser = (TextView) findViewById(R.id.toUser);
 		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
 		toUser.setText(toUserText);
-
+		Bitmap stamp = Home.getStamp(this, receiverName);
+		Log.d("debug", "stampView");
+		ImageView stampView = (ImageView) findViewById(R.id.stamp);
+		Log.d("debug", "stampView" + stampView);
+		stampView.setImageBitmap(stamp);
 	}
 
 	@Override

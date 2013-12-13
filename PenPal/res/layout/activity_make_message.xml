@@ -10,40 +10,51 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MakeMessage" >
 
-    <TextView
-        android:id="@+id/toUser"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="25sp"
-        android:text="@string/to_user" />
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/toUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="30dp"
+            android:text="@string/to_user"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/stamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/questionButton"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/toUser"
-        android:text="@string/get_question_button"
+        android:layout_below="@id/header"
+        android:layout_centerHorizontal="true"
         android:onClick="getSuggestedQuestion"
-         />
+        android:text="@string/get_question_button" />
 
     <TextView
         android:id="@+id/suggestedQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/questionButton"
-        android:layout_centerHorizontal="true"
-         />
+        android:layout_below="@id/header"
+        android:layout_centerHorizontal="true" />
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/clearSendLayout"
-        android:layout_below="@id/suggestedQuestion"
-        >
-
+        android:layout_below="@id/questionButton" >
     </FrameLayout>
 
     <LinearLayout

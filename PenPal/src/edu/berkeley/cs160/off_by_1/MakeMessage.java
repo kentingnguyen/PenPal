@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -40,6 +43,9 @@ public class MakeMessage extends ActionBarActivity {
 			TextView toUser = (TextView) findViewById(R.id.toUser); 
 			String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
 			toUser.setText(toUserText);
+			Bitmap stamp = Home.getStamp(this, receiverName);
+			ImageView stampView = (ImageView) findViewById(R.id.stamp);
+			stampView.setImageBitmap(stamp);
 
 			FragmentManager manager = getSupportFragmentManager();
 			FragmentTransaction transaction = manager.beginTransaction();
@@ -107,6 +113,7 @@ public class MakeMessage extends ActionBarActivity {
 
 	public void getSuggestedQuestion(View v) {
 		getSuggestedQuestion();
+		v.setVisibility(View.INVISIBLE);
 	}
 
 	public void getSuggestedQuestion() {

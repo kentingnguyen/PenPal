@@ -3,6 +3,7 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -134,16 +135,17 @@ public class Home extends ActionBarActivity {
 
 	}
 
-	public Bitmap getStamp(String name) {
+	public static Bitmap getStamp(Activity act, String name) {
 		Drawable stamp = null;
 		if (name.equals("Timmy")) {
-			stamp = getResources().getDrawable(R.drawable.stamp1);
+			stamp = act.getResources().getDrawable(R.drawable.stamp1);
 		} else if (name.equals("Annie")) {
-			stamp = getResources().getDrawable(R.drawable.stamp2);
+			stamp = act.getResources().getDrawable(R.drawable.stamp2);
 		}
 		else {
-			stamp = getResources().getDrawable(R.drawable.stamp5);
+			stamp = act.getResources().getDrawable(R.drawable.stamp5);
 		}
 		return ((BitmapDrawable) stamp).getBitmap();
+		//return stamp;
 	}
 }
