@@ -85,7 +85,7 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 			Log.d("debug", "made player correctly" + player);
 			playButton.setText("Stop Playing");
 			//player.setDataSource(fileName);
-			player.prepare();
+			//player.prepare();
 			player.start();
 			player.setOnCompletionListener(new OnCompletionListener() {
 				@Override
@@ -94,8 +94,6 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 					playButton.setText("Play Button");
 				}
 			});
-		} catch (IOException e) {
-			Log.e("error", "voicemessage player.prepare() failed");
 		} catch (Exception e) {
 			Log.e("error", "Error, null exception");
 		}
