@@ -43,7 +43,9 @@ public class Home extends ActionBarActivity {
 			} 
 			stamp = openedMsg.getCompoundDrawables()[2];
 			Drawable openedImage = getResources().getDrawable(R.drawable.opened_message);
-			openedMsg.setCompoundDrawables(openedImage, null, stamp, null);
+			Log.d("debug", "opened image" + openedImage);
+			
+			openedMsg.setCompoundDrawablesWithIntrinsicBounds(openedImage, null, stamp, null);
 		} catch (Exception e) {
 
 		}
