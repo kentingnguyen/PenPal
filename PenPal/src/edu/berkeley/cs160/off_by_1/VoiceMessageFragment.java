@@ -35,9 +35,7 @@ public class VoiceMessageFragment extends MessageFragment {
 	Timer timer;
 	int record = 0;
 	String startPlay;
-
 	AsyncTask<Integer, Integer, Integer> task;
-
 	int x = 0;
 	long delay;
 	long cap;
@@ -111,7 +109,7 @@ public class VoiceMessageFragment extends MessageFragment {
 	void startPlaying() {
 		player = new MediaPlayer();
 		try {
-			playButton.setText("Stop Playing");
+			playButton.setText(act.getString(R.string.stop_play));
 			player.setDataSource(fileName);
 			player.prepare();
 			player.start();
@@ -216,7 +214,7 @@ public class VoiceMessageFragment extends MessageFragment {
 		File f = new File(fileName);
 		f.delete();
 		record = 0;
-		recordButton.setText("Record Button");
+		recordButton.setText(act.getString(R.string.start_record));
 		recordButton.setVisibility(View.VISIBLE);
 		playButton.setVisibility(View.INVISIBLE);
 		progress.setProgress(0);

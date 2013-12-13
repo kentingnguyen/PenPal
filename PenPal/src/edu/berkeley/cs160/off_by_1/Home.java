@@ -123,16 +123,16 @@ TextView unreadMessagesText;
 		if (name.equals("Timmy")){
 			data[0] = "Timmy";
 			data[1] = "Spain";
-			data[2] = "English, Spanish";
+			data[2] = "English and Spanish";
 		} else if (name.equals("Annie")) {
 			data[0] = "Annie";
 			data[1] = "France";
-			data[2] = "English, French";
+			data[2] = "English and French";
 		} else if (name.equals("Angus")) {
 			data[0] = "Angus";
 
 			data[1] = "CA, United States";
-			data[2] = "English, Vietnamese";
+			data[2] = "English and Vietnamese";
 		} else if (name.equals("Mike")) {
 			data[0] = "Mike";
 			data[1] = "New York, United States";
@@ -144,7 +144,7 @@ TextView unreadMessagesText;
 			data[2] = "German";
 
 		} else {
-			data[0] = "A random alien";
+			data[0] = "A New Pen Pal";
 			data[1] = "Unknown";
 			data[2] = "Unknown";
 		}
