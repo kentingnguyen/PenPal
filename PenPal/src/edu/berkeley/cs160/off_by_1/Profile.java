@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 public class Profile extends ActionBarActivity {
 	String profileName = "";
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class Profile extends ActionBarActivity {
 		String[] data = Home.getUserData(name);
 		byte[] compressStamp = i.getByteArrayExtra("image");
 		Bitmap stampBitmap = BitmapFactory.decodeByteArray(compressStamp, 0, compressStamp.length);
-		
+
 		profileName = data[0];
 		TextView friendProfileName = (TextView) findViewById(R.id.profileName);
 		ImageView friendProfileStamp = (ImageView) findViewById(R.id.stamp);
@@ -39,76 +39,68 @@ public class Profile extends ActionBarActivity {
 		//Drawable stamp = (Drawable) data[1];
 		String friendProfileLocationText = String.format(getResources().getString(R.string.location), data[1]);
 		String friendProfileLanguageText = String.format(getResources().getString(R.string.language), data[2]);
-		
-		
+
+
 		friendProfileName.setText(friendProfileNameText);
 		//friendProfileStamp.setBackgroundDrawable(stamp);
 		friendProfileStamp.setImageBitmap(stampBitmap);
 		friendProfileLocation.setText(friendProfileLocationText);
 		friendProfileLanguage.setText(friendProfileLanguageText);
-		
-		
-		
-	
-		
-		
-		
-
 	}
 
-	 @Override
-	    public void onBackPressed(){
-	    super.onBackPressed();
-	    Intent i = new Intent();
-	    setResult(RESULT_OK, i);
-	     finish();     
-	    }
+	@Override
+	public void onBackPressed(){
+		super.onBackPressed();
+		Intent i = new Intent();
+		setResult(RESULT_OK, i);
+		finish();     
+	}
 
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.header, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Intent i = new Intent();
 		switch(item.getItemId()) {		
 		case R.id.actionHome:
-				i.putExtra("home", true);
-				setResult(RESULT_OK, i);
-				finish();
-				return true;
+			i.putExtra("home", true);
+			setResult(RESULT_OK, i);
+			finish();
+			return true;
 		case R.id.actionBack:
-				setResult(RESULT_OK, i);
-				finish();
-				return true;
+			setResult(RESULT_OK, i);
+			finish();
+			return true;
 		}
-	return false;
+		return false;
 	}
 
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-	try {
-		boolean goHome = i.getBooleanExtra("home", false);
-	if (goHome) {
-		setResult(RESULT_OK, i);
-		finish();	
+		try {
+			boolean goHome = i.getBooleanExtra("home", false);
+			if (goHome) {
+				setResult(RESULT_OK, i);
+				finish();	
+			}
+		} catch (Exception e) {
+		}
 	}
-	} catch (Exception e) {
-	}
-}
 
-	
-    public void goToSendMessage(View v) {
-       goToSendMessage(); 
-    }
-        
-    public void goToSendMessage() {
-    	Intent i = new Intent(this, SendMessage.class);
-    	i.putExtra("name", profileName);
-    	startActivityForResult(i, 0);
-    }
+
+	public void goToSendMessage(View v) {
+		goToSendMessage(); 
+	}
+
+	public void goToSendMessage() {
+		Intent i = new Intent(this, SendMessage.class);
+		i.putExtra("name", profileName);
+		startActivityForResult(i, 0);
+	}
 }
