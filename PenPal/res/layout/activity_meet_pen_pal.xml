@@ -8,52 +8,58 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MeetPenPal" >
 
-        <TextView
-            android:id="@+id/meetPenPalText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/new_pen_pal_text"
-            android:textSize="25sp" /><ImageView android:id="@+id/sun" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_marginBottom="10dp" android:adjustViewBounds="true" android:baselineAlignBottom="true" android:src="@drawable/sun" />
-        
-        <TextView
-	    	android:id="@+id/penPalDetailsText"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:lines="4"
-	        android:layout_centerInParent="true"
-	        android:layout_marginTop="15dp"
-	        android:text=""
-	        android:textSize="35sp"
-			android:textAlignment="center" />
-        
-    	        
+    <TextView
+        android:id="@+id/meetPenPalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/new_pen_pal_text"
+        android:textSize="25sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            >
+    <ImageView
+        android:id="@+id/sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:adjustViewBounds="true"
+        android:baselineAlignBottom="true"
+        android:src="@drawable/sun" />
 
-            <Button
-                style="@style/RedButton"
-                android:id="@+id/research"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:onClick="research"
-                android:layout_height="50dp"
-                android:text="@string/research_pen_pal" />
+    <TextView
+        android:id="@+id/penPalDetailsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/meetPenPalText"
+        android:layout_marginTop="25dp"
+        android:lines="4"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="30sp" />
 
-            <Button
-                style="@style/GreenButton"
-                android:id="@+id/sendMessage"
-				android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="50dp"
-                android:text="@string/send_message_button"
-                android:onClick="goToSendMessage"
-                 />
-            
-        </LinearLayout>
-    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/research"
+            style="@style/RedButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="research"
+            android:text="@string/research_pen_pal" />
+
+        <Button
+            android:id="@+id/sendMessage"
+            style="@style/GreenButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="goToSendMessage"
+            android:text="@string/send_message_button" />
+    </LinearLayout>
+
 </RelativeLayout>

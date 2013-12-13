@@ -37,8 +37,8 @@ public class Profile extends ActionBarActivity {
 
 		String friendProfileNameText = String.format(getResources().getString(R.string.user_profile), profileName);
 		//Drawable stamp = (Drawable) data[1];
-		String friendProfileLocationText = String.format(getResources().getString(R.string.location), data[1]);
-		String friendProfileLanguageText = String.format(getResources().getString(R.string.language), data[2]);
+		String friendProfileLocationText = String.format(getResources().getString(R.string.location), profileName, data[1]);
+		String friendProfileLanguageText = String.format(getResources().getString(R.string.language), profileName, data[2]);
 
 
 		friendProfileName.setText(friendProfileNameText);

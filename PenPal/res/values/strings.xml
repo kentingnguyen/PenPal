@@ -24,9 +24,9 @@
     <string name="friend_list_button">Friend\'s List</string>
     <string name="friend_list_text">My Friends</string>
     <string name="new_pen_pal_button">Make a New Pen Pal!</string>
-    <string name="new_pen_pal_text">Meet a New Pen Pal!</string>
+    <string name="new_pen_pal_text">Make a New Pen Pal!</string>
     <string name="send_message_text">Send a message\n to %s!</string>
-    <string name="message_sent_text">Message been sent\n to\n %s!</string>
+    <string name="message_sent_text">I sent a message to\n %s!</string>
     <string name="text_message">Write</string>
     <string name="draw_message">Draw</string>
     <string name="voice_message">Talk</string>
@@ -53,9 +53,9 @@
     <string name="largesize">Large stroke</string>
     <string name="erasers">Eraser</string>
     <string name="stroke">Stroke</string>
-    <string name="location">Location From: %1$s</string>
-    <string name="language">Language: %1$s</string>
-    <string name="get_question_button"> Get a Question</string>
+    <string name="location">%1$s is from %2$s</string>
+    <string name="language">%1$s speaks %2$s</string>
+    <string name="get_question_button">Throw me a question!</string>
     <string name="received_message"> Hi Jack Jack,\n How are you doing today?</string>
     <string-array name="suggested_questions">
         <item>What are you learning in school? </item>
@@ -78,7 +78,7 @@
         
         
     </string-array>
-
+    <string name="internet_error">"I need the internet on to work"</string>
     <string name="send_another">Send Another</string>
     <string name="undo">undo</string>
 

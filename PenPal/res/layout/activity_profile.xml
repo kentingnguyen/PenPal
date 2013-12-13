@@ -8,48 +8,46 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Home" >
 
-    <TextView
-        android:id="@+id/profileName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/language"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="21dp"
-        android:text="@string/user_profile"
-        android:textSize="20sp" />
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-    <ImageView
-        android:id="@+id/stamp"
-        android:layout_width="89dp"
-        android:layout_height="89dp"
-        android:layout_alignLeft="@+id/profileName"
-        android:layout_below="@+id/profileName"
-        android:layout_marginTop="21dp"
-        
-         />
-   
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_profile"
+            android:layout_marginRight="30dp"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/stamp"
+            android:layout_width="89dp"
+            android:layout_height="89dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="21dp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/friendListButton"
-        android:layout_below="@id/stamp"
+        android:layout_below="@+id/header"
         android:layout_marginTop="28dp"
         android:text="@string/location"
         android:textSize="20sp" />
-    
-	<TextView
+
+    <TextView
         android:id="@+id/language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/friendListButton"
         android:layout_below="@+id/location"
         android:layout_marginTop="28dp"
         android:text="@string/language"
         android:textSize="20sp" />
-	
-	<Button
+
+    <Button
         android:id="@+id/friendListButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,4 +56,5 @@
         android:layout_alignParentRight="true"
         android:onClick="goToSendMessage"
         android:text="@string/send_message_button" />
+
 </RelativeLayout>

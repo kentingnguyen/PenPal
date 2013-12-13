@@ -1,5 +1,8 @@
 package edu.berkeley.cs160.off_by_1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 
 import android.support.v7.app.ActionBarActivity;
@@ -15,43 +18,58 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Home extends ActionBarActivity {
+List<String> unreadMessages = new ArrayList<String>();
+int unreadMsgCount;
+String unreadMsgString; 
+TextView unreadMessagesText; 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+		unreadMessages.add("Timmy");
+		unreadMessages.add("Annie");
 		
+		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-
-		//R.id.unreadText
-		int unreadMessages = 2;
-		String unreadMsgString = getResources().getQuantityString(R.plurals.unread_messages, unreadMessages, unreadMessages);
-		TextView unreadMessagesText = (TextView) findViewById(R.id.unreadText);
-		unreadMessagesText.setText(unreadMsgString);
+		updateUnreadMsgCount();
 	}
 
+	private void updateUnreadMsgCount() {
+		unreadMsgCount = unreadMessages.size();
+		unreadMsgString = getResources().getQuantityString(R.plurals.unread_messages, unreadMsgCount, unreadMsgCount);
+		unreadMessagesText = (TextView) findViewById(R.id.unreadText);
+		unreadMessagesText.setText(unreadMsgString);		
+	}
+	
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
 		Log.d("debug", "Got here" );
 		try {
 			String name = i.getStringExtra("name");
+			
+			unreadMessages.remove(name);
+			
 			Button openedMsg = null;
 			Drawable stamp;
 			Log.d("debug", "received name" + name);
 			if (name.equals("Timmy")) {
 				openedMsg = (Button) findViewById(R.id.timmy);
+				
 			} else if (name.equals("Annie")) {
 				openedMsg = (Button) findViewById(R.id.annie);
 			} 
 			stamp = openedMsg.getCompoundDrawables()[2];
 			Drawable openedImage = getResources().getDrawable(R.drawable.opened_message);
 			Log.d("debug", "opened image" + openedImage);
-			
 			openedMsg.setCompoundDrawablesWithIntrinsicBounds(openedImage, null, stamp, null);
+			
+			updateUnreadMsgCount();
 		} catch (Exception e) {
 
 		}
 	}
 
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

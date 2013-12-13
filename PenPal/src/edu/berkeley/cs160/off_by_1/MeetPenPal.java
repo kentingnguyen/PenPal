@@ -51,7 +51,7 @@ public class MeetPenPal extends ActionBarActivity {
 			Button sendMessage = (Button) findViewById(R.id.sendMessage);
 			sendMessage.setVisibility(View.GONE);
 			detailsText = (TextView) findViewById(R.id.penPalDetailsText);
-			detailsText.setText("Please turn on your internet");
+			detailsText.setText(getString(R.string.internet_error));
 		} catch (Exception e) {
 		}
 	}
@@ -124,9 +124,9 @@ public class MeetPenPal extends ActionBarActivity {
 		StringBuilder details = new StringBuilder();
 		try {
 			name = penPalDetails.getString("first_name");
-			details.append("Name:").append(name).append(" ");;
-			details.append(penPalDetails.getString("last_name")).append("\n");
-			details.append("From: ").append(penPalDetails.getString("location")).append("\n");
+			details.append("Meet ").append(name).append(" ");;
+			details.append(penPalDetails.getString("last_name")).append("\n\n");
+			details.append(name).append(" is from ").append(penPalDetails.getString("location")).append("\n");
 			detailsText.setText(details.toString());
 		} catch (Exception e) {
 		}				

@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="@string/message_sent_text"
-        android:textSize="35sp" />
+        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"

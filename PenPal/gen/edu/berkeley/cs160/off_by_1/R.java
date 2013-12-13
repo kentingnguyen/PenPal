@@ -1059,10 +1059,10 @@ containing a value of this type.
         public static final int image=0x7f070027;
         public static final int imageView1=0x7f07004a;
         public static final int kk=0x7f070065;
-        public static final int language=0x7f07005c;
+        public static final int language=0x7f07005d;
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070029;
-        public static final int location=0x7f07005d;
+        public static final int location=0x7f07005c;
         public static final int mainSpinner1=0x7f070067;
         public static final int meetPenPalText=0x7f070055;
         public static final int messageSent=0x7f070059;
@@ -1266,6 +1266,7 @@ containing a value of this type.
         public static final int green=0x7f0c0030;
         public static final int hello_user=0x7f0c001a;
         public static final int home_button=0x7f0c0016;
+        public static final int internet_error=0x7f0c003f;
         public static final int language=0x7f0c003c;
         public static final int largesize=0x7f0c0038;
         public static final int location=0x7f0c003b;
@@ -1278,7 +1279,7 @@ containing a value of this type.
         public static final int red=0x7f0c002b;
         public static final int reply_button=0x7f0c0026;
         public static final int research_pen_pal=0x7f0c0028;
-        public static final int send_another=0x7f0c003f;
+        public static final int send_another=0x7f0c0040;
         public static final int send_message_button=0x7f0c0029;
         public static final int send_message_text=0x7f0c001f;
         public static final int smallsize=0x7f0c0036;
@@ -1292,7 +1293,7 @@ containing a value of this type.
         public static final int title_activity_receive_message=0x7f0c0011;
         public static final int title_activity_send_message=0x7f0c0013;
         public static final int to_user=0x7f0c0025;
-        public static final int undo=0x7f0c0040;
+        public static final int undo=0x7f0c0041;
         public static final int user_profile=0x7f0c002a;
         public static final int voice_message=0x7f0c0023;
         public static final int yellow=0x7f0c002e;

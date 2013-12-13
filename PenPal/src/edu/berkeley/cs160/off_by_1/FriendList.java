@@ -86,13 +86,8 @@ public class FriendList extends ActionBarActivity {
 	}
 
 	public void goToProfile(View v) {
-
-		//Log.d("debug", profileName);
-		//goToProfile(profileName);
 		Intent i = new Intent(this, Profile.class);
 		Button buttonV = (Button) v;
-		Object[] data = getUserData(buttonV);
-		//Log.d("debug", "data" + data[0] + data[1] + data[2]);
 		String profileName = buttonV.getText().toString();
 		byte[] compressStamp = getUserStamp(buttonV); 
 		i.putExtra("name", profileName);
@@ -108,24 +103,6 @@ public class FriendList extends ActionBarActivity {
 		stampBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 		byte[] compressStamp = stream.toByteArray();
 		return compressStamp;
-	}
-
-	/*void goToProfile(String name) {
-		Intent i = new Intent(this, Profile.class);
-		String[] data = getUserData(name);
-		Log.d("debug", "data" + data[0] + data[1] + data[2]);
-		i.putExtra("name", data);
-		startActivityForResult(i, 0);
-	}*/
-
-	private String[] getUserData(Button v) {
-		String profileName = v.getText().toString();
-		Drawable stamp = ((Button) v).getBackground(); 
-		String[] data = new String[3];
-		data[0] = profileName;
-		data[1] = "Spain";
-		data[2] = "English, Spanish";
-		return data;
 	}
 
 }
