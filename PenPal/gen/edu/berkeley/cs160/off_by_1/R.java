@@ -1009,8 +1009,8 @@ containing a value of this type.
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f07004b;
-        public static final int actionBack=0x7f070070;
-        public static final int actionHome=0x7f070071;
+        public static final int actionBack=0x7f07006e;
+        public static final int actionHome=0x7f07006f;
         public static final int action_bar=0x7f07001c;
         public static final int action_bar_activity_content=0x7f070015;
         public static final int action_bar_container=0x7f07001b;
@@ -1022,7 +1022,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f070016;
         public static final int action_menu_presenter=0x7f070017;
         public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f07006f;
+        public static final int action_settings=0x7f07006d;
         public static final int activity_chooser_view_content=0x7f070025;
         public static final int always=0x7f07000b;
         public static final int annie=0x7f070049;
@@ -1036,7 +1036,7 @@ containing a value of this type.
         public static final int disableHome=0x7f070008;
         public static final int drawMessageButton=0x7f070062;
         public static final int dropdown=0x7f07000f;
-        public static final int editTextMessage=0x7f07006b;
+        public static final int editTextMessage=0x7f070069;
         public static final int edit_query=0x7f070030;
         public static final int end=0x7f070013;
         public static final int expand_activities_button=0x7f070026;
@@ -1071,18 +1071,16 @@ containing a value of this type.
         public static final int none=0x7f070010;
         public static final int normal=0x7f070000;
         public static final int penPalDetailsText=0x7f070054;
-        public static final int playButton=0x7f070069;
-        public static final int playProgressBar=0x7f070068;
-        public static final int playTimer=0x7f07006a;
+        public static final int playButton=0x7f070068;
         public static final int profileName=0x7f070059;
         public static final int progress_circular=0x7f070018;
         public static final int progress_horizontal=0x7f070019;
         public static final int questionButton=0x7f07004d;
         public static final int radio=0x7f07002f;
         public static final int receivedContainer=0x7f07005f;
-        public static final int recordButton=0x7f07006d;
-        public static final int recordProgressBar=0x7f07006c;
-        public static final int recordTimer=0x7f07006e;
+        public static final int recordButton=0x7f07006b;
+        public static final int recordProgressBar=0x7f07006a;
+        public static final int recordTimer=0x7f07006c;
         public static final int reply=0x7f07005e;
         public static final int research=0x7f070055;
         public static final int search_badge=0x7f070032;

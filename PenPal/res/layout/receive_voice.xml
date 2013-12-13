@@ -4,32 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <ProgressBar
-        android:id="@+id/playProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
-        android:max="60"/>
-
     <Button
         android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/playProgressBar"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginTop="18dp"
-        android:text="Play Button" />
-
-    <TextView
-        android:id="@+id/playTimer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/playProgressBar"
-        android:layout_below="@+id/playProgressBar"
-        android:text=":15"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30sp" />
+        android:text="Play Button"
+         />
 
 </RelativeLayout>

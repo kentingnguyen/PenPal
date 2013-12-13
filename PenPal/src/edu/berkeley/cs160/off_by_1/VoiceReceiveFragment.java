@@ -28,12 +28,12 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 	TextView time;
 	Button playButton;
 	//String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/receive_voice.mp4";
-	MediaRecorder recorder;
+	//MediaRecorder recorder;
 	MediaPlayer player;
-	ProgressBar progress;
+	//ProgressBar progress;
 	Handler handler = new Handler();
-	Timer timer;
-	int record = 0;	
+	//Timer timer;
+	//int record = 0;	
 	AsyncTask<Integer, Integer, Integer> task;
 
 	int x = 0;
@@ -63,15 +63,16 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 		});
 
 		
-		time = (TextView) v.findViewById(R.id.playTimer);
+		/*time = (TextView) v.findViewById(R.id.playTimer);
 		setTime(":15");
 
-		progress = (ProgressBar) v.findViewById(R.id.playProgressBar);
+		//progress = (ProgressBar) v.findViewById(R.id.playProgressBar);
 		timer = new Timer();
 
 		cap = progress.getMax();
 		delay = (15 * 1000) / cap;
 		Log.d("debug", "inititalized everything" + playButton + time + progress);
+		*/
 		return v;
 	}
 
@@ -138,10 +139,10 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 
 			@Override
 			protected void onProgressUpdate(Integer... values) {
-				setTime(":" + String.valueOf(15-p*15/cap));
+				//setTime(":" + String.valueOf(15-p*15/cap));
 				handler.post(new Runnable() {
 					public void run() {
-						progress.setProgress(p);
+						//progress.setProgress(p);
 					}
 				});
 			}
