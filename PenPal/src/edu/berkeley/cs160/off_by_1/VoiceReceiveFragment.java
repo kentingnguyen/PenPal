@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
@@ -26,14 +27,13 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 
 	TextView time;
 	Button playButton;
-	String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/voicemessage.mp4";
+	//String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/receive_voice.mp4";
 	MediaRecorder recorder;
 	MediaPlayer player;
 	ProgressBar progress;
 	Handler handler = new Handler();
 	Timer timer;
-	int record = 0;
-
+	int record = 0;	
 	AsyncTask<Integer, Integer, Integer> task;
 
 	int x = 0;
@@ -41,9 +41,10 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 	long cap;
 	boolean cancel = false;
 
-
 	boolean playing = false;
 
+			
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -75,10 +76,15 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 	}
 
 	void startPlaying() {
-		player = new MediaPlayer();
+		Log.d("debug", "starting playback");
+		
+		
+		Log.d("debug", "got activiy correctly" + act);
 		try {
+			player = MediaPlayer.create(act, R.raw.annie);
+			Log.d("debug", "made player correctly" + player);
 			playButton.setText("Stop Playing");
-			player.setDataSource(fileName);
+			//player.setDataSource(fileName);
 			player.prepare();
 			player.start();
 			player.setOnCompletionListener(new OnCompletionListener() {
@@ -90,6 +96,8 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 			});
 		} catch (IOException e) {
 			Log.e("error", "voicemessage player.prepare() failed");
+		} catch (Exception e) {
+			Log.e("error", "Error, null exception");
 		}
 
 	}
