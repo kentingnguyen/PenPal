@@ -3,7 +3,10 @@ package edu.berkeley.cs160.off_by_1;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 public class ReceiveMessage extends ActionBarActivity {
 
 	String senderName = "";
+	ReceiveFragment fragment = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +26,18 @@ public class ReceiveMessage extends ActionBarActivity {
 		TextView fromUser = (TextView) findViewById(R.id.fromUser); 
 		fromUser.setText(fromUserText);
 		
-		
+		try {
+		String msgType = Home.getUserMsgType(senderName);
+		FragmentManager manager = getSupportFragmentManager();
+		Log.d("debug", "msgType" + msgType);
+		FragmentTransaction transaction = manager.beginTransaction();
+		fragment = new ReceiveFragment(msgType);
+		Log.d("debug", "fragment" + fragment);
+		transaction.replace(R.id.receivedContainer, fragment);
+		transaction.commit();
+		} catch (Exception e) {
+			
+		}
 	}
 
 	@Override

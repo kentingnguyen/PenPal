@@ -28,6 +28,15 @@ public class Home extends ActionBarActivity {
 		unreadMessagesText.setText(unreadMsgString);
 	}
 
+	public static String getUserMsgType(String name) {
+		if (name.equals("Timmy")) {
+			return "text";
+		} else if (name.equals("Annie")) {
+			return "voice";
+		} else {
+			return "text";
+		}
+	}
 
 	public static String[] getUserData(String name) {
 		String[] data = new String[3];
