@@ -30,7 +30,7 @@ public class MessageFragment extends Fragment{
 			fragment = new VoiceMessageFragment();
 		} else if (type.equals("draw")) {
 			fragment = new DrawMessageFragment();
-			Log.d("debug", "hi");
+			
 			draw = true;
 		}
 	}
@@ -39,7 +39,7 @@ public class MessageFragment extends Fragment{
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         act = activity;
-        Log.d("debug", "hello onattach");
+        
     }
     
 	
@@ -49,8 +49,7 @@ public class MessageFragment extends Fragment{
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.text_message, container, false);	
 		//if (draw) {
-			Log.d("debug", "it's drawing");
-			Log.d("debug", getActivity().toString());
+			
 			//onAttach(getActivity());
 			fragment.onAttach(act);
 			//draw = false;

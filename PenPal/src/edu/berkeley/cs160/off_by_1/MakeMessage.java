@@ -53,7 +53,7 @@ public class MakeMessage extends ActionBarActivity {
 
 			transaction.replace(R.id.fragmentContainer, fragment);
 			transaction.commit();
-			Log.d(debug, "added in fragment container");
+			
 		} catch (Exception e) {
 
 		}
@@ -98,7 +98,7 @@ public class MakeMessage extends ActionBarActivity {
 		try {
 			boolean goHome = i.getBooleanExtra("home", false);
 			boolean sendAnother = i.getBooleanExtra("sendAnother", false);
-			Log.d("debug", "on activity result" + goHome + " " + sendAnother);
+			
 			if (goHome) {
 				setResult(RESULT_OK, i);
 				finish();	
@@ -131,10 +131,10 @@ public class MakeMessage extends ActionBarActivity {
 
 	public void sendMessage(View v) {
 		//in progress
-		Log.d(debug, "starting send message" + fragment);
+		
 		Intent i = fragment.getIntent();
 		i.putExtra("name", receiverName);
-		Log.d(debug, "got intent" + i);
+		
 		goToMessageSent(i);
 	}
 

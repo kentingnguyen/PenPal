@@ -42,7 +42,7 @@ TextView unreadMessagesText;
 	
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-		Log.d("debug", "Got here" );
+		
 		try {
 			String name = i.getStringExtra("name");
 			
@@ -50,7 +50,7 @@ TextView unreadMessagesText;
 			
 			Button openedMsg = null;
 			Drawable stamp;
-			Log.d("debug", "received name" + name);
+			
 			if (name.equals("Timmy")) {
 				openedMsg = (Button) findViewById(R.id.timmy);
 				
@@ -59,7 +59,7 @@ TextView unreadMessagesText;
 			} 
 			stamp = openedMsg.getCompoundDrawables()[2];
 			Drawable openedImage = getResources().getDrawable(R.drawable.opened_message);
-			Log.d("debug", "opened image" + openedImage);
+			
 			openedMsg.setCompoundDrawablesWithIntrinsicBounds(openedImage, null, stamp, null);
 			
 			updateUnreadMsgCount();
@@ -73,7 +73,7 @@ TextView unreadMessagesText;
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		Log.d("debug", "inflating menu");
+		
 		getMenuInflater().inflate(R.menu.home, menu);
 		//MenuItem backItem = menu.findItem(R.id.actionBack);
 		//MenuItem homeItem = menu.findItem(R.id.actionHome);

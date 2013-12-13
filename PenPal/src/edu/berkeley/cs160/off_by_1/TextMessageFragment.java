@@ -30,7 +30,7 @@ public class TextMessageFragment extends MessageFragment {
 	    }
 	    
 	    Intent getIntent() {
-	    	Log.d("debug", "edittext" + editText);
+	    	
 	    	String msg = editText.getText().toString();
 	    	Intent i = new Intent();
 	    	i.putExtra("msg", msg);

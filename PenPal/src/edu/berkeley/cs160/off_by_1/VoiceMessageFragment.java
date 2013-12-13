@@ -48,11 +48,11 @@ public class VoiceMessageFragment extends MessageFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		Log.d("debug", "inflating voice message");
+		
 		View v = inflater.inflate(R.layout.voice_message, container, false);
 		startPlay = act.getString(R.string.start_play);
 		recordButton = (Button) v.findViewById(R.id.recordButton);
-		Log.d("debug", "recordButton" + recordButton);
+		
 		recordButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

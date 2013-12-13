@@ -35,10 +35,10 @@ public class ReceiveMessage extends ActionBarActivity {
 		try {
 		String msgType = Home.getUserMsgType(senderName);
 		FragmentManager manager = getSupportFragmentManager();
-		Log.d("debug", "msgType" + msgType);
+		
 		FragmentTransaction transaction = manager.beginTransaction();
 		fragment = new ReceiveFragment(msgType);
-		Log.d("debug", "fragment" + fragment);
+		
 		transaction.replace(R.id.receivedContainer, fragment);
 		transaction.commit();
 		} catch (Exception e) {

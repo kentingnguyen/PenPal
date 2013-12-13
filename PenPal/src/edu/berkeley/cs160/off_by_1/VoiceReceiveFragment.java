@@ -49,9 +49,9 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// Inflate the layout for this fragment
-		Log.d("debug", "inflating voice message");
+		
 		View v = inflater.inflate(R.layout.receive_voice, container, false);
-		Log.d("debug", "inflated view" );
+		
 
 		playButton = (Button) v.findViewById(R.id.playButton);
 		playButton.setOnClickListener(new View.OnClickListener() {
@@ -77,13 +77,10 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 	}
 
 	void startPlaying() {
-		Log.d("debug", "starting playback");
 		
-		
-		Log.d("debug", "got activiy correctly" + act);
 		try {
 			player = MediaPlayer.create(act, R.raw.annie);
-			Log.d("debug", "made player correctly" + player);
+			
 			playButton.setText("Stop Playing");
 			//player.setDataSource(fileName);
 			//player.prepare();

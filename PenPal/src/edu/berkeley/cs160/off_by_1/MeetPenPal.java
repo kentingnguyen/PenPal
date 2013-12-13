@@ -120,13 +120,14 @@ public class MeetPenPal extends ActionBarActivity {
 
 	public void setDetailsTextView(JSONObject penPalDetails) {
 		detailsText = (TextView) findViewById(R.id.penPalDetailsText);
-		
+
 		StringBuilder details = new StringBuilder();
 		try {
 			name = penPalDetails.getString("first_name");
-			details.append("Meet ").append(name).append(" ");;
+			details.append("Meet ").append(name).append(" ");
 			details.append(penPalDetails.getString("last_name")).append("\n\n");
 			details.append(name).append(" is from ").append(penPalDetails.getString("location")).append("\n");
+			//String.format(getString(R.string.pen_pal_details), name, 
 			detailsText.setText(details.toString());
 		} catch (Exception e) {
 		}				
@@ -154,7 +155,7 @@ public class MeetPenPal extends ActionBarActivity {
 			try {
 				HttpClient client = new DefaultHttpClient();
 				HttpGet get = new HttpGet(api);
-				
+
 				StringBuilder builder = new StringBuilder();
 				java.lang.String line;
 				JSONObject jsonObject = null; 
@@ -162,14 +163,14 @@ public class MeetPenPal extends ActionBarActivity {
 				HttpResponse response = client.execute(get);
 				int statusCode = response.getStatusLine().getStatusCode();
 				if (statusCode == HttpStatus.SC_OK) {
-					Log.d("debug", "here");
+					
 					HttpEntity entity = response.getEntity();
 					InputStream content = entity.getContent();
 					BufferedReader reader = new BufferedReader(new InputStreamReader(content));
 					while ((line = reader.readLine()) != null) {
 						builder.append(line);
 					}
-					Log.d("debug", builder.toString());
+					
 				} else {
 					return null;
 				}
@@ -177,7 +178,7 @@ public class MeetPenPal extends ActionBarActivity {
 				JSONObject jsonArray = null;
 
 				jsonArray = new JSONObject(builder.toString());
-				Log.d("debug", "here!!!!!!");
+				
 				if (jsonArray.length() != 0) {
 					jsonObject = jsonArray;
 				} else {		
@@ -185,7 +186,7 @@ public class MeetPenPal extends ActionBarActivity {
 				}
 				return jsonObject;
 			} catch (Exception e) {
-				Log.d("debug", "hi2");
+				
 				return null;
 			}
 		}
@@ -198,7 +199,7 @@ public class MeetPenPal extends ActionBarActivity {
 				} else {
 					Button sendMessage = (Button) findViewById(R.id.sendMessage);
 					sendMessage.setVisibility(View.VISIBLE);
-				setDetailsTextView(penpaldata);
+					setDetailsTextView(penpaldata);
 				}
 				// TODO: check this.exception 
 				// TODO: do something with the feed

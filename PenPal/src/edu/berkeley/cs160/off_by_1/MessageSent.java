@@ -87,7 +87,7 @@ public class MessageSent extends ActionBarActivity {
 		Intent i = new Intent();
 		i.putExtra("sendAnother", true);
 		setResult(RESULT_OK, i);
-		Log.d("debug", "Sending another");
+		
 		finish();
 	}
 

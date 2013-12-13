@@ -25,9 +25,9 @@ public class SendMessage extends ActionBarActivity {
 		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
 		toUser.setText(toUserText);
 		Bitmap stamp = Home.getStamp(this, receiverName);
-		Log.d("debug", "stampView");
+		
 		ImageView stampView = (ImageView) findViewById(R.id.stamp);
-		Log.d("debug", "stampView" + stampView);
+		
 		stampView.setImageBitmap(stamp);
 	}
 
@@ -95,7 +95,7 @@ public class SendMessage extends ActionBarActivity {
     	Intent i = new Intent(this, MakeMessage.class);
     	i.putExtra("msgType", "draw");
     	i.putExtra("name", receiverName);
-    	Log.d("debug", "got to intent");
+    	
     	startActivityForResult(i, 0);
     }
 

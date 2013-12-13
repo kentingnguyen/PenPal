@@ -61,8 +61,10 @@
     <string name="stop_record">Stop Recording</string>
     <string name="start_play">Play Message</string>
     <string name="stop_play">"Stop Playing"</string>
+    <string name="pen_pal_details">Meet %1$s %2$s\n\n 
+        %1$s is from %3$s\n\n 
+        %1$s speaks %4$s</string>
 
-    
     <string-array name="suggested_questions">
         <item>What are you learning in school? </item>
         <item>What did you eat for breakfast? </item>
@@ -81,11 +83,10 @@
         <item>What is your favorite movie? </item>
         <item>What is your favorite animal? </item>
         <item>Do you have a pet? </item>
-        
-        
     </string-array>
-    <string name="internet_error">"I need the internet on to work"</string>
-    <string name="loading"> Please wait while your data gets loaded.</string>
+
+    <string name="internet_error">"I need to turn internet on to find a Pen Pal"</string>
+    <string name="loading"> Finding a Pen Pal.  Please Wait...</string>
     <string name="send_another">Send Another</string>
     <string name="undo">undo</string>
 

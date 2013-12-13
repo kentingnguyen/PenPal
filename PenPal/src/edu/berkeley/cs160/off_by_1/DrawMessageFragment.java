@@ -54,7 +54,7 @@ public class DrawMessageFragment extends MessageFragment {
 	public class CustomView extends View {
         public CustomView(Context context) {
         	super(context);
-        	Log.d("debug", "crashed?");
+        	
             paint.setAntiAlias(true);
             paint.setColor(color);
             paint.setStyle(Paint.Style.STROKE);
@@ -82,8 +82,6 @@ public class DrawMessageFragment extends MessageFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.d("debug", "before view");
-		Log.d("debug", "here");
 		if (act == null) {
 			Log.d("debug", "it's nulllllllllllllllllllllllllllllllll");
 		} else {

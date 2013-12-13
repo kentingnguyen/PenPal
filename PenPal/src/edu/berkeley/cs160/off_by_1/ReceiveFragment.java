@@ -30,11 +30,9 @@ public class ReceiveFragment extends Fragment{
 			//fragment = null;
 		} else if (type.equals("voice")) {
 			fragment = new VoiceReceiveFragment();
-			Log.d("debug", "made voice frag" + fragment);
+			
 		} else if (type.equals("draw")) {
-			//fragment = new DrawReceiveFragment();
-			//Log.d("debug", "hi");
-			//draw = true;
+			
 			fragment = null;
 		}
 	}
