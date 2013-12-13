@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Home extends ActionBarActivity {
@@ -17,15 +18,72 @@ public class Home extends ActionBarActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.d("debug", "creating1");
+		
 		setContentView(R.layout.activity_home);
 
-		Log.d("debug", "creating");
 		//R.id.unreadText
 		int unreadMessages = 2;
 		String unreadMsgString = getResources().getQuantityString(R.plurals.unread_messages, unreadMessages, unreadMessages);
 		TextView unreadMessagesText = (TextView) findViewById(R.id.unreadText);
 		unreadMessagesText.setText(unreadMsgString);
+	}
+
+	@Override
+	public void onActivityResult(int req, int result, Intent i) {
+		Log.d("debug", "Got here" );
+		try {
+			String name = i.getStringExtra("name");
+			Button openedMsg = null;
+			Drawable stamp;
+			Log.d("debug", "received name" + name);
+			if (name.equals("Timmy")) {
+				openedMsg = (Button) findViewById(R.id.timmy);
+			} else if (name.equals("Annie")) {
+				openedMsg = (Button) findViewById(R.id.annie);
+			} 
+			stamp = openedMsg.getCompoundDrawables()[2];
+			Drawable openedImage = getResources().getDrawable(R.drawable.opened_message);
+			openedMsg.setCompoundDrawables(openedImage, null, stamp, null);
+		} catch (Exception e) {
+
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		Log.d("debug", "inflating menu");
+		getMenuInflater().inflate(R.menu.home, menu);
+		//MenuItem backItem = menu.findItem(R.id.actionBack);
+		//MenuItem homeItem = menu.findItem(R.id.actionHome);
+		// To retrieve the Action Provider
+		//ShareActionProvider provider = (ShareActionProvider) MenuItemCompat.getActionProvider(backItem);
+		return super.onCreateOptionsMenu(menu);
+	}
+	/**
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+
+    }
+	 */
+	public void goToFriendList(View v) {
+		goToFriendList();	
+	}
+
+	public void goToFriendList() {
+		Intent i = new Intent(this, FriendList.class);    	
+		startActivity(i);
+	}
+
+	public void goToReceiveMessage(View v) {
+		String name = ((TextView) v).getText().toString(); 
+		goToReceiveMessage(name);	
+	}
+
+	public void goToReceiveMessage(String name) {
+		Intent i = new Intent(this, ReceiveMessage.class);
+		i.putExtra("name", name);
+		startActivityForResult(i, 0);
+
 	}
 
 	public static String getUserMsgType(String name) {
@@ -85,42 +143,5 @@ public class Home extends ActionBarActivity {
 			stamp = getResources().getDrawable(R.drawable.stamp5);
 		}
 		return ((BitmapDrawable) stamp).getBitmap();
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		Log.d("debug", "inflating menu");
-		getMenuInflater().inflate(R.menu.home, menu);
-		//MenuItem backItem = menu.findItem(R.id.actionBack);
-		//MenuItem homeItem = menu.findItem(R.id.actionHome);
-		// To retrieve the Action Provider
-		//ShareActionProvider provider = (ShareActionProvider) MenuItemCompat.getActionProvider(backItem);
-		return super.onCreateOptionsMenu(menu);
-	}
-	/**
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-
-    }
-	 */
-	public void goToFriendList(View v) {
-		goToFriendList();	
-	}
-
-	public void goToFriendList() {
-		Intent i = new Intent(this, FriendList.class);    	
-		startActivity(i);
-	}
-
-	public void goToReceiveMessage(View v) {
-		String name = ((TextView) v).getText().toString(); 
-		goToReceiveMessage(name);	
-	}
-
-	public void goToReceiveMessage(String name) {
-		Intent i = new Intent(this, ReceiveMessage.class);
-		i.putExtra("name", name);
-		startActivity(i);
-
 	}
 }

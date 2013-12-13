@@ -49,10 +49,9 @@ public class ReceiveMessage extends ActionBarActivity {
 
 	@Override
 	public void onBackPressed(){
-		super.onBackPressed();
+		//super.onBackPressed();
 		Intent i = new Intent();
-		setResult(RESULT_OK, i);
-		finish();     
+		goBack(i);     
 	}
 
 
@@ -61,19 +60,25 @@ public class ReceiveMessage extends ActionBarActivity {
 		Intent i = new Intent();
 		switch(item.getItemId()) {		
 		case R.id.actionHome:
-			i.putExtra("home", true);
+			/*i.putExtra("home", true);
 			setResult(RESULT_OK, i);
-			finish();
+			finish();*/
+			goBack(i);
 			return true;
 		case R.id.actionBack:
-			setResult(RESULT_OK, i);
-			finish();
+			goBack(i);
 			return true;
 		}
 		return false;
 	}
 
 
+	private void goBack(Intent i) {
+		setResult(RESULT_OK, i);
+		i.putExtra("name", senderName);
+		finish();
+	}
+	
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
 		try {

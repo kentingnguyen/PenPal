@@ -1025,9 +1025,8 @@ containing a value of this type.
         public static final int action_settings=0x7f06006f;
         public static final int activity_chooser_view_content=0x7f060025;
         public static final int always=0x7f06000b;
+        public static final int annie=0x7f060049;
         public static final int beginning=0x7f060011;
-        public static final int button1=0x7f060048;
-        public static final int button2=0x7f060049;
         public static final int checkbox=0x7f06002d;
         public static final int clearButton=0x7f060051;
         public static final int clearSendLayout=0x7f060050;
@@ -1112,6 +1111,7 @@ containing a value of this type.
         public static final int tabMode=0x7f060002;
         public static final int textMessage=0x7f060067;
         public static final int textMessageButton=0x7f060061;
+        public static final int timmy=0x7f060048;
         public static final int title=0x7f06002b;
         public static final int toUser=0x7f06004c;
         public static final int top_action_bar=0x7f060020;
