@@ -79,6 +79,7 @@
         
     </string-array>
     <string name="internet_error">"I need the internet on to work"</string>
+    <string name="loading"> Please wait while your data gets loaded.</string>
     <string name="send_another">Send Another</string>
     <string name="undo">undo</string>
 

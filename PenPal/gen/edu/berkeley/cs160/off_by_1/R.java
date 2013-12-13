@@ -1269,6 +1269,7 @@ containing a value of this type.
         public static final int internet_error=0x7f0c003f;
         public static final int language=0x7f0c003c;
         public static final int largesize=0x7f0c0038;
+        public static final int loading=0x7f0c0040;
         public static final int location=0x7f0c003b;
         public static final int medsize=0x7f0c0037;
         public static final int message_sent_text=0x7f0c0020;
@@ -1279,7 +1280,7 @@ containing a value of this type.
         public static final int red=0x7f0c002b;
         public static final int reply_button=0x7f0c0026;
         public static final int research_pen_pal=0x7f0c0028;
-        public static final int send_another=0x7f0c0040;
+        public static final int send_another=0x7f0c0041;
         public static final int send_message_button=0x7f0c0029;
         public static final int send_message_text=0x7f0c001f;
         public static final int smallsize=0x7f0c0036;
@@ -1293,7 +1294,7 @@ containing a value of this type.
         public static final int title_activity_receive_message=0x7f0c0011;
         public static final int title_activity_send_message=0x7f0c0013;
         public static final int to_user=0x7f0c0025;
-        public static final int undo=0x7f0c0041;
+        public static final int undo=0x7f0c0042;
         public static final int user_profile=0x7f0c002a;
         public static final int voice_message=0x7f0c0023;
         public static final int yellow=0x7f0c002e;
