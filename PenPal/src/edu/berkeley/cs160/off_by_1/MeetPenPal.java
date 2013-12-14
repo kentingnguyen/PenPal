@@ -126,7 +126,8 @@ public class MeetPenPal extends ActionBarActivity {
 			name = penPalDetails.getString("first_name");
 			details.append("Meet ").append(name).append(" ");
 			details.append(penPalDetails.getString("last_name")).append("\n\n");
-			details.append(name).append(" is from ").append(penPalDetails.getString("location")).append("\n");
+			details.append(name).append(" is from ").append(penPalDetails.getString("location")).append("\n\n");
+			details.append(name).append(" speaks ").append(penPalDetails.getString("language")).append("\n");
 			//String.format(getString(R.string.pen_pal_details), name, 
 			detailsText.setText(details.toString());
 		} catch (Exception e) {
