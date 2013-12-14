@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="22dp"
         android:layout_marginTop="42dp"
-        android:background="@drawable/stamp1"
+        android:drawableBottom="@drawable/stamp1"
         android:onClick="goToProfile"
         android:text="Timmy"
         android:textSize="15sp" />
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
-        android:background="@drawable/stamp2"
+        android:drawableBottom="@drawable/stamp2"
         android:onClick="goToProfile"
         android:text="Annie"
         android:src="@drawable/stamp2"/>
@@ -47,7 +47,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="22dp"
         android:layout_marginTop="42dp"
-        android:background="@drawable/stamp3"
+        android:drawableBottom="@drawable/stamp3"
         android:text="Angus"
         android:onClick="goToProfile"/>
     
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="22dp"
         android:layout_marginTop="200dp"
-        android:background="@drawable/stamp4"
+        android:drawableBottom="@drawable/stamp4"
         android:text="Mike"
         android:onClick="goToProfile"/>
 
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:background="@drawable/stamp5"
+        android:drawableBottom="@drawable/stamp5"
         android:text="Natalie"
         android:onClick="goToProfile"/>
     

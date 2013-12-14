@@ -26,11 +26,12 @@ public class Profile extends ActionBarActivity {
 		//String[] data = i.getStringArrayExtra("name");
 		String name = i.getStringExtra("name");
 		String[] data = Home.getUserData(name);
-		try {
+		
 		byte[] compressStamp = i.getByteArrayExtra("image");
 		Bitmap stampBitmap = BitmapFactory.decodeByteArray(compressStamp, 0, compressStamp.length);
 
-		profileName = data[0];
+		//profileName = data[0];
+		profileName = name;
 		TextView friendProfileName = (TextView) findViewById(R.id.profileName);
 		ImageView friendProfileStamp = (ImageView) findViewById(R.id.stamp);
 		TextView friendProfileLocation = (TextView) findViewById(R.id.location);
@@ -47,9 +48,7 @@ public class Profile extends ActionBarActivity {
 		friendProfileStamp.setImageBitmap(stampBitmap);
 		friendProfileLocation.setText(friendProfileLocationText);
 		friendProfileLanguage.setText(friendProfileLanguageText);
-		} catch (Exception e) {
-			
-		}
+		
 	}
 
 	@Override

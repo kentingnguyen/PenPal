@@ -26,6 +26,7 @@ public class MessageSent extends ActionBarActivity {
 		String toUserText = String.format(getResources().getString(R.string.to_user), receiverName);
 		toUser.setText(toUserText);
 		Bitmap stamp = Home.getStamp(this, receiverName);
+		
 		ImageView stampView = (ImageView) findViewById(R.id.stamp);
 		stampView.setImageBitmap(stamp);
 

@@ -18,16 +18,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Home extends ActionBarActivity {
-List<String> unreadMessages = new ArrayList<String>();
-int unreadMsgCount;
-String unreadMsgString; 
-TextView unreadMessagesText; 	
+	List<String> unreadMessages = new ArrayList<String>();
+	int unreadMsgCount;
+	String unreadMsgString; 
+	TextView unreadMessagesText; 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		unreadMessages.add("Timmy");
 		unreadMessages.add("Annie");
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		updateUnreadMsgCount();
@@ -39,41 +39,41 @@ TextView unreadMessagesText;
 		unreadMessagesText = (TextView) findViewById(R.id.unreadText);
 		unreadMessagesText.setText(unreadMsgString);		
 	}
-	
+
 	@Override
 	public void onActivityResult(int req, int result, Intent i) {
-		
+
 		try {
 			String name = i.getStringExtra("name");
-			
+
 			unreadMessages.remove(name);
-			
+
 			Button openedMsg = null;
 			Drawable stamp;
-			
+
 			if (name.equals("Timmy")) {
 				openedMsg = (Button) findViewById(R.id.timmy);
-				
+
 			} else if (name.equals("Annie")) {
 				openedMsg = (Button) findViewById(R.id.annie);
 			} 
 			stamp = openedMsg.getCompoundDrawables()[2];
 			Drawable openedImage = getResources().getDrawable(R.drawable.opened_message);
-			
+
 			openedMsg.setCompoundDrawablesWithIntrinsicBounds(openedImage, null, stamp, null);
-			
+
 			updateUnreadMsgCount();
 		} catch (Exception e) {
 
 		}
 	}
 
-	
-	
+
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		
+
 		getMenuInflater().inflate(R.menu.home, menu);
 		//MenuItem backItem = menu.findItem(R.id.actionBack);
 		//MenuItem homeItem = menu.findItem(R.id.actionHome);
@@ -159,7 +159,13 @@ TextView unreadMessagesText;
 			stamp = act.getResources().getDrawable(R.drawable.stamp1);
 		} else if (name.equals("Annie")) {
 			stamp = act.getResources().getDrawable(R.drawable.stamp2);
-		}
+		} else if (name.equals("Angus")) {
+			stamp = act.getResources().getDrawable(R.drawable.stamp3);
+		} else if (name.equals("Mike")) {
+			stamp = act.getResources().getDrawable(R.drawable.stamp4);
+		} else if (name.equals("Natalie")) {
+			stamp = act.getResources().getDrawable(R.drawable.stamp5);
+		}		
 		else {
 			stamp = act.getResources().getDrawable(R.drawable.stamp5);
 		}
