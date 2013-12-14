@@ -989,23 +989,30 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int back_btn=0x7f020057;
         public static final int background=0x7f020058;
-        public static final int home_icon=0x7f020059;
-        public static final int list_view_button=0x7f02005a;
-        public static final int list_view_green_button=0x7f02005b;
-        public static final int list_view_green_button_click=0x7f02005c;
-        public static final int opened_message=0x7f02005d;
-        public static final int pen_pal_icon=0x7f02005e;
-        public static final int pen_pal_text=0x7f02005f;
-        public static final int profile_icon=0x7f020060;
-        public static final int red_button=0x7f020061;
-        public static final int stamp1=0x7f020062;
-        public static final int stamp2=0x7f020063;
-        public static final int stamp3=0x7f020064;
-        public static final int stamp4=0x7f020065;
-        public static final int stamp5=0x7f020066;
-        public static final int sun=0x7f020067;
-        public static final int top_bar=0x7f020068;
-        public static final int unopened_message=0x7f020069;
+        public static final int draw_btn=0x7f020059;
+        public static final int home_icon=0x7f02005a;
+        public static final int list_view_button=0x7f02005b;
+        public static final int list_view_green_button=0x7f02005c;
+        public static final int list_view_green_button_click=0x7f02005d;
+        public static final int opened_message=0x7f02005e;
+        public static final int pen_pal_icon=0x7f02005f;
+        public static final int pen_pal_text=0x7f020060;
+        public static final int play_button=0x7f020061;
+        public static final int profile_icon=0x7f020062;
+        public static final int record_btn=0x7f020063;
+        public static final int red_button=0x7f020064;
+        public static final int stamp1=0x7f020065;
+        public static final int stamp2=0x7f020066;
+        public static final int stamp3=0x7f020067;
+        public static final int stamp4=0x7f020068;
+        public static final int stamp5=0x7f020069;
+        public static final int stop_button=0x7f02006a;
+        public static final int sun=0x7f02006b;
+        public static final int talk_btn=0x7f02006c;
+        public static final int throw_question=0x7f02006d;
+        public static final int top_bar=0x7f02006e;
+        public static final int unopened_message=0x7f02006f;
+        public static final int write_btn=0x7f020070;
     }
     public static final class id {
         public static final int RelativeLayout1=0x7f07004b;
@@ -1103,7 +1110,7 @@ containing a value of this type.
         public static final int showHome=0x7f070004;
         public static final int showTitle=0x7f070006;
         public static final int split_action_bar=0x7f07001e;
-        public static final int stamp=0x7f07004e;
+        public static final int stamp=0x7f07004d;
         public static final int submit_area=0x7f070039;
         public static final int suggestedQuestion=0x7f070050;
         public static final int sun=0x7f070042;
@@ -1112,7 +1119,7 @@ containing a value of this type.
         public static final int textMessageButton=0x7f070061;
         public static final int timmy=0x7f070048;
         public static final int title=0x7f07002b;
-        public static final int toUser=0x7f07004d;
+        public static final int toUser=0x7f07004e;
         public static final int top_action_bar=0x7f070020;
         public static final int unreadMessagesLayout=0x7f070046;
         public static final int unreadText=0x7f070045;
@@ -1339,8 +1346,9 @@ containing a value of this type.
         /**  Action Bar Theme. 
  Action Bar Theme. 
          */
-        public static final int PenPalActionBar=0x7f0d0088;
-        public static final int PenPalTheme=0x7f0d0089;
+        public static final int PenPalActionBar=0x7f0d0089;
+        public static final int PenPalTheme=0x7f0d008a;
+        public static final int QuestionButton=0x7f0d0088;
         public static final int RedButton=0x7f0d0087;
         /**  Mimic text appearance in select_dialog_item.xml 
          */

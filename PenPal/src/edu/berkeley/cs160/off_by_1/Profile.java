@@ -26,6 +26,7 @@ public class Profile extends ActionBarActivity {
 		//String[] data = i.getStringArrayExtra("name");
 		String name = i.getStringExtra("name");
 		String[] data = Home.getUserData(name);
+		try {
 		byte[] compressStamp = i.getByteArrayExtra("image");
 		Bitmap stampBitmap = BitmapFactory.decodeByteArray(compressStamp, 0, compressStamp.length);
 
@@ -46,6 +47,9 @@ public class Profile extends ActionBarActivity {
 		friendProfileStamp.setImageBitmap(stampBitmap);
 		friendProfileLocation.setText(friendProfileLocationText);
 		friendProfileLanguage.setText(friendProfileLanguageText);
+		} catch (Exception e) {
+			
+		}
 	}
 
 	@Override

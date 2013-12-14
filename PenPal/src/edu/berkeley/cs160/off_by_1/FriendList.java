@@ -97,12 +97,17 @@ public class FriendList extends ActionBarActivity {
 	}
 
 	private byte[] getUserStamp(Button v) {
+		try {
 		Drawable stamp = v.getCompoundDrawables()[3];
 		Bitmap stampBitmap = ((BitmapDrawable) stamp).getBitmap();
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
 		stampBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
 		byte[] compressStamp = stream.toByteArray();
 		return compressStamp;
+		} catch (Exception e) {
+			
+		}
+		return null;
 	}
 
 }
