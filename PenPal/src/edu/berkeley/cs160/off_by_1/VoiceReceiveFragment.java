@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -76,12 +77,13 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 		return v;
 	}
 
-	void startPlaying() {
+	@SuppressLint("NewApi")
+  void startPlaying() {
 		
 		try {
 			player = MediaPlayer.create(act, R.raw.annie);
 			
-			playButton.setText("Stop Playing");
+			playButton.setBackgroundResource(R.drawable.stop_button);
 			//player.setDataSource(fileName);
 			//player.prepare();
 			player.start();
@@ -99,7 +101,7 @@ public class VoiceReceiveFragment extends ReceiveFragment{
 	}
 
 	void stopPlaying() {
-		playButton.setText("Play Button");
+	  playButton.setBackgroundResource(R.drawable.play_button);
 		player.release();
 		player = null;
 	}

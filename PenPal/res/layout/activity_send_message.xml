@@ -7,59 +7,59 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SendMessage" >
-    
-        <LinearLayout
+    <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <TextView
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/tan" >
+        <ImageView
+            android:id="@+id/stamp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+             />
+		<TextView
             android:id="@+id/toUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
-            android:text="@string/send_message_text"
-            android:textSize="25sp" />
-
-        <ImageView
-            android:id="@+id/stamp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp" />
+            android:layout_marginTop="15dp"
+            android:textColor="@color/light_blue"
+            android:text="@string/send_message_text" />
     </LinearLayout>
-
+   
     <Button
         android:id="@+id/textMessageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/write_btn"
         android:layout_above="@+id/drawMessageButton"
         android:layout_alignParentRight="true"
         android:layout_marginRight="32dp"
         android:onClick="goToTextMessage"
-        android:text="@string/text_message"
         android:textSize="35sp" />
 
     <Button
         android:id="@+id/voiceMessageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/talk_btn"
         android:layout_below="@+id/sendMessageText"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="104dp"
         android:onClick="goToVoiceMessage"
-        android:text="@string/voice_message"
         android:textSize="35sp" />
 
     <Button
         android:id="@+id/drawMessageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/draw_btn"
         android:layout_below="@+id/voiceMessageButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="38dp"
         android:onClick="goToDrawMessage"
-        android:text="@string/draw_message"
         android:textSize="35sp" />
 
 </RelativeLayout>

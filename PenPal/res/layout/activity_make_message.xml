@@ -13,34 +13,35 @@
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <TextView
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/tan" >
+        <ImageView
+            android:id="@+id/stamp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+             />
+		<TextView
             android:id="@+id/toUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginRight="30dp"
-            android:text="@string/to_user"
-            android:textSize="25sp" />
-
-        <ImageView
-            android:id="@+id/stamp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp" />
+            android:layout_marginTop="15dp"
+            android:textColor="@color/light_blue"
+            android:text="@string/to_user" />
     </LinearLayout>
+ 
 
     <Button
         android:id="@+id/questionButton"
-        style="?android:attr/buttonStyleSmall"
+        style="@style/QuestionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/header"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:onClick="getSuggestedQuestion"
-        android:text="@string/get_question_button" />
+        android:onClick="getSuggestedQuestion"/>
 
     <TextView
         android:id="@+id/suggestedQuestion"
