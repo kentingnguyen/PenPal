@@ -1,6 +1,3 @@
 PenPal
 ======
-Notes on current implementations
-Chose to use Fragment for the header with Home and Back buttons, since it would be easier to modularize
-Tried to use TabHost to switch between write,draw, and text options, but TabActivity is deprecated.
-	ActionBar Tab does not allow tabs to be at the bottom of the screen
+Pen Pal is an android application that will allow kids from around the world to meet and interact with each other.  This app is designed to be kid-friendly through large buttons, a colorful design, and a basic user interface.  Once a kid has a Pen Pal, he can send and receive either a voice message, a text message, or a drawn message from his new friend. 
